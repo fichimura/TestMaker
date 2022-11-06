@@ -1650,3 +1650,328 @@ Processing by StaticPagesController#landing_page as HTML
 Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 0.0ms | Allocations: 3782)
 
 
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2039971103330730045)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCourses (20221106202115)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (16.1ms)[0m  [1m[35mCREATE TABLE "courses" ("id" bigserial primary key, "titulo" character varying, "descricao" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221106202115"]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(2039971103330730045)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2022-11-06 17:22:26 -0300
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#landing_page as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering static_pages/landing_page.html.haml within layouts/application
+  Rendered static_pages/landing_page.html.haml within layouts/application (Duration: 38.2ms | Allocations: 19592)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 142.5ms | Allocations: 50547)
+Completed 200 OK in 156ms (Views: 145.8ms | ActiveRecord: 0.0ms | Allocations: 53817)
+
+
+Started GET "/" for ::1 at 2022-11-06 17:22:27 -0300
+Processing by StaticPagesController#landing_page as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering static_pages/landing_page.html.haml within layouts/application
+  Rendered static_pages/landing_page.html.haml within layouts/application (Duration: 0.3ms | Allocations: 84)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 9.7ms | Allocations: 3594)
+Completed 200 OK in 12ms (Views: 10.7ms | ActiveRecord: 0.0ms | Allocations: 4093)
+
+
+Started GET "/privacy_policy" for ::1 at 2022-11-06 17:22:29 -0300
+Processing by StaticPagesController#privacy_policy as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering static_pages/privacy_policy.html.haml within layouts/application
+  Rendered static_pages/privacy_policy.html.haml within layouts/application (Duration: 3.2ms | Allocations: 2449)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 11.3ms | Allocations: 5942)
+Completed 200 OK in 13ms (Views: 11.9ms | ActiveRecord: 0.0ms | Allocations: 6595)
+
+
+Started GET "/" for ::1 at 2022-11-06 17:22:30 -0300
+Processing by StaticPagesController#landing_page as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering static_pages/landing_page.html.haml within layouts/application
+  Rendered static_pages/landing_page.html.haml within layouts/application (Duration: 0.3ms | Allocations: 62)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 9.6ms | Allocations: 3515)
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.0ms | Allocations: 3905)
+
+
+Started GET "/privacy_policy" for ::1 at 2022-11-06 17:22:31 -0300
+Processing by StaticPagesController#privacy_policy as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering static_pages/privacy_policy.html.haml within layouts/application
+  Rendered static_pages/privacy_policy.html.haml within layouts/application (Duration: 0.4ms | Allocations: 38)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 14.2ms | Allocations: 3488)
+Completed 200 OK in 17ms (Views: 15.3ms | ActiveRecord: 0.0ms | Allocations: 3873)
+
+
+Started GET "/" for ::1 at 2022-11-06 17:22:32 -0300
+Processing by StaticPagesController#landing_page as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering static_pages/landing_page.html.haml within layouts/application
+  Rendered static_pages/landing_page.html.haml within layouts/application (Duration: 0.4ms | Allocations: 51)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 15.4ms | Allocations: 3504)
+Completed 200 OK in 18ms (Views: 16.5ms | ActiveRecord: 0.0ms | Allocations: 3894)
+
+
+Started GET "/" for ::1 at 2022-11-06 17:23:34 -0300
+Processing by StaticPagesController#landing_page as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering static_pages/landing_page.html.haml within layouts/application
+  Rendered static_pages/landing_page.html.haml within layouts/application (Duration: 38.5ms | Allocations: 21775)
+  Rendered layout layouts/application.html.haml (Duration: 39.1ms | Allocations: 21914)
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 0.0ms | Allocations: 23146)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check %nav.navbar.navbar-expand-lg.navbar-light.bg-light
+  %a.navbar-brand{:href => "#"}
+    %i.fa-solid.fa-house
+    Navbar
+  %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
+    %span.navbar-toggler-icon
+  #navbarSupportedContent.collapse.navbar-collapse
+    %ul.navbar-nav.mr-auto
+      %li.nav-item.active
+        %a.nav-link{:href => "#"}
+          Home
+          %span.sr-only (current)
+      %li.nav-item
+        %a.nav-link{:href => "#"} Link
+      %li.nav-item.dropdown
+        %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+          Dropdown
+        .dropdown-menu{"aria-labelledby" => "navbarDropdown"}
+          %a.dropdown-item{:href => "#"} Action
+          %a.dropdown-item{:href => "#"} Another action
+          .dropdown-divider
+          %a.dropdown-item{:href => "#"} Something else here
+      %li.nav-item
+        %a.nav-link.disabled{:href => "#"} Disabled
+    %form.form-inline.my-2.my-lg-0
+      %input.form-control.mr-sm-2{"aria-label" => "Search", :placeholder => "Search", :type => "search"}/
+      %button.btn.btn-outline-success.my-2.my-sm-0{:type => "submit"} Search
+.container
+  %h1 Hello World
+  = link_to "Cursos", cursos_path, class = 'btn btn-success'
+  = link_to "Privacy Policy",  privacy_policy_path
+
+):
+1:    %nav.navbar.navbar-expand-lg.navbar-light.bg-light
+2:      %a.navbar-brand{:href => "#"}
+3:        %i.fa-solid.fa-house
+4:        Navbar
+5:      %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
+6:        %span.navbar-toggler-icon
+7:      #navbarSupportedContent.collapse.navbar-collapse
+8:        %ul.navbar-nav.mr-auto
+9:          %li.nav-item.active
+10:            %a.nav-link{:href => "#"}
+11:              Home
+12:              %span.sr-only (current)
+13:          %li.nav-item
+14:            %a.nav-link{:href => "#"} Link
+15:          %li.nav-item.dropdown
+16:            %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+17:              Dropdown
+18:            .dropdown-menu{"aria-labelledby" => "navbarDropdown"}
+19:              %a.dropdown-item{:href => "#"} Action
+20:              %a.dropdown-item{:href => "#"} Another action
+21:              .dropdown-divider
+22:              %a.dropdown-item{:href => "#"} Something else here
+23:          %li.nav-item
+24:            %a.nav-link.disabled{:href => "#"} Disabled
+25:        %form.form-inline.my-2.my-lg-0
+26:          %input.form-control.mr-sm-2{"aria-label" => "Search", :placeholder => "Search", :type => "search"}/
+27:          %button.btn.btn-outline-success.my-2.my-sm-0{:type => "submit"} Search
+28:    .container
+29:      %h1 Hello World
+30:      = link_to "Cursos", cursos_path, class = 'btn btn-success'
+31:      = link_to "Privacy Policy",  privacy_policy_path
+  
+app/views/static_pages/landing_page.html.haml:30: syntax error, unexpected '='
+app/views/static_pages/landing_page.html.haml:30: syntax error, unexpected '='
+app/views/static_pages/landing_page.html.haml:30: syntax error, unexpected '='
+app/views/static_pages/landing_page.html.haml:30: syntax error, unexpected '='
+app/views/static_pages/landing_page.html.haml:30: syntax error, unexpected '='
+app/views/static_pages/landing_page.html.haml:30: syntax error, unexpected '='
+Started GET "/" for ::1 at 2022-11-06 17:23:58 -0300
+Processing by StaticPagesController#landing_page as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering static_pages/landing_page.html.haml within layouts/application
+  Rendered static_pages/landing_page.html.haml within layouts/application (Duration: 26.6ms | Allocations: 17176)
+  Rendered layout layouts/application.html.haml (Duration: 27.4ms | Allocations: 17306)
+Completed 500 Internal Server Error in 43ms (ActiveRecord: 0.0ms | Allocations: 18575)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check %nav.navbar.navbar-expand-lg.navbar-light.bg-light
+  %a.navbar-brand{:href => "#"}
+    %i.fa-solid.fa-house
+    Navbar
+  %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
+    %span.navbar-toggler-icon
+  #navbarSupportedContent.collapse.navbar-collapse
+    %ul.navbar-nav.mr-auto
+      %li.nav-item.active
+        %a.nav-link{:href => "#"}
+          Home
+          %span.sr-only (current)
+      %li.nav-item
+        %a.nav-link{:href => "#"} Link
+      %li.nav-item.dropdown
+        %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+          Dropdown
+        .dropdown-menu{"aria-labelledby" => "navbarDropdown"}
+          %a.dropdown-item{:href => "#"} Action
+          %a.dropdown-item{:href => "#"} Another action
+          .dropdown-divider
+          %a.dropdown-item{:href => "#"} Something else here
+      %li.nav-item
+        %a.nav-link.disabled{:href => "#"} Disabled
+    %form.form-inline.my-2.my-lg-0
+      %input.form-control.mr-sm-2{"aria-label" => "Search", :placeholder => "Search", :type => "search"}/
+      %button.btn.btn-outline-success.my-2.my-sm-0{:type => "submit"} Search
+.container
+  %h1 Hello World
+  = link_to "Cursos", cursos_path, class='btn btn-success'
+  = link_to "Privacy Policy",  privacy_policy_path
+
+):
+1:    %nav.navbar.navbar-expand-lg.navbar-light.bg-light
+2:      %a.navbar-brand{:href => "#"}
+3:        %i.fa-solid.fa-house
+4:        Navbar
+5:      %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
+6:        %span.navbar-toggler-icon
+7:      #navbarSupportedContent.collapse.navbar-collapse
+8:        %ul.navbar-nav.mr-auto
+9:          %li.nav-item.active
+10:            %a.nav-link{:href => "#"}
+11:              Home
+12:              %span.sr-only (current)
+13:          %li.nav-item
+14:            %a.nav-link{:href => "#"} Link
+15:          %li.nav-item.dropdown
+16:            %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+17:              Dropdown
+18:            .dropdown-menu{"aria-labelledby" => "navbarDropdown"}
+19:              %a.dropdown-item{:href => "#"} Action
+20:              %a.dropdown-item{:href => "#"} Another action
+21:              .dropdown-divider
+22:              %a.dropdown-item{:href => "#"} Something else here
+23:          %li.nav-item
+24:            %a.nav-link.disabled{:href => "#"} Disabled
+25:        %form.form-inline.my-2.my-lg-0
+26:          %input.form-control.mr-sm-2{"aria-label" => "Search", :placeholder => "Search", :type => "search"}/
+27:          %button.btn.btn-outline-success.my-2.my-sm-0{:type => "submit"} Search
+28:    .container
+29:      %h1 Hello World
+30:      = link_to "Cursos", cursos_path, class='btn btn-success'
+31:      = link_to "Privacy Policy",  privacy_policy_path
+  
+app/views/static_pages/landing_page.html.haml:30: syntax error, unexpected '='
+app/views/static_pages/landing_page.html.haml:30: syntax error, unexpected '='
+app/views/static_pages/landing_page.html.haml:30: syntax error, unexpected '='
+app/views/static_pages/landing_page.html.haml:30: syntax error, unexpected '='
+app/views/static_pages/landing_page.html.haml:30: syntax error, unexpected '='
+app/views/static_pages/landing_page.html.haml:30: syntax error, unexpected '='
+Started GET "/" for ::1 at 2022-11-06 17:24:22 -0300
+Processing by StaticPagesController#landing_page as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering static_pages/landing_page.html.haml within layouts/application
+  Rendered static_pages/landing_page.html.haml within layouts/application (Duration: 56.1ms | Allocations: 20189)
+  Rendered layout layouts/application.html.haml (Duration: 56.8ms | Allocations: 20318)
+Completed 500 Internal Server Error in 62ms (ActiveRecord: 0.0ms | Allocations: 21584)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `cursos_path' for #<ActionView::Base:0x00000000009560>
+Did you mean?  courses_path
+               course_path):
+    27:       %button.btn.btn-outline-success.my-2.my-sm-0{:type => "submit"} Search
+    28: .container
+    29:   %h1 Hello World
+    30:   = link_to "Cursos", cursos_path, class:'btn btn-success'
+    31:   = link_to "Privacy Policy",  privacy_policy_path
+  
+app/views/static_pages/landing_page.html.haml:30
+Started GET "/" for ::1 at 2022-11-06 17:26:40 -0300
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#landing_page as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering static_pages/landing_page.html.haml within layouts/application
+  Rendered static_pages/landing_page.html.haml within layouts/application (Duration: 35.1ms | Allocations: 20088)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 58.1ms | Allocations: 32154)
+Completed 200 OK in 72ms (Views: 61.0ms | ActiveRecord: 0.0ms | Allocations: 35425)
+
+
+Started GET "/courses" for ::1 at 2022-11-06 17:26:41 -0300
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering courses/index.html.haml within layouts/application
+  [1m[36mCourse Load (2.5ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.haml:13
+  Rendered courses/index.html.haml within layouts/application (Duration: 18.9ms | Allocations: 7263)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 31.8ms | Allocations: 10873)
+Completed 200 OK in 42ms (Views: 32.5ms | ActiveRecord: 2.5ms | Allocations: 12942)
+
+
+Started GET "/courses/new" for ::1 at 2022-11-06 17:26:42 -0300
+Processing by CoursesController#new as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering courses/new.html.haml within layouts/application
+  Rendered courses/_form.html.haml (Duration: 77.0ms | Allocations: 31594)
+  Rendered courses/new.html.haml within layouts/application (Duration: 82.6ms | Allocations: 34128)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 87.4ms | Allocations: 37636)
+Completed 200 OK in 113ms (Views: 88.2ms | ActiveRecord: 9.6ms | Allocations: 41931)
+
+
+Started POST "/courses" for ::1 at 2022-11-06 17:26:44 -0300
+Processing by CoursesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "course"=>{"titulo"=>"", "descricao"=>""}, "commit"=>"Create Course"}
+  Rendering layout layouts/application.html.haml
+  Rendering courses/new.html.haml within layouts/application
+  Rendered courses/_form.html.haml (Duration: 38.9ms | Allocations: 16871)
+  Rendered courses/new.html.haml within layouts/application (Duration: 39.6ms | Allocations: 17000)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 51.3ms | Allocations: 20353)
+Completed 422 Unprocessable Entity in 59ms (Views: 52.2ms | ActiveRecord: 0.0ms | Allocations: 22085)
+
+
+Started POST "/courses" for ::1 at 2022-11-06 17:26:49 -0300
+Processing by CoursesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "course"=>{"titulo"=>"dsadas", "descricao"=>"sdsadasdasd"}, "commit"=>"Create Course"}
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/courses_controller.rb:27:in `block in create'
+  [1m[36mCourse Create (2.2ms)[0m  [1m[32mINSERT INTO "courses" ("titulo", "descricao", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["titulo", "dsadas"], ["descricao", "sdsadasdasd"], ["created_at", "2022-11-06 20:26:49.445749"], ["updated_at", "2022-11-06 20:26:49.445749"]]
+  ↳ app/controllers/courses_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/courses_controller.rb:27:in `block in create'
+Redirected to http://localhost:3000/courses/1
+Completed 302 Found in 13ms (ActiveRecord: 5.2ms | Allocations: 3458)
+
+
+Started GET "/courses/1" for ::1 at 2022-11-06 17:26:49 -0300
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (1.4ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:63:in `set_course'
+  Rendering layout layouts/application.html.haml
+  Rendering courses/show.html.haml within layouts/application
+  Rendered courses/show.html.haml within layouts/application (Duration: 4.4ms | Allocations: 4015)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 10.5ms | Allocations: 7542)
+Completed 200 OK in 20ms (Views: 11.3ms | ActiveRecord: 2.7ms | Allocations: 9787)
+
+
