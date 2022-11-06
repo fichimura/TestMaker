@@ -5,6 +5,12 @@ ruby '3.1.2'
 
 gem 'net-smtp'
 
+gem "haml-rails", "~> 2.0"
+
+gem 'simple_form'
+
+gem 'html2haml'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.7'
 # Use postgresql as the database for Active Record
