@@ -1,0 +1,293 @@
+Started GET "/" for ::1 at 2022-11-06 02:30:29 -0300
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/share/rvm/gems/ruby-3.1.2/gems/railties-6.1.7/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/railties-6.1.7/lib/rails/templates/rails/welcome/index.html.erb (Duration: 16.7ms | Allocations: 575)
+Completed 200 OK in 68ms (Views: 37.4ms | ActiveRecord: 0.0ms | Allocations: 4655)
+
+
+Started GET "/" for ::1 at 2022-11-06 02:30:30 -0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/share/rvm/gems/ruby-3.1.2/gems/railties-6.1.7/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/railties-6.1.7/lib/rails/templates/rails/welcome/index.html.erb (Duration: 8.9ms | Allocations: 265)
+Completed 200 OK in 16ms (Views: 12.0ms | ActiveRecord: 0.0ms | Allocations: 1109)
+
+
+Started GET "/static_pages/landing_page" for ::1 at 2022-11-06 02:30:35 -0300
+Processing by StaticPagesController#landing_page as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  Rendered static_pages/landing_page.html.erb within layouts/application (Duration: 0.5ms | Allocations: 152)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/fakichi/Documents/usp/GPTI/Testmaker/public/packs
+[Webpacker] Hash: 804a8059a304061a3e74
+Version: webpack 4.46.0
+Time: 1915ms
+Built at: 11/06/2022 2:30:39 AM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-271cf8931bb708d2d8bb.js    121 KiB  application  [emitted] [immutable]  application
+js/application-271cf8931bb708d2d8bb.js.map    133 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-271cf8931bb708d2d8bb.js js/application-271cf8931bb708d2d8bb.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 493 bytes {application} [built]
+    + 3 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 4166.5ms | Allocations: 14385)
+Completed 200 OK in 4170ms (Views: 4168.7ms | ActiveRecord: 0.0ms | Allocations: 15706)
+
+
+Started GET "/static_pages/landing_page" for ::1 at 2022-11-06 02:32:30 -0300
+Processing by StaticPagesController#landing_page as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  Rendered static_pages/landing_page.html.erb within layouts/application (Duration: 0.9ms | Allocations: 294)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 3623)
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.0ms | Allocations: 4909)
+
+
+Started GET "/static_pages/landing_page" for ::1 at 2022-11-06 02:32:37 -0300
+Processing by StaticPagesController#landing_page as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  Rendered static_pages/landing_page.html.erb within layouts/application (Duration: 0.3ms | Allocations: 77)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 3006)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.0ms | Allocations: 3435)
+
+
+Started GET "/static_pages/landing_page" for ::1 at 2022-11-06 02:32:37 -0300
+Processing by StaticPagesController#landing_page as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  Rendered static_pages/landing_page.html.erb within layouts/application (Duration: 0.5ms | Allocations: 77)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.8ms | Allocations: 3007)
+Completed 200 OK in 13ms (Views: 11.8ms | ActiveRecord: 0.0ms | Allocations: 3394)
+
+
+Started GET "/static_pages/landing_page" for ::1 at 2022-11-06 02:32:51 -0300
+Processing by StaticPagesController#landing_page as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  Rendered static_pages/landing_page.html.erb within layouts/application (Duration: 1.3ms | Allocations: 254)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | Allocations: 3580)
+Completed 200 OK in 17ms (Views: 14.9ms | ActiveRecord: 0.0ms | Allocations: 4725)
+
+
+Started GET "/static_pages/privacy_policy" for ::1 at 2022-11-06 02:32:51 -0300
+Processing by StaticPagesController#privacy_policy as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/privacy_policy.html.erb within layouts/application
+  Rendered static_pages/privacy_policy.html.erb within layouts/application (Duration: 0.4ms | Allocations: 110)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | Allocations: 3637)
+Completed 200 OK in 11ms (Views: 9.2ms | ActiveRecord: 0.0ms | Allocations: 4189)
+
+
+Started GET "/static_pages/privacy_policy" for ::1 at 2022-11-06 02:33:39 -0300
+Processing by StaticPagesController#privacy_policy as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/privacy_policy.html.erb within layouts/application
+  Rendered static_pages/privacy_policy.html.erb within layouts/application (Duration: 1.2ms | Allocations: 252)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | Allocations: 3578)
+Completed 200 OK in 17ms (Views: 14.7ms | ActiveRecord: 0.0ms | Allocations: 4723)
+
+
+Started GET "/static_pages/landing_page" for ::1 at 2022-11-06 02:33:40 -0300
+Processing by StaticPagesController#landing_page as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  Rendered static_pages/landing_page.html.erb within layouts/application (Duration: 0.5ms | Allocations: 167)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 3599)
+Completed 200 OK in 10ms (Views: 8.1ms | ActiveRecord: 0.0ms | Allocations: 4164)
+
+
+Started GET "/static_pages/privacy_policy" for ::1 at 2022-11-06 02:33:40 -0300
+Processing by StaticPagesController#privacy_policy as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/privacy_policy.html.erb within layouts/application
+  Rendered static_pages/privacy_policy.html.erb within layouts/application (Duration: 0.3ms | Allocations: 77)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.8ms | Allocations: 3619)
+Completed 200 OK in 23ms (Views: 21.9ms | ActiveRecord: 0.0ms | Allocations: 4002)
+
+
+Started GET "/static_pages/privacy_policy" for ::1 at 2022-11-06 02:34:32 -0300
+Processing by StaticPagesController#privacy_policy as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/privacy_policy.html.erb within layouts/application
+  Rendered static_pages/privacy_policy.html.erb within layouts/application (Duration: 0.6ms | Allocations: 77)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 3008)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.0ms | Allocations: 3388)
+
+
+Started GET "/" for ::1 at 2022-11-06 02:34:37 -0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/share/rvm/gems/ruby-3.1.2/gems/railties-6.1.7/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/railties-6.1.7/lib/rails/templates/rails/welcome/index.html.erb (Duration: 10.1ms | Allocations: 268)
+Completed 200 OK in 14ms (Views: 12.0ms | ActiveRecord: 0.0ms | Allocations: 1041)
+
+
+Started GET "/" for ::1 at 2022-11-06 02:35:03 -0300
+  
+ArgumentError (Missing :controller key on routes definition, please check your routes.):
+  
+config/routes.rb:2:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/static_pages/landing_page" for ::1 at 2022-11-06 02:35:38 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/static_pages/landing_page"):
+  
+Started GET "/" for ::1 at 2022-11-06 02:36:13 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/"):
+  
+Started GET "/static_pages/privacy_policy" for ::1 at 2022-11-06 02:37:05 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/static_pages/privacy_policy"):
+  
+Started GET "/" for ::1 at 2022-11-06 02:38:19 -0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/share/rvm/gems/ruby-3.1.2/gems/railties-6.1.7/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/railties-6.1.7/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.3ms | Allocations: 54)
+Completed 200 OK in 2ms (Views: 1.2ms | Allocations: 514)
+
+
+Started GET "/" for ::1 at 2022-11-06 02:38:53 -0300
+Processing by StaticPagesController#landing_page as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  Rendered static_pages/landing_page.html.erb within layouts/application (Duration: 0.3ms | Allocations: 151)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 3284)
+Completed 200 OK in 7ms (Views: 6.5ms | Allocations: 4034)
+
+
+Started GET "/privacy_policy" for ::1 at 2022-11-06 02:40:54 -0300
+Processing by StaticPagesController#privacy_policy as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/privacy_policy.html.erb within layouts/application
+  Rendered static_pages/privacy_policy.html.erb within layouts/application (Duration: 0.3ms | Allocations: 151)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 3278)
+Completed 200 OK in 7ms (Views: 6.2ms | Allocations: 4028)
+
+
+Started GET "/privacy_policy" for ::1 at 2022-11-06 02:41:36 -0300
+Processing by StaticPagesController#privacy_policy as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/privacy_policy.html.erb within layouts/application
+  Rendered static_pages/privacy_policy.html.erb within layouts/application (Duration: 0.8ms | Allocations: 247)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 3573)
+Completed 200 OK in 11ms (Views: 10.0ms | Allocations: 4796)
+
+
+Started GET "/" for ::1 at 2022-11-06 02:41:36 -0300
+Processing by StaticPagesController#landing_page as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  Rendered static_pages/landing_page.html.erb within layouts/application (Duration: 0.9ms | Allocations: 168)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 3703)
+Completed 200 OK in 11ms (Views: 9.3ms | Allocations: 4251)
+
+
+Started GET "/static_pages/privacy_policy" for ::1 at 2022-11-06 02:41:50 -0300
+Processing by StaticPagesController#privacy_policy as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/privacy_policy.html.erb within layouts/application
+  Rendered static_pages/privacy_policy.html.erb within layouts/application (Duration: 1.4ms | Allocations: 248)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 3702)
+Completed 200 OK in 13ms (Views: 9.8ms | Allocations: 5349)
+
+
+Started GET "/" for ::1 at 2022-11-06 02:41:51 -0300
+Processing by StaticPagesController#landing_page as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  Rendered static_pages/landing_page.html.erb within layouts/application (Duration: 1.0ms | Allocations: 167)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | Allocations: 3630)
+Completed 200 OK in 13ms (Views: 12.2ms | Allocations: 4179)
+
+
+Started GET "/" for ::1 at 2022-11-06 02:42:11 -0300
+Processing by StaticPagesController#landing_page as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  Rendered static_pages/landing_page.html.erb within layouts/application (Duration: 0.9ms | Allocations: 254)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 3580)
+Completed 200 OK in 11ms (Views: 9.6ms | Allocations: 4719)
+
+
+Started GET "/privacy_policy" for ::1 at 2022-11-06 02:42:12 -0300
+Processing by StaticPagesController#privacy_policy as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/privacy_policy.html.erb within layouts/application
+  Rendered static_pages/privacy_policy.html.erb within layouts/application (Duration: 0.7ms | Allocations: 158)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 3706)
+Completed 200 OK in 11ms (Views: 9.6ms | Allocations: 4255)
+
+
+Started GET "/" for ::1 at 2022-11-06 02:42:13 -0300
+Processing by StaticPagesController#landing_page as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  Rendered static_pages/landing_page.html.erb within layouts/application (Duration: 0.6ms | Allocations: 76)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.1ms | Allocations: 3607)
+Completed 200 OK in 15ms (Views: 14.3ms | Allocations: 3986)
+
+
+Started GET "/" for ::1 at 2022-11-06 02:47:14 -0300
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by StaticPagesController#landing_page as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  Rendered static_pages/landing_page.html.erb within layouts/application (Duration: 0.8ms | Allocations: 523)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.3ms | Allocations: 11290)
+Completed 200 OK in 31ms (Views: 24.2ms | ActiveRecord: 0.0ms | Allocations: 14477)
+
+
+Started GET "/" for ::1 at 2022-11-06 02:47:15 -0300
+Processing by StaticPagesController#landing_page as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  Rendered static_pages/landing_page.html.erb within layouts/application (Duration: 0.3ms | Allocations: 99)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.4ms | Allocations: 2990)
+Completed 200 OK in 27ms (Views: 26.0ms | ActiveRecord: 0.0ms | Allocations: 3479)
+
+
+Started GET "/privacy_policy" for ::1 at 2022-11-06 02:47:17 -0300
+Processing by StaticPagesController#privacy_policy as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/privacy_policy.html.erb within layouts/application
+  Rendered static_pages/privacy_policy.html.erb within layouts/application (Duration: 1.3ms | Allocations: 212)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.5ms | Allocations: 3839)
+Completed 200 OK in 21ms (Views: 17.3ms | ActiveRecord: 0.0ms | Allocations: 4477)
+
+
+Started GET "/" for ::1 at 2022-11-06 02:47:18 -0300
+Processing by StaticPagesController#landing_page as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/landing_page.html.erb within layouts/application
+  Rendered static_pages/landing_page.html.erb within layouts/application (Duration: 0.5ms | Allocations: 76)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.2ms | Allocations: 3540)
+Completed 200 OK in 17ms (Views: 15.3ms | ActiveRecord: 0.0ms | Allocations: 3930)
+
+
