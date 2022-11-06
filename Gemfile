@@ -3,6 +3,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.1.2'
 
+gem 'faker'
+
+gem 'devise'
+
 gem 'net-smtp'
 
 gem "haml-rails", "~> 2.0"

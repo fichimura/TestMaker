@@ -1975,3 +1975,1437 @@ Processing by CoursesController#show as HTML
 Completed 200 OK in 20ms (Views: 11.3ms | ActiveRecord: 2.7ms | Allocations: 9787)
 
 
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2039971103330730045)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateActiveStorageTables (20221106202827)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.8ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" bigserial primary key, "key" character varying NOT NULL, "filename" character varying NOT NULL, "content_type" character varying, "metadata" text, "service_name" character varying NOT NULL, "byte_size" bigint NOT NULL, "checksum" character varying NOT NULL, "created_at" timestamp NOT NULL)[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (7.4ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" bigserial primary key, "name" character varying NOT NULL, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" timestamp NOT NULL, CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" bigserial primary key, "blob_id" bigint NOT NULL, "variation_digest" character varying NOT NULL, CONSTRAINT "fk_rails_993965df05"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221106202827"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateActionTextTables (20221106202828)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE TABLE "action_text_rich_texts" ("id" bigserial primary key, "name" character varying NOT NULL, "body" text, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_action_text_rich_texts_uniqueness" ON "action_text_rich_texts" ("record_type", "record_id", "name")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221106202828"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(2039971103330730045)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2022-11-06 17:33:00 -0300
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#landing_page as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering static_pages/landing_page.html.haml within layouts/application
+  Rendered static_pages/landing_page.html.haml within layouts/application (Duration: 34.4ms | Allocations: 20088)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Invalid configuration object. Webpack has been initialised using a configuration object that does not match the API schema.
+ - configuration has an unknown property 'resolvedModules'. These properties are valid:
+   object { amd?, bail?, cache?, context?, dependencies?, devServer?, devtool?, entry?, externals?, infrastructureLogging?, loader?, mode?, module?, name?, node?, optimization?, output?, parallelism?, performance?, plugins?, profile?, recordsInputPath?, recordsOutputPath?, recordsPath?, resolve?, resolveLoader?, serve?, stats?, target?, watch?, watchOptions? }
+   For typos: please correct them.
+   For loader options: webpack >= v2.0.0 no longer allows custom properties in configuration.
+     Loaders should be updated to allow passing options via loader options in module.rules.
+     Until loaders are updated one can use the LoaderOptionsPlugin to pass these options to the loader:
+     plugins: [
+       new webpack.LoaderOptionsPlugin({
+         // test: /\.xxx$/, // may apply this only for some modules
+         options: {
+           resolvedModules: …
+         }
+       })
+     ]
+ - configuration.plugins[0] misses the property 'apply'.
+   function
+   -> The run point of the plugin, required method.
+ - configuration.plugins[1] misses the property 'apply'.
+   function
+   -> The run point of the plugin, required method.
+ - configuration.plugins[2] misses the property 'apply'.
+   function
+   -> The run point of the plugin, required method.
+ - configuration.plugins[3] misses the property 'apply'.
+   function
+   -> The run point of the plugin, required method.
+ - configuration.plugins[4] misses the property 'apply'.
+   function
+   -> The run point of the plugin, required method.
+
+  Rendered layout layouts/application.html.haml (Duration: 1585.4ms | Allocations: 59530)
+Completed 200 OK in 1597ms (Views: 1588.9ms | ActiveRecord: 0.0ms | Allocations: 62800)
+
+
+Started GET "/" for ::1 at 2022-11-06 17:33:02 -0300
+Processing by StaticPagesController#landing_page as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering static_pages/landing_page.html.haml within layouts/application
+  Rendered static_pages/landing_page.html.haml within layouts/application (Duration: 0.3ms | Allocations: 123)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 9.2ms | Allocations: 4266)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.0ms | Allocations: 4760)
+
+
+Started GET "/" for ::1 at 2022-11-06 17:33:56 -0300
+Processing by StaticPagesController#landing_page as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering static_pages/landing_page.html.haml within layouts/application
+  Rendered static_pages/landing_page.html.haml within layouts/application (Duration: 12.5ms | Allocations: 15695)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 23.4ms | Allocations: 24467)
+Completed 200 OK in 28ms (Views: 26.0ms | ActiveRecord: 0.0ms | Allocations: 25815)
+
+
+Started GET "/courses" for ::1 at 2022-11-06 17:35:01 -0300
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering courses/index.html.haml within layouts/application
+  [1m[36mCourse Load (1.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.haml:13
+  [1m[36mActionText::RichText Load (1.4ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered courses/index.html.haml within layouts/application (Duration: 71.5ms | Allocations: 23511)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 77.8ms | Allocations: 27609)
+Completed 200 OK in 92ms (Views: 64.7ms | ActiveRecord: 15.8ms | Allocations: 30936)
+
+
+Started GET "/courses/new" for ::1 at 2022-11-06 17:35:04 -0300
+Processing by CoursesController#new as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering courses/new.html.haml within layouts/application
+  Rendered courses/_form.html.haml (Duration: 6.9ms | Allocations: 6625)
+  Rendered courses/new.html.haml within layouts/application (Duration: 11.0ms | Allocations: 9205)
+  Rendered layout layouts/application.html.haml (Duration: 11.4ms | Allocations: 9324)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms | Allocations: 9993)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check -# frozen_string_literal: true
+= simple_form_for(@course) do |f|
+  = f.error_notification
+  = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+
+  .form-inputs
+    = f.input :titulo
+    = f.label : descricao
+    = f.rich_text_area :descricao 
+
+
+  .form-actions
+    = f.button :submit
+
+):
+1:    -# frozen_string_literal: true
+2:    = simple_form_for(@course) do |f|
+3:      = f.error_notification
+4:      = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+5:    
+6:      .form-inputs
+7:        = f.input :titulo
+8:        = f.label : descricao
+9:        = f.rich_text_area :descricao 
+10:    
+11:    
+12:      .form-actions
+13:        = f.button :submit
+  
+app/views/courses/_form.html.haml:8: syntax error, unexpected ':'
+app/views/courses/_form.html.haml:8: syntax error, unexpected ':'
+app/views/courses/_form.html.haml:8: syntax error, unexpected ':'
+app/views/courses/_form.html.haml:8: syntax error, unexpected ':'
+app/views/courses/_form.html.haml:8: syntax error, unexpected ':'
+app/views/courses/_form.html.haml:8: syntax error, unexpected ':'
+app/views/courses/new.html.haml:3
+Started GET "/courses/new" for ::1 at 2022-11-06 17:35:17 -0300
+Processing by CoursesController#new as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering courses/new.html.haml within layouts/application
+  Rendered courses/_form.html.haml (Duration: 71.3ms | Allocations: 20487)
+  Rendered courses/new.html.haml within layouts/application (Duration: 77.9ms | Allocations: 23102)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 97.3ms | Allocations: 31983)
+Completed 200 OK in 104ms (Views: 101.1ms | ActiveRecord: 0.0ms | Allocations: 33330)
+
+
+Started GET "/courses/new" for ::1 at 2022-11-06 17:36:43 -0300
+Processing by CoursesController#new as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering courses/new.html.haml within layouts/application
+  Rendered courses/_form.html.haml (Duration: 17.6ms | Allocations: 8591)
+  Rendered courses/new.html.haml within layouts/application (Duration: 18.2ms | Allocations: 8720)
+  Rendered layout layouts/application.html.haml (Duration: 526.5ms | Allocations: 16670)
+Completed 500 Internal Server Error in 529ms (ActiveRecord: 0.0ms | Allocations: 17125)
+
+
+  
+ActionView::Template::Error (Error: File to import not found or unreadable: font-awesome-sprockets.
+        on line 2:1 of app/assets/stylesheets/application.scss
+>> @import "font-awesome-sprockets";
+
+   ^
+):
+     6:     %meta{:content => "width=device-width,initial-scale=1", :name => "viewport"}/
+     7:     = csrf_meta_tags
+     8:     = csp_meta_tag
+     9:     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    10:     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true
+    11:   %body
+    12:     = yield
+  
+app/assets/stylesheets/application.scss:2
+app/views/layouts/application.html.haml:9
+Started GET "/courses/new" for ::1 at 2022-11-06 17:36:56 -0300
+Processing by CoursesController#new as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering courses/new.html.haml within layouts/application
+  Rendered courses/_form.html.haml (Duration: 13.5ms | Allocations: 8422)
+  Rendered courses/new.html.haml within layouts/application (Duration: 13.9ms | Allocations: 8547)
+  Rendered layout layouts/application.html.haml (Duration: 493.6ms | Allocations: 16311)
+Completed 500 Internal Server Error in 495ms (ActiveRecord: 0.0ms | Allocations: 16697)
+
+
+  
+ActionView::Template::Error (Error: File to import not found or unreadable: font-awesome.
+        on line 2:1 of app/assets/stylesheets/application.scss
+>> @import "font-awesome";
+
+   ^
+):
+     6:     %meta{:content => "width=device-width,initial-scale=1", :name => "viewport"}/
+     7:     = csrf_meta_tags
+     8:     = csp_meta_tag
+     9:     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    10:     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true
+    11:   %body
+    12:     = yield
+  
+app/assets/stylesheets/application.scss:2
+app/views/layouts/application.html.haml:9
+Started GET "/courses/new" for ::1 at 2022-11-06 17:37:02 -0300
+Processing by CoursesController#new as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering courses/new.html.haml within layouts/application
+  Rendered courses/_form.html.haml (Duration: 25.4ms | Allocations: 8421)
+  Rendered courses/new.html.haml within layouts/application (Duration: 26.2ms | Allocations: 8546)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 951.9ms | Allocations: 44919)
+Completed 200 OK in 954ms (Views: 952.6ms | ActiveRecord: 0.0ms | Allocations: 45320)
+
+
+Started GET "/" for ::1 at 2022-11-06 17:39:04 -0300
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#landing_page as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering static_pages/landing_page.html.haml within layouts/application
+  Rendered static_pages/landing_page.html.haml within layouts/application (Duration: 41.0ms | Allocations: 20088)
+  Rendered layout layouts/application.html.haml (Duration: 111.5ms | Allocations: 38795)
+Completed 500 Internal Server Error in 127ms (ActiveRecord: 0.0ms | Allocations: 42015)
+
+
+  
+ActionView::Template::Error (Multiple files with the same output path cannot be linked ("application.css")
+In "/home/fakichi/Documents/usp/GPTI/TestMaker/app/assets/config/manifest.js" these files were linked:
+  - /home/fakichi/Documents/usp/GPTI/TestMaker/app/assets/stylesheets/application.css
+  - /home/fakichi/Documents/usp/GPTI/TestMaker/app/assets/stylesheets/application.scss
+):
+  
+sprockets (4.1.1) lib/sprockets/base.rb:100:in `find_all_linked_assets'
+sprockets (4.1.1) lib/sprockets/manifest.rb:125:in `each'
+sprockets (4.1.1) lib/sprockets/manifest.rb:125:in `to_a'
+sprockets (4.1.1) lib/sprockets/manifest.rb:125:in `block (2 levels) in find'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:24:in `block in execute'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:47:in `block in synchronize'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:47:in `synchronize'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:47:in `synchronize'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:22:in `execute'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/promise.rb:564:in `block in realize'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:352:in `run_task'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:343:in `block (3 levels) in create_worker'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `loop'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `block (2 levels) in create_worker'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:333:in `catch'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:333:in `block in create_worker'
+Started GET "/" for ::1 at 2022-11-06 17:39:32 -0300
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#landing_page as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering static_pages/landing_page.html.haml within layouts/application
+  Rendered static_pages/landing_page.html.haml within layouts/application (Duration: 29.4ms | Allocations: 20088)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 56.8ms | Allocations: 35223)
+Completed 200 OK in 69ms (Views: 60.0ms | ActiveRecord: 0.0ms | Allocations: 38494)
+
+
+Started GET "/courses" for ::1 at 2022-11-06 17:39:34 -0300
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering courses/index.html.haml within layouts/application
+  [1m[36mCourse Load (1.8ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.haml:13
+  [1m[36mActionText::RichText Load (1.4ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered courses/index.html.haml within layouts/application (Duration: 57.8ms | Allocations: 21363)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 64.0ms | Allocations: 25464)
+Completed 200 OK in 75ms (Views: 45.9ms | ActiveRecord: 20.8ms | Allocations: 28565)
+
+
+Started GET "/courses/new" for ::1 at 2022-11-06 17:39:35 -0300
+Processing by CoursesController#new as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering courses/new.html.haml within layouts/application
+  Rendered courses/_form.html.haml (Duration: 58.0ms | Allocations: 20366)
+  Rendered courses/new.html.haml within layouts/application (Duration: 63.2ms | Allocations: 22979)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 74.3ms | Allocations: 26966)
+Completed 200 OK in 77ms (Views: 75.2ms | ActiveRecord: 0.0ms | Allocations: 27657)
+
+
+Started GET "/courses/new" for ::1 at 2022-11-06 17:40:11 -0300
+Processing by CoursesController#new as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering courses/new.html.haml within layouts/application
+  Rendered courses/_form.html.haml (Duration: 54.7ms | Allocations: 24806)
+  Rendered courses/new.html.haml within layouts/application (Duration: 60.7ms | Allocations: 27415)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 78.3ms | Allocations: 36260)
+Completed 200 OK in 83ms (Views: 81.2ms | ActiveRecord: 0.0ms | Allocations: 37630)
+
+
+Started GET "/courses/new" for ::1 at 2022-11-06 17:40:17 -0300
+Processing by CoursesController#new as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering courses/new.html.haml within layouts/application
+  Rendered courses/_form.html.haml (Duration: 39.0ms | Allocations: 14918)
+  Rendered courses/new.html.haml within layouts/application (Duration: 39.8ms | Allocations: 15047)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 53.9ms | Allocations: 18876)
+Completed 200 OK in 57ms (Views: 55.1ms | ActiveRecord: 0.0ms | Allocations: 19344)
+
+
+Started GET "/courses/new" for ::1 at 2022-11-06 17:40:18 -0300
+Processing by CoursesController#new as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering courses/new.html.haml within layouts/application
+  Rendered courses/_form.html.haml (Duration: 38.9ms | Allocations: 14841)
+  Rendered courses/new.html.haml within layouts/application (Duration: 39.5ms | Allocations: 14966)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 52.5ms | Allocations: 18850)
+Completed 200 OK in 55ms (Views: 53.5ms | ActiveRecord: 0.0ms | Allocations: 19252)
+
+
+Started GET "/courses/new" for ::1 at 2022-11-06 17:40:21 -0300
+Processing by CoursesController#new as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering courses/new.html.haml within layouts/application
+  Rendered courses/_form.html.haml (Duration: 26.7ms | Allocations: 18807)
+  Rendered courses/new.html.haml within layouts/application (Duration: 30.8ms | Allocations: 21410)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 52.3ms | Allocations: 30170)
+Completed 200 OK in 56ms (Views: 54.3ms | ActiveRecord: 0.0ms | Allocations: 31463)
+
+
+Started GET "/" for ::1 at 2022-11-06 17:42:20 -0300
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#landing_page as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering static_pages/landing_page.html.haml within layouts/application
+  Rendered static_pages/landing_page.html.haml within layouts/application (Duration: 34.9ms | Allocations: 20088)
+  Rendered layout layouts/application.html.haml (Duration: 130.1ms | Allocations: 56918)
+Completed 500 Internal Server Error in 144ms (ActiveRecord: 0.0ms | Allocations: 60138)
+
+
+  
+ActionView::Template::Error (Multiple files with the same output path cannot be linked ("application.css")
+In "/home/fakichi/Documents/usp/GPTI/TestMaker/app/assets/config/manifest.js" these files were linked:
+  - /home/fakichi/Documents/usp/GPTI/TestMaker/app/assets/stylesheets/application.css
+  - /home/fakichi/Documents/usp/GPTI/TestMaker/app/assets/stylesheets/application.scss
+):
+  
+sprockets (4.1.1) lib/sprockets/base.rb:100:in `find_all_linked_assets'
+sprockets (4.1.1) lib/sprockets/manifest.rb:125:in `each'
+sprockets (4.1.1) lib/sprockets/manifest.rb:125:in `to_a'
+sprockets (4.1.1) lib/sprockets/manifest.rb:125:in `block (2 levels) in find'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:24:in `block in execute'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:47:in `block in synchronize'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:47:in `synchronize'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:47:in `synchronize'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:22:in `execute'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/promise.rb:564:in `block in realize'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:352:in `run_task'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:343:in `block (3 levels) in create_worker'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `loop'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `block (2 levels) in create_worker'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:333:in `catch'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:333:in `block in create_worker'
+Started GET "/" for ::1 at 2022-11-06 17:42:45 -0300
+Processing by StaticPagesController#landing_page as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering static_pages/landing_page.html.haml within layouts/application
+  Rendered static_pages/landing_page.html.haml within layouts/application (Duration: 0.3ms | Allocations: 121)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Invalid configuration object. Webpack has been initialised using a configuration object that does not match the API schema.
+ - configuration has an unknown property 'resolvedModules'. These properties are valid:
+   object { amd?, bail?, cache?, context?, dependencies?, devServer?, devtool?, entry?, externals?, infrastructureLogging?, loader?, mode?, module?, name?, node?, optimization?, output?, parallelism?, performance?, plugins?, profile?, recordsInputPath?, recordsOutputPath?, recordsPath?, resolve?, resolveLoader?, serve?, stats?, target?, watch?, watchOptions? }
+   For typos: please correct them.
+   For loader options: webpack >= v2.0.0 no longer allows custom properties in configuration.
+     Loaders should be updated to allow passing options via loader options in module.rules.
+     Until loaders are updated one can use the LoaderOptionsPlugin to pass these options to the loader:
+     plugins: [
+       new webpack.LoaderOptionsPlugin({
+         // test: /\.xxx$/, // may apply this only for some modules
+         options: {
+           resolvedModules: …
+         }
+       })
+     ]
+ - configuration.plugins[0] misses the property 'apply'.
+   function
+   -> The run point of the plugin, required method.
+ - configuration.plugins[1] misses the property 'apply'.
+   function
+   -> The run point of the plugin, required method.
+ - configuration.plugins[2] misses the property 'apply'.
+   function
+   -> The run point of the plugin, required method.
+ - configuration.plugins[3] misses the property 'apply'.
+   function
+   -> The run point of the plugin, required method.
+ - configuration.plugins[4] misses the property 'apply'.
+   function
+   -> The run point of the plugin, required method.
+
+  Rendered layout layouts/application.html.haml (Duration: 1489.5ms | Allocations: 12451)
+Completed 200 OK in 1492ms (Views: 1490.5ms | ActiveRecord: 0.0ms | Allocations: 12968)
+
+
+Started GET "/courses" for ::1 at 2022-11-06 17:42:51 -0300
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering courses/index.html.haml within layouts/application
+  [1m[36mCourse Load (2.4ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.haml:13
+  [1m[36mActionText::RichText Load (2.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered courses/index.html.haml within layouts/application (Duration: 85.2ms | Allocations: 21363)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 89.6ms | Allocations: 24435)
+Completed 200 OK in 103ms (Views: 68.8ms | ActiveRecord: 23.9ms | Allocations: 27533)
+
+
+Started GET "/courses/new" for ::1 at 2022-11-06 17:42:54 -0300
+Processing by CoursesController#new as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering courses/new.html.haml within layouts/application
+  Rendered courses/_form.html.haml (Duration: 38.4ms | Allocations: 25947)
+  Rendered courses/new.html.haml within layouts/application (Duration: 42.4ms | Allocations: 28544)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 46.9ms | Allocations: 31501)
+Completed 200 OK in 49ms (Views: 47.4ms | ActiveRecord: 0.0ms | Allocations: 32187)
+
+
+Started GET "/" for ::1 at 2022-11-06 17:43:35 -0300
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#landing_page as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering static_pages/landing_page.html.haml within layouts/application
+  Rendered static_pages/landing_page.html.haml within layouts/application (Duration: 27.8ms | Allocations: 20088)
+  Rendered layout layouts/application.html.haml (Duration: 51.4ms | Allocations: 33370)
+Completed 500 Internal Server Error in 61ms (ActiveRecord: 0.0ms | Allocations: 36590)
+
+
+  
+ActionView::Template::Error (Multiple files with the same output path cannot be linked ("application.css")
+In "/home/fakichi/Documents/usp/GPTI/TestMaker/app/assets/config/manifest.js" these files were linked:
+  - /home/fakichi/Documents/usp/GPTI/TestMaker/app/assets/stylesheets/application.css
+  - /home/fakichi/Documents/usp/GPTI/TestMaker/app/assets/stylesheets/application.scss
+):
+  
+sprockets (4.1.1) lib/sprockets/base.rb:100:in `find_all_linked_assets'
+sprockets (4.1.1) lib/sprockets/manifest.rb:125:in `each'
+sprockets (4.1.1) lib/sprockets/manifest.rb:125:in `to_a'
+sprockets (4.1.1) lib/sprockets/manifest.rb:125:in `block (2 levels) in find'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:24:in `block in execute'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:47:in `block in synchronize'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:47:in `synchronize'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:47:in `synchronize'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:22:in `execute'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/promise.rb:564:in `block in realize'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:352:in `run_task'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:343:in `block (3 levels) in create_worker'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `loop'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `block (2 levels) in create_worker'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:333:in `catch'
+concurrent-ruby (1.1.10) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:333:in `block in create_worker'
+Started GET "/" for ::1 at 2022-11-06 17:43:47 -0300
+Processing by StaticPagesController#landing_page as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering static_pages/landing_page.html.haml within layouts/application
+  Rendered static_pages/landing_page.html.haml within layouts/application (Duration: 0.3ms | Allocations: 121)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 28.2ms | Allocations: 8689)
+Completed 200 OK in 30ms (Views: 28.9ms | ActiveRecord: 0.0ms | Allocations: 9206)
+
+
+Started GET "/courses" for ::1 at 2022-11-06 17:43:48 -0300
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering courses/index.html.haml within layouts/application
+  [1m[36mCourse Load (1.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.haml:13
+  [1m[36mActionText::RichText Load (1.3ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered courses/index.html.haml within layouts/application (Duration: 49.6ms | Allocations: 21362)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 55.8ms | Allocations: 25460)
+Completed 200 OK in 64ms (Views: 42.8ms | ActiveRecord: 15.0ms | Allocations: 28558)
+
+
+Started GET "/courses/new" for ::1 at 2022-11-06 17:43:50 -0300
+Processing by CoursesController#new as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering courses/new.html.haml within layouts/application
+  Rendered courses/_form.html.haml (Duration: 37.5ms | Allocations: 25950)
+  Rendered courses/new.html.haml within layouts/application (Duration: 42.0ms | Allocations: 28546)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 48.2ms | Allocations: 32527)
+Completed 200 OK in 50ms (Views: 48.8ms | ActiveRecord: 0.0ms | Allocations: 33197)
+
+
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 1.3ms | Allocations: 700)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Create (0.7ms)[0m  [1m[32mINSERT INTO "courses" ("titulo", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["titulo", "Education 117"], ["created_at", "2022-11-06 21:17:25.928614"], ["updated_at", "2022-11-06 21:17:25.928614"]]
+  [1m[36mActionText::RichText Create (1.1ms)[0m  [1m[32mINSERT INTO "action_text_rich_texts" ("name", "body", "record_type", "record_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "descricao"], ["body", "The things I do for love."], ["record_type", "Course"], ["record_id", 2], ["created_at", "2022-11-06 21:17:25.948816"], ["updated_at", "2022-11-06 21:17:25.948816"]]
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 1], ["record_type", "ActionText::RichText"], ["name", "embeds"]]
+  [1m[36mCourse Update (0.5ms)[0m  [1m[33mUPDATE "courses" SET "updated_at" = $1 WHERE "courses"."id" = $2[0m  [["updated_at", "2022-11-06 21:17:25.952039"], ["id", 2]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.5ms | Allocations: 271)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Create (0.4ms)[0m  [1m[32mINSERT INTO "courses" ("titulo", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["titulo", "Criminology 461"], ["created_at", "2022-11-06 21:17:25.972806"], ["updated_at", "2022-11-06 21:17:25.972806"]]
+  [1m[36mActionText::RichText Create (0.5ms)[0m  [1m[32mINSERT INTO "action_text_rich_texts" ("name", "body", "record_type", "record_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "descricao"], ["body", "A lion doesn't concern itself with the opinion of sheep."], ["record_type", "Course"], ["record_id", 3], ["created_at", "2022-11-06 21:17:25.975969"], ["updated_at", "2022-11-06 21:17:25.975969"]]
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 2], ["record_type", "ActionText::RichText"], ["name", "embeds"]]
+  [1m[36mCourse Update (0.5ms)[0m  [1m[33mUPDATE "courses" SET "updated_at" = $1 WHERE "courses"."id" = $2[0m  [["updated_at", "2022-11-06 21:17:25.978146"], ["id", 3]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.4ms | Allocations: 246)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Create (0.4ms)[0m  [1m[32mINSERT INTO "courses" ("titulo", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["titulo", "Teaching 526"], ["created_at", "2022-11-06 21:17:25.986522"], ["updated_at", "2022-11-06 21:17:25.986522"]]
+  [1m[36mActionText::RichText Create (0.5ms)[0m  [1m[32mINSERT INTO "action_text_rich_texts" ("name", "body", "record_type", "record_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "descricao"], ["body", "Power is a curious thing. Who lives, Who dies. Power resides where men believe it resides. It is a trick, A shadow on the wall."], ["record_type", "Course"], ["record_id", 4], ["created_at", "2022-11-06 21:17:25.989508"], ["updated_at", "2022-11-06 21:17:25.989508"]]
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 3], ["record_type", "ActionText::RichText"], ["name", "embeds"]]
+  [1m[36mCourse Update (0.5ms)[0m  [1m[33mUPDATE "courses" SET "updated_at" = $1 WHERE "courses"."id" = $2[0m  [["updated_at", "2022-11-06 21:17:25.991723"], ["id", 4]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.4ms | Allocations: 246)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Create (0.5ms)[0m  [1m[32mINSERT INTO "courses" ("titulo", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["titulo", "Psychology 444"], ["created_at", "2022-11-06 21:17:26.000375"], ["updated_at", "2022-11-06 21:17:26.000375"]]
+  [1m[36mActionText::RichText Create (0.5ms)[0m  [1m[32mINSERT INTO "action_text_rich_texts" ("name", "body", "record_type", "record_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "descricao"], ["body", "Nothing burns like the cold."], ["record_type", "Course"], ["record_id", 5], ["created_at", "2022-11-06 21:17:26.003489"], ["updated_at", "2022-11-06 21:17:26.003489"]]
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 4], ["record_type", "ActionText::RichText"], ["name", "embeds"]]
+  [1m[36mCourse Update (0.5ms)[0m  [1m[33mUPDATE "courses" SET "updated_at" = $1 WHERE "courses"."id" = $2[0m  [["updated_at", "2022-11-06 21:17:26.005561"], ["id", 5]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.4ms | Allocations: 246)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Create (0.5ms)[0m  [1m[32mINSERT INTO "courses" ("titulo", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["titulo", "Computer Science 277"], ["created_at", "2022-11-06 21:17:26.013829"], ["updated_at", "2022-11-06 21:17:26.013829"]]
+  [1m[36mActionText::RichText Create (0.5ms)[0m  [1m[32mINSERT INTO "action_text_rich_texts" ("name", "body", "record_type", "record_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "descricao"], ["body", "Why is it that when one man builds a wall, the next man immediately needs to know what's on the other side?"], ["record_type", "Course"], ["record_id", 6], ["created_at", "2022-11-06 21:17:26.017240"], ["updated_at", "2022-11-06 21:17:26.017240"]]
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 5], ["record_type", "ActionText::RichText"], ["name", "embeds"]]
+  [1m[36mCourse Update (0.5ms)[0m  [1m[33mUPDATE "courses" SET "updated_at" = $1 WHERE "courses"."id" = $2[0m  [["updated_at", "2022-11-06 21:17:26.019339"], ["id", 6]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.4ms | Allocations: 246)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Create (0.5ms)[0m  [1m[32mINSERT INTO "courses" ("titulo", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["titulo", "Creative Arts 456"], ["created_at", "2022-11-06 21:17:26.027497"], ["updated_at", "2022-11-06 21:17:26.027497"]]
+  [1m[36mActionText::RichText Create (0.5ms)[0m  [1m[32mINSERT INTO "action_text_rich_texts" ("name", "body", "record_type", "record_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "descricao"], ["body", "The things I do for love."], ["record_type", "Course"], ["record_id", 7], ["created_at", "2022-11-06 21:17:26.030577"], ["updated_at", "2022-11-06 21:17:26.030577"]]
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 6], ["record_type", "ActionText::RichText"], ["name", "embeds"]]
+  [1m[36mCourse Update (0.5ms)[0m  [1m[33mUPDATE "courses" SET "updated_at" = $1 WHERE "courses"."id" = $2[0m  [["updated_at", "2022-11-06 21:17:26.032557"], ["id", 7]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.4ms | Allocations: 246)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Create (0.4ms)[0m  [1m[32mINSERT INTO "courses" ("titulo", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["titulo", "Engineering 260"], ["created_at", "2022-11-06 21:17:26.040919"], ["updated_at", "2022-11-06 21:17:26.040919"]]
+  [1m[36mActionText::RichText Create (0.5ms)[0m  [1m[32mINSERT INTO "action_text_rich_texts" ("name", "body", "record_type", "record_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "descricao"], ["body", "There are no heroes...in life, the monsters win."], ["record_type", "Course"], ["record_id", 8], ["created_at", "2022-11-06 21:17:26.043943"], ["updated_at", "2022-11-06 21:17:26.043943"]]
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 7], ["record_type", "ActionText::RichText"], ["name", "embeds"]]
+  [1m[36mCourse Update (0.4ms)[0m  [1m[33mUPDATE "courses" SET "updated_at" = $1 WHERE "courses"."id" = $2[0m  [["updated_at", "2022-11-06 21:17:26.046018"], ["id", 8]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.4ms | Allocations: 246)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Create (0.5ms)[0m  [1m[32mINSERT INTO "courses" ("titulo", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["titulo", "Psychology 379"], ["created_at", "2022-11-06 21:17:26.054014"], ["updated_at", "2022-11-06 21:17:26.054014"]]
+  [1m[36mActionText::RichText Create (0.5ms)[0m  [1m[32mINSERT INTO "action_text_rich_texts" ("name", "body", "record_type", "record_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "descricao"], ["body", "Some old wounds never truly heal, and bleed again at the slightest word."], ["record_type", "Course"], ["record_id", 9], ["created_at", "2022-11-06 21:17:26.057179"], ["updated_at", "2022-11-06 21:17:26.057179"]]
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 8], ["record_type", "ActionText::RichText"], ["name", "embeds"]]
+  [1m[36mCourse Update (0.5ms)[0m  [1m[33mUPDATE "courses" SET "updated_at" = $1 WHERE "courses"."id" = $2[0m  [["updated_at", "2022-11-06 21:17:26.059267"], ["id", 9]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.4ms | Allocations: 246)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Create (0.4ms)[0m  [1m[32mINSERT INTO "courses" ("titulo", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["titulo", "Design 295"], ["created_at", "2022-11-06 21:17:26.067404"], ["updated_at", "2022-11-06 21:17:26.067404"]]
+  [1m[36mActionText::RichText Create (0.6ms)[0m  [1m[32mINSERT INTO "action_text_rich_texts" ("name", "body", "record_type", "record_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "descricao"], ["body", "Things are not always as they seemed, much that may seem evil can be good."], ["record_type", "Course"], ["record_id", 10], ["created_at", "2022-11-06 21:17:26.070549"], ["updated_at", "2022-11-06 21:17:26.070549"]]
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 9], ["record_type", "ActionText::RichText"], ["name", "embeds"]]
+  [1m[36mCourse Update (0.5ms)[0m  [1m[33mUPDATE "courses" SET "updated_at" = $1 WHERE "courses"."id" = $2[0m  [["updated_at", "2022-11-06 21:17:26.073365"], ["id", 10]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.4ms | Allocations: 246)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Create (0.4ms)[0m  [1m[32mINSERT INTO "courses" ("titulo", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["titulo", "Applied Science (Psychology) 415"], ["created_at", "2022-11-06 21:17:26.082593"], ["updated_at", "2022-11-06 21:17:26.082593"]]
+  [1m[36mActionText::RichText Create (0.5ms)[0m  [1m[32mINSERT INTO "action_text_rich_texts" ("name", "body", "record_type", "record_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "descricao"], ["body", "Some old wounds never truly heal, and bleed again at the slightest word."], ["record_type", "Course"], ["record_id", 11], ["created_at", "2022-11-06 21:17:26.086186"], ["updated_at", "2022-11-06 21:17:26.086186"]]
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 10], ["record_type", "ActionText::RichText"], ["name", "embeds"]]
+  [1m[36mCourse Update (0.5ms)[0m  [1m[33mUPDATE "courses" SET "updated_at" = $1 WHERE "courses"."id" = $2[0m  [["updated_at", "2022-11-06 21:17:26.088471"], ["id", 11]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.3ms | Allocations: 246)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Create (0.5ms)[0m  [1m[32mINSERT INTO "courses" ("titulo", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["titulo", "Architectural Technology 533"], ["created_at", "2022-11-06 21:17:26.097394"], ["updated_at", "2022-11-06 21:17:26.097394"]]
+  [1m[36mActionText::RichText Create (0.5ms)[0m  [1m[32mINSERT INTO "action_text_rich_texts" ("name", "body", "record_type", "record_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "descricao"], ["body", "... a mind needs books as a sword needs a whetstone, if it is to keep its edge."], ["record_type", "Course"], ["record_id", 12], ["created_at", "2022-11-06 21:17:26.101014"], ["updated_at", "2022-11-06 21:17:26.101014"]]
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 11], ["record_type", "ActionText::RichText"], ["name", "embeds"]]
+  [1m[36mCourse Update (0.6ms)[0m  [1m[33mUPDATE "courses" SET "updated_at" = $1 WHERE "courses"."id" = $2[0m  [["updated_at", "2022-11-06 21:17:26.103540"], ["id", 12]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.4ms | Allocations: 247)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Create (0.5ms)[0m  [1m[32mINSERT INTO "courses" ("titulo", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["titulo", "Business 414"], ["created_at", "2022-11-06 21:17:26.126002"], ["updated_at", "2022-11-06 21:17:26.126002"]]
+  [1m[36mActionText::RichText Create (0.5ms)[0m  [1m[32mINSERT INTO "action_text_rich_texts" ("name", "body", "record_type", "record_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "descricao"], ["body", "Summer will end soon enough, and childhood as well."], ["record_type", "Course"], ["record_id", 13], ["created_at", "2022-11-06 21:17:26.129626"], ["updated_at", "2022-11-06 21:17:26.129626"]]
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 12], ["record_type", "ActionText::RichText"], ["name", "embeds"]]
+  [1m[36mCourse Update (0.5ms)[0m  [1m[33mUPDATE "courses" SET "updated_at" = $1 WHERE "courses"."id" = $2[0m  [["updated_at", "2022-11-06 21:17:26.131716"], ["id", 13]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.5ms | Allocations: 246)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Create (0.5ms)[0m  [1m[32mINSERT INTO "courses" ("titulo", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["titulo", "Forensic Science 445"], ["created_at", "2022-11-06 21:17:26.140483"], ["updated_at", "2022-11-06 21:17:26.140483"]]
+  [1m[36mActionText::RichText Create (0.4ms)[0m  [1m[32mINSERT INTO "action_text_rich_texts" ("name", "body", "record_type", "record_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "descricao"], ["body", "All dwarfs are bastards in their father's eyes"], ["record_type", "Course"], ["record_id", 14], ["created_at", "2022-11-06 21:17:26.143682"], ["updated_at", "2022-11-06 21:17:26.143682"]]
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 13], ["record_type", "ActionText::RichText"], ["name", "embeds"]]
+  [1m[36mCourse Update (0.4ms)[0m  [1m[33mUPDATE "courses" SET "updated_at" = $1 WHERE "courses"."id" = $2[0m  [["updated_at", "2022-11-06 21:17:26.145631"], ["id", 14]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.3ms | Allocations: 246)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Create (0.4ms)[0m  [1m[32mINSERT INTO "courses" ("titulo", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["titulo", "Medicine 582"], ["created_at", "2022-11-06 21:17:26.153544"], ["updated_at", "2022-11-06 21:17:26.153544"]]
+  [1m[36mActionText::RichText Create (0.5ms)[0m  [1m[32mINSERT INTO "action_text_rich_texts" ("name", "body", "record_type", "record_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "descricao"], ["body", "Why is it that when one man builds a wall, the next man immediately needs to know what's on the other side?"], ["record_type", "Course"], ["record_id", 15], ["created_at", "2022-11-06 21:17:26.156526"], ["updated_at", "2022-11-06 21:17:26.156526"]]
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 14], ["record_type", "ActionText::RichText"], ["name", "embeds"]]
+  [1m[36mCourse Update (0.5ms)[0m  [1m[33mUPDATE "courses" SET "updated_at" = $1 WHERE "courses"."id" = $2[0m  [["updated_at", "2022-11-06 21:17:26.158758"], ["id", 15]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.3ms | Allocations: 246)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Create (0.4ms)[0m  [1m[32mINSERT INTO "courses" ("titulo", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["titulo", "Forensic Science 420"], ["created_at", "2022-11-06 21:17:26.166623"], ["updated_at", "2022-11-06 21:17:26.166623"]]
+  [1m[36mActionText::RichText Create (0.5ms)[0m  [1m[32mINSERT INTO "action_text_rich_texts" ("name", "body", "record_type", "record_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "descricao"], ["body", "All dwarfs are bastards in their father's eyes"], ["record_type", "Course"], ["record_id", 16], ["created_at", "2022-11-06 21:17:26.169545"], ["updated_at", "2022-11-06 21:17:26.169545"]]
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 15], ["record_type", "ActionText::RichText"], ["name", "embeds"]]
+  [1m[36mCourse Update (0.5ms)[0m  [1m[33mUPDATE "courses" SET "updated_at" = $1 WHERE "courses"."id" = $2[0m  [["updated_at", "2022-11-06 21:17:26.171552"], ["id", 16]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.3ms | Allocations: 246)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Create (0.4ms)[0m  [1m[32mINSERT INTO "courses" ("titulo", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["titulo", "Education 115"], ["created_at", "2022-11-06 21:17:26.180103"], ["updated_at", "2022-11-06 21:17:26.180103"]]
+  [1m[36mActionText::RichText Create (0.6ms)[0m  [1m[32mINSERT INTO "action_text_rich_texts" ("name", "body", "record_type", "record_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "descricao"], ["body", "And I have a tender spot in my heart for cripples and bastards and broken things."], ["record_type", "Course"], ["record_id", 17], ["created_at", "2022-11-06 21:17:26.183108"], ["updated_at", "2022-11-06 21:17:26.183108"]]
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 16], ["record_type", "ActionText::RichText"], ["name", "embeds"]]
+  [1m[36mCourse Update (0.4ms)[0m  [1m[33mUPDATE "courses" SET "updated_at" = $1 WHERE "courses"."id" = $2[0m  [["updated_at", "2022-11-06 21:17:26.185460"], ["id", 17]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.4ms | Allocations: 246)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Create (0.4ms)[0m  [1m[32mINSERT INTO "courses" ("titulo", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["titulo", "Health Science 590"], ["created_at", "2022-11-06 21:17:26.193761"], ["updated_at", "2022-11-06 21:17:26.193761"]]
+  [1m[36mActionText::RichText Create (0.7ms)[0m  [1m[32mINSERT INTO "action_text_rich_texts" ("name", "body", "record_type", "record_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "descricao"], ["body", "Knowledge could be more valuable than gold, more deadly than a dagger."], ["record_type", "Course"], ["record_id", 18], ["created_at", "2022-11-06 21:17:26.196675"], ["updated_at", "2022-11-06 21:17:26.196675"]]
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 17], ["record_type", "ActionText::RichText"], ["name", "embeds"]]
+  [1m[36mCourse Update (0.9ms)[0m  [1m[33mUPDATE "courses" SET "updated_at" = $1 WHERE "courses"."id" = $2[0m  [["updated_at", "2022-11-06 21:17:26.198973"], ["id", 18]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.4ms | Allocations: 246)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Create (0.4ms)[0m  [1m[32mINSERT INTO "courses" ("titulo", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["titulo", "Architectural Technology 561"], ["created_at", "2022-11-06 21:17:26.207687"], ["updated_at", "2022-11-06 21:17:26.207687"]]
+  [1m[36mActionText::RichText Create (0.4ms)[0m  [1m[32mINSERT INTO "action_text_rich_texts" ("name", "body", "record_type", "record_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "descricao"], ["body", "... a mind needs books as a sword needs a whetstone, if it is to keep its edge."], ["record_type", "Course"], ["record_id", 19], ["created_at", "2022-11-06 21:17:26.210879"], ["updated_at", "2022-11-06 21:17:26.210879"]]
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 18], ["record_type", "ActionText::RichText"], ["name", "embeds"]]
+  [1m[36mCourse Update (0.5ms)[0m  [1m[33mUPDATE "courses" SET "updated_at" = $1 WHERE "courses"."id" = $2[0m  [["updated_at", "2022-11-06 21:17:26.212955"], ["id", 19]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.4ms | Allocations: 246)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Create (0.4ms)[0m  [1m[32mINSERT INTO "courses" ("titulo", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["titulo", "Business 421"], ["created_at", "2022-11-06 21:17:26.221611"], ["updated_at", "2022-11-06 21:17:26.221611"]]
+  [1m[36mActionText::RichText Create (0.6ms)[0m  [1m[32mINSERT INTO "action_text_rich_texts" ("name", "body", "record_type", "record_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "descricao"], ["body", "... a mind needs books as a sword needs a whetstone, if it is to keep its edge."], ["record_type", "Course"], ["record_id", 20], ["created_at", "2022-11-06 21:17:26.224716"], ["updated_at", "2022-11-06 21:17:26.224716"]]
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 19], ["record_type", "ActionText::RichText"], ["name", "embeds"]]
+  [1m[36mCourse Update (0.5ms)[0m  [1m[33mUPDATE "courses" SET "updated_at" = $1 WHERE "courses"."id" = $2[0m  [["updated_at", "2022-11-06 21:17:26.227277"], ["id", 20]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.3ms | Allocations: 246)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Create (0.9ms)[0m  [1m[32mINSERT INTO "courses" ("titulo", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["titulo", "Information Systems 272"], ["created_at", "2022-11-06 21:17:26.235671"], ["updated_at", "2022-11-06 21:17:26.235671"]]
+  [1m[36mActionText::RichText Create (0.5ms)[0m  [1m[32mINSERT INTO "action_text_rich_texts" ("name", "body", "record_type", "record_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "descricao"], ["body", "Give me honorable enemies rather than ambitious ones, and I'll sleep more easily by night."], ["record_type", "Course"], ["record_id", 21], ["created_at", "2022-11-06 21:17:26.239364"], ["updated_at", "2022-11-06 21:17:26.239364"]]
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 20], ["record_type", "ActionText::RichText"], ["name", "embeds"]]
+  [1m[36mCourse Update (0.5ms)[0m  [1m[33mUPDATE "courses" SET "updated_at" = $1 WHERE "courses"."id" = $2[0m  [["updated_at", "2022-11-06 21:17:26.241614"], ["id", 21]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.3ms | Allocations: 246)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Create (0.4ms)[0m  [1m[32mINSERT INTO "courses" ("titulo", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["titulo", "Communications 342"], ["created_at", "2022-11-06 21:17:26.249543"], ["updated_at", "2022-11-06 21:17:26.249543"]]
+  [1m[36mActionText::RichText Create (0.5ms)[0m  [1m[32mINSERT INTO "action_text_rich_texts" ("name", "body", "record_type", "record_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "descricao"], ["body", "When you play a game of thrones you win or you die."], ["record_type", "Course"], ["record_id", 22], ["created_at", "2022-11-06 21:17:26.252534"], ["updated_at", "2022-11-06 21:17:26.252534"]]
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 21], ["record_type", "ActionText::RichText"], ["name", "embeds"]]
+  [1m[36mCourse Update (0.5ms)[0m  [1m[33mUPDATE "courses" SET "updated_at" = $1 WHERE "courses"."id" = $2[0m  [["updated_at", "2022-11-06 21:17:26.254522"], ["id", 22]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.3ms | Allocations: 246)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Create (0.4ms)[0m  [1m[32mINSERT INTO "courses" ("titulo", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["titulo", "Education 441"], ["created_at", "2022-11-06 21:17:26.262498"], ["updated_at", "2022-11-06 21:17:26.262498"]]
+  [1m[36mActionText::RichText Create (0.5ms)[0m  [1m[32mINSERT INTO "action_text_rich_texts" ("name", "body", "record_type", "record_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "descricao"], ["body", "Nothing burns like the cold."], ["record_type", "Course"], ["record_id", 23], ["created_at", "2022-11-06 21:17:26.265536"], ["updated_at", "2022-11-06 21:17:26.265536"]]
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 22], ["record_type", "ActionText::RichText"], ["name", "embeds"]]
+  [1m[36mCourse Update (0.5ms)[0m  [1m[33mUPDATE "courses" SET "updated_at" = $1 WHERE "courses"."id" = $2[0m  [["updated_at", "2022-11-06 21:17:26.267588"], ["id", 23]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.3ms | Allocations: 246)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Create (0.4ms)[0m  [1m[32mINSERT INTO "courses" ("titulo", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["titulo", "Biological Science 518"], ["created_at", "2022-11-06 21:17:26.276029"], ["updated_at", "2022-11-06 21:17:26.276029"]]
+  [1m[36mActionText::RichText Create (0.4ms)[0m  [1m[32mINSERT INTO "action_text_rich_texts" ("name", "body", "record_type", "record_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "descricao"], ["body", "Give me honorable enemies rather than ambitious ones, and I'll sleep more easily by night."], ["record_type", "Course"], ["record_id", 24], ["created_at", "2022-11-06 21:17:26.279592"], ["updated_at", "2022-11-06 21:17:26.279592"]]
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 23], ["record_type", "ActionText::RichText"], ["name", "embeds"]]
+  [1m[36mCourse Update (0.6ms)[0m  [1m[33mUPDATE "courses" SET "updated_at" = $1 WHERE "courses"."id" = $2[0m  [["updated_at", "2022-11-06 21:17:26.282042"], ["id", 24]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.5ms | Allocations: 243)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Create (0.4ms)[0m  [1m[32mINSERT INTO "courses" ("titulo", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["titulo", "Engineering 311"], ["created_at", "2022-11-06 21:17:26.292405"], ["updated_at", "2022-11-06 21:17:26.292405"]]
+  [1m[36mActionText::RichText Create (0.4ms)[0m  [1m[32mINSERT INTO "action_text_rich_texts" ("name", "body", "record_type", "record_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "descricao"], ["body", "The North remembers."], ["record_type", "Course"], ["record_id", 25], ["created_at", "2022-11-06 21:17:26.295906"], ["updated_at", "2022-11-06 21:17:26.295906"]]
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 24], ["record_type", "ActionText::RichText"], ["name", "embeds"]]
+  [1m[36mCourse Update (0.5ms)[0m  [1m[33mUPDATE "courses" SET "updated_at" = $1 WHERE "courses"."id" = $2[0m  [["updated_at", "2022-11-06 21:17:26.298033"], ["id", 25]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.4ms | Allocations: 246)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Create (0.5ms)[0m  [1m[32mINSERT INTO "courses" ("titulo", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["titulo", "Commerce 349"], ["created_at", "2022-11-06 21:17:26.307658"], ["updated_at", "2022-11-06 21:17:26.307658"]]
+  [1m[36mActionText::RichText Create (0.5ms)[0m  [1m[32mINSERT INTO "action_text_rich_texts" ("name", "body", "record_type", "record_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "descricao"], ["body", "There are no heroes...in life, the monsters win."], ["record_type", "Course"], ["record_id", 26], ["created_at", "2022-11-06 21:17:26.311372"], ["updated_at", "2022-11-06 21:17:26.311372"]]
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 25], ["record_type", "ActionText::RichText"], ["name", "embeds"]]
+  [1m[36mCourse Update (0.4ms)[0m  [1m[33mUPDATE "courses" SET "updated_at" = $1 WHERE "courses"."id" = $2[0m  [["updated_at", "2022-11-06 21:17:26.313321"], ["id", 26]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.4ms | Allocations: 246)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Create (0.6ms)[0m  [1m[32mINSERT INTO "courses" ("titulo", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["titulo", "Law 465"], ["created_at", "2022-11-06 21:17:26.322258"], ["updated_at", "2022-11-06 21:17:26.322258"]]
+  [1m[36mActionText::RichText Create (0.6ms)[0m  [1m[32mINSERT INTO "action_text_rich_texts" ("name", "body", "record_type", "record_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "descricao"], ["body", "Never forget who you are. The rest of the world won't. Wear it like an armor and it can never be used against you."], ["record_type", "Course"], ["record_id", 27], ["created_at", "2022-11-06 21:17:26.326042"], ["updated_at", "2022-11-06 21:17:26.326042"]]
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 26], ["record_type", "ActionText::RichText"], ["name", "embeds"]]
+  [1m[36mCourse Update (0.5ms)[0m  [1m[33mUPDATE "courses" SET "updated_at" = $1 WHERE "courses"."id" = $2[0m  [["updated_at", "2022-11-06 21:17:26.328241"], ["id", 27]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.3ms | Allocations: 246)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Create (0.5ms)[0m  [1m[32mINSERT INTO "courses" ("titulo", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["titulo", "Communications 239"], ["created_at", "2022-11-06 21:17:26.337181"], ["updated_at", "2022-11-06 21:17:26.337181"]]
+  [1m[36mActionText::RichText Create (0.6ms)[0m  [1m[32mINSERT INTO "action_text_rich_texts" ("name", "body", "record_type", "record_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "descricao"], ["body", "There are no heroes...in life, the monsters win."], ["record_type", "Course"], ["record_id", 28], ["created_at", "2022-11-06 21:17:26.340646"], ["updated_at", "2022-11-06 21:17:26.340646"]]
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 27], ["record_type", "ActionText::RichText"], ["name", "embeds"]]
+  [1m[36mCourse Update (0.5ms)[0m  [1m[33mUPDATE "courses" SET "updated_at" = $1 WHERE "courses"."id" = $2[0m  [["updated_at", "2022-11-06 21:17:26.343297"], ["id", 28]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.3ms | Allocations: 246)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Create (0.5ms)[0m  [1m[32mINSERT INTO "courses" ("titulo", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["titulo", "Commerce 560"], ["created_at", "2022-11-06 21:17:26.351686"], ["updated_at", "2022-11-06 21:17:26.351686"]]
+  [1m[36mActionText::RichText Create (0.5ms)[0m  [1m[32mINSERT INTO "action_text_rich_texts" ("name", "body", "record_type", "record_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "descricao"], ["body", "And I have a tender spot in my heart for cripples and bastards and broken things."], ["record_type", "Course"], ["record_id", 29], ["created_at", "2022-11-06 21:17:26.355363"], ["updated_at", "2022-11-06 21:17:26.355363"]]
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 28], ["record_type", "ActionText::RichText"], ["name", "embeds"]]
+  [1m[36mCourse Update (0.5ms)[0m  [1m[33mUPDATE "courses" SET "updated_at" = $1 WHERE "courses"."id" = $2[0m  [["updated_at", "2022-11-06 21:17:26.357884"], ["id", 29]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.3ms | Allocations: 246)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Create (0.5ms)[0m  [1m[32mINSERT INTO "courses" ("titulo", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["titulo", "Law 127"], ["created_at", "2022-11-06 21:17:26.366581"], ["updated_at", "2022-11-06 21:17:26.366581"]]
+  [1m[36mActionText::RichText Create (0.5ms)[0m  [1m[32mINSERT INTO "action_text_rich_texts" ("name", "body", "record_type", "record_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "descricao"], ["body", "When the snows fall and the white winds blow, the lone wolf dies but the pack survives."], ["record_type", "Course"], ["record_id", 30], ["created_at", "2022-11-06 21:17:26.369903"], ["updated_at", "2022-11-06 21:17:26.369903"]]
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 29], ["record_type", "ActionText::RichText"], ["name", "embeds"]]
+  [1m[36mCourse Update (0.6ms)[0m  [1m[33mUPDATE "courses" SET "updated_at" = $1 WHERE "courses"."id" = $2[0m  [["updated_at", "2022-11-06 21:17:26.372140"], ["id", 30]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.4ms | Allocations: 246)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Create (0.5ms)[0m  [1m[32mINSERT INTO "courses" ("titulo", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["titulo", "Commerce 550"], ["created_at", "2022-11-06 21:17:26.380998"], ["updated_at", "2022-11-06 21:17:26.380998"]]
+  [1m[36mActionText::RichText Create (0.6ms)[0m  [1m[32mINSERT INTO "action_text_rich_texts" ("name", "body", "record_type", "record_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "descricao"], ["body", "Once you’ve accepted your flaws, no one can use them against you."], ["record_type", "Course"], ["record_id", 31], ["created_at", "2022-11-06 21:17:26.384539"], ["updated_at", "2022-11-06 21:17:26.384539"]]
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 30], ["record_type", "ActionText::RichText"], ["name", "embeds"]]
+  [1m[36mCourse Update (0.5ms)[0m  [1m[33mUPDATE "courses" SET "updated_at" = $1 WHERE "courses"."id" = $2[0m  [["updated_at", "2022-11-06 21:17:26.386964"], ["id", 31]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2022-11-06 18:17:36 -0300
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#landing_page as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering static_pages/landing_page.html.haml within layouts/application
+  Rendered static_pages/landing_page.html.haml within layouts/application (Duration: 18.6ms | Allocations: 20082)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 50.1ms | Allocations: 33766)
+Completed 200 OK in 65ms (Views: 53.5ms | ActiveRecord: 0.0ms | Allocations: 37037)
+
+
+Started GET "/" for ::1 at 2022-11-06 18:17:36 -0300
+Processing by StaticPagesController#landing_page as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering static_pages/landing_page.html.haml within layouts/application
+  Rendered static_pages/landing_page.html.haml within layouts/application (Duration: 0.5ms | Allocations: 123)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 12.7ms | Allocations: 4192)
+Completed 200 OK in 15ms (Views: 13.6ms | ActiveRecord: 0.0ms | Allocations: 4686)
+
+
+Started GET "/courses" for ::1 at 2022-11-06 18:17:37 -0300
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering courses/index.html.haml within layouts/application
+  [1m[36mCourse Load (3.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.haml:13
+  [1m[36mActionText::RichText Load (1.3ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  [1m[36mActionText::RichText Load (1.4ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 1.4ms | Allocations: 542)
+  [1m[36mActionText::RichText Load (1.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.4ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.3ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.4ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.3ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.4ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.3ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 6], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.4ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 7], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.5ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 8], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.7ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 9], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.4ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 10], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.4ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 11], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.4ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 12], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.5ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.0ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 13], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.4ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.0ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 14], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.4ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 15], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.4ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.0ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 16], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.4ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.0ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 17], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.4ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.0ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 18], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.5ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.0ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 19], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.4ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 20], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.4ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 21], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.4ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.0ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 22], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.4ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 23], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.4ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.0ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 24], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.4ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.0ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 25], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.3ms | Allocations: 243)
+  [1m[36mActionText::RichText Load (1.0ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 26], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.4ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.0ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 27], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.4ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 28], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.4ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.0ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 29], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.6ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.0ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 30], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.4ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 31], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 1.6ms | Allocations: 257)
+  Rendered courses/index.html.haml within layouts/application (Duration: 269.9ms | Allocations: 77658)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 276.1ms | Allocations: 81789)
+Completed 200 OK in 286ms (Views: 220.2ms | ActiveRecord: 58.4ms | Allocations: 84859)
+
+
+Started GET "/courses" for ::1 at 2022-11-06 18:18:49 -0300
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering courses/index.html.haml within layouts/application
+  [1m[36mCourse Load (2.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.haml:13
+  [1m[36mActionText::RichText Load (1.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  [1m[36mActionText::RichText Load (1.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 1.2ms | Allocations: 549)
+  [1m[36mActionText::RichText Load (1.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.4ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.4ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.9ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 6], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.4ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.0ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 7], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.6ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.0ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 8], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 1.0ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.6ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 9], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.5ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.0ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 10], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.4ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.0ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 11], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.4ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.4ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 12], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.6ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.0ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 13], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.4ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.0ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 14], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.8ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.0ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 15], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.6ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.0ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 16], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.4ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.4ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 17], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.4ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.0ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 18], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.4ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 19], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.6ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.0ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 20], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.8ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 21], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.4ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.0ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 22], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.6ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.7ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 23], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.4ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.0ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 24], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.4ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.0ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 25], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.5ms | Allocations: 243)
+  [1m[36mActionText::RichText Load (1.3ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 26], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.5ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.4ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 27], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.4ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 28], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.4ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 29], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.4ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 30], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.4ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 31], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 1.9ms | Allocations: 257)
+  Rendered courses/index.html.haml within layouts/application (Duration: 226.4ms | Allocations: 81826)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 250.5ms | Allocations: 95585)
+Completed 200 OK in 268ms (Views: 205.4ms | ActiveRecord: 48.8ms | Allocations: 100675)
+
+
+Started GET "/" for ::1 at 2022-11-06 18:18:52 -0300
+Processing by StaticPagesController#landing_page as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering static_pages/landing_page.html.haml within layouts/application
+  Rendered static_pages/landing_page.html.haml within layouts/application (Duration: 98.8ms | Allocations: 15754)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 105.9ms | Allocations: 19895)
+Completed 200 OK in 111ms (Views: 108.8ms | ActiveRecord: 0.0ms | Allocations: 21144)
+
+
+Started GET "/courses" for ::1 at 2022-11-06 18:18:53 -0300
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering courses/index.html.haml within layouts/application
+  [1m[36mCourse Load (2.4ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.haml:13
+  [1m[36mActionText::RichText Load (2.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  [1m[36mActionText::RichText Load (2.3ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 1.0ms | Allocations: 282)
+  [1m[36mActionText::RichText Load (2.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 1.2ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (2.0ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 1.5ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (2.4ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.7ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.8ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 6], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.7ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.7ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 7], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.9ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.0ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 8], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.4ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (0.9ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 9], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.7ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (0.9ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 10], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.7ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 11], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.4ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.4ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 12], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.4ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.0ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 13], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.4ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.0ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 14], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 1.1ms | Allocations: 247)
+  [1m[36mActionText::RichText Load (1.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 15], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.5ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.0ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 16], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.5ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.3ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 17], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.6ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 18], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.5ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 19], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.5ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.0ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 20], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.5ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 21], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.6ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.7ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 22], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.5ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.0ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 23], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.4ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.0ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 24], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.6ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 25], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.5ms | Allocations: 243)
+  [1m[36mActionText::RichText Load (1.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 26], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.5ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 27], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.5ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 28], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.5ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 29], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.7ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.4ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 30], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.5ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 31], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.4ms | Allocations: 246)
+  Rendered courses/index.html.haml within layouts/application (Duration: 184.3ms | Allocations: 55928)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 190.0ms | Allocations: 59914)
+Completed 200 OK in 192ms (Views: 147.3ms | ActiveRecord: 43.5ms | Allocations: 60383)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2039971103330730045)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20221106212705)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (36.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221106212705"]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(2039971103330730045)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2022-11-06 18:28:29 -0300
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#landing_page as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering static_pages/landing_page.html.haml within layouts/application
+  Rendered static_pages/landing_page.html.haml within layouts/application (Duration: 22.1ms | Allocations: 20089)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 51.5ms | Allocations: 34596)
+Completed 200 OK in 63ms (Views: 54.8ms | ActiveRecord: 0.0ms | Allocations: 37939)
+
+
+Started GET "/" for ::1 at 2022-11-06 18:28:29 -0300
+Processing by StaticPagesController#landing_page as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering static_pages/landing_page.html.haml within layouts/application
+  Rendered static_pages/landing_page.html.haml within layouts/application (Duration: 0.4ms | Allocations: 123)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 7.8ms | Allocations: 4229)
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.0ms | Allocations: 4725)
+
+
+Started GET "/" for ::1 at 2022-11-06 18:29:05 -0300
+Processing by StaticPagesController#landing_page as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering static_pages/landing_page.html.haml within layouts/application
+  Rendered static_pages/landing_page.html.haml within layouts/application (Duration: 0.4ms | Allocations: 130)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 9.7ms | Allocations: 4235)
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.0ms | Allocations: 4724)
+
+
+Started GET "/privacy_policy" for ::1 at 2022-11-06 18:29:10 -0300
+Processing by StaticPagesController#privacy_policy as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering static_pages/privacy_policy.html.haml within layouts/application
+  Rendered static_pages/privacy_policy.html.haml within layouts/application (Duration: 7.4ms | Allocations: 2424)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 19.5ms | Allocations: 6282)
+Completed 200 OK in 22ms (Views: 20.4ms | ActiveRecord: 0.0ms | Allocations: 6834)
+
+
+Started GET "/" for ::1 at 2022-11-06 18:29:11 -0300
+Processing by StaticPagesController#landing_page as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering static_pages/landing_page.html.haml within layouts/application
+  Rendered static_pages/landing_page.html.haml within layouts/application (Duration: 0.4ms | Allocations: 89)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 9.7ms | Allocations: 4049)
+Completed 200 OK in 12ms (Views: 10.6ms | ActiveRecord: 0.0ms | Allocations: 4442)
+
+
+Started GET "/courses" for ::1 at 2022-11-06 18:29:11 -0300
+Processing by CoursesController#index as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering courses/index.html.haml within layouts/application
+  [1m[36mCourse Load (1.9ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.haml:13
+  [1m[36mActionText::RichText Load (1.6ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  [1m[36mActionText::RichText Load (1.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 1.4ms | Allocations: 539)
+  [1m[36mActionText::RichText Load (1.4ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.4ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.5ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.5ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 6], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 1.0ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 7], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.5ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 8], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.5ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 9], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.5ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.9ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 10], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.8ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.5ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 11], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.8ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.5ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 12], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 1.1ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 13], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.4ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.5ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 14], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.5ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.6ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 15], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.4ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 16], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.5ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 17], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.5ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 18], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.7ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 19], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.4ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 20], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.6ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.4ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 21], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.4ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 22], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.5ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 23], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.4ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 24], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.8ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.3ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 25], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.4ms | Allocations: 243)
+  [1m[36mActionText::RichText Load (1.0ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 26], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.4ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.0ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 27], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.4ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (1.0ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 28], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.6ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (0.9ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 29], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.5ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (0.9ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 30], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 0.4ms | Allocations: 246)
+  [1m[36mActionText::RichText Load (0.9ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 31], ["record_type", "Course"], ["name", "descricao"], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:16
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views/action_text/content/_layout.html.erb (Duration: 1.9ms | Allocations: 257)
+  Rendered courses/index.html.haml within layouts/application (Duration: 232.7ms | Allocations: 78024)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 238.9ms | Allocations: 82194)
+Completed 200 OK in 246ms (Views: 183.1ms | ActiveRecord: 57.6ms | Allocations: 85079)
+
+
+Started GET "/" for ::1 at 2022-11-06 18:31:57 -0300
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#landing_page as HTML
+Completed 401 Unauthorized in 12ms (ActiveRecord: 0.0ms | Allocations: 2501)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-11-06 18:31:58 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 1.4ms | Allocations: 663)
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 10.3ms | Allocations: 4273)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 39.4ms | Allocations: 23019)
+Completed 200 OK in 67ms (Views: 45.1ms | ActiveRecord: 8.2ms | Allocations: 31820)
+
+
+Started GET "/users/sign_up" for ::1 at 2022-11-06 18:32:13 -0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/shared/_error_messages.html.erb (Duration: 0.9ms | Allocations: 192)
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 128)
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 6.3ms | Allocations: 2371)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 13.8ms | Allocations: 6528)
+Completed 200 OK in 18ms (Views: 16.4ms | ActiveRecord: 0.0ms | Allocations: 8165)
+
+
+Started POST "/users" for ::1 at 2022-11-06 18:32:29 -0300
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"abc@abc.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "abc@abc.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "abc@abc.com"], ["encrypted_password", "$2a$12$.0lK/uWtzC80xR.aZFWO.u/Ei4JX8/KMXs9h3qBisA6FRDTLdY87i"], ["created_at", "2022-11-06 21:32:30.154537"], ["updated_at", "2022-11-06 21:32:30.154537"]]
+  [1m[36mTRANSACTION (9.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 261ms (ActiveRecord: 14.2ms | Allocations: 14340)
+
+
+Started GET "/" for ::1 at 2022-11-06 18:32:30 -0300
+Processing by StaticPagesController#landing_page as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering static_pages/landing_page.html.haml within layouts/application
+  Rendered static_pages/landing_page.html.haml within layouts/application (Duration: 10.1ms | Allocations: 15786)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 16.1ms | Allocations: 19909)
+Completed 200 OK in 25ms (Views: 17.6ms | ActiveRecord: 2.1ms | Allocations: 23148)
+
+
+Started GET "/" for ::1 at 2022-11-06 18:36:43 -0300
+Processing by StaticPagesController#landing_page as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering static_pages/landing_page.html.haml within layouts/application
+  Rendered static_pages/landing_page.html.haml within layouts/application (Duration: 13.6ms | Allocations: 15694)
+  Rendered layout layouts/application.html.haml (Duration: 20.4ms | Allocations: 22421)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 1.0ms | Allocations: 25358)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check !!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Testmaker
+    %meta{:content => "width=device-width,initial-scale=1", :name => "viewport"}/
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true
+  %body
+  = render "layouts/navbar"
+    %p.notice= notice
+    %p.alert= alert
+    = yield
+
+):
+1:    !!!
+2:    %html
+3:      %head
+4:        %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+5:        %title Testmaker
+6:        %meta{:content => "width=device-width,initial-scale=1", :name => "viewport"}/
+7:        = csrf_meta_tags
+8:        = csp_meta_tag
+9:        = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+10:        = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true
+11:      %body
+12:      = render "layouts/navbar"
+13:        %p.notice= notice
+14:        %p.alert= alert
+15:        = yield
+  
+app/views/layouts/application.html.haml:17: syntax error, unexpected `end', expecting end-of-input
+app/views/layouts/application.html.haml:17: syntax error, unexpected `end', expecting end-of-input
+app/views/layouts/application.html.haml:17: syntax error, unexpected `end', expecting end-of-input
+app/views/layouts/application.html.haml:17: syntax error, unexpected `end', expecting end-of-input
+app/views/layouts/application.html.haml:17: syntax error, unexpected `end', expecting end-of-input
+app/views/layouts/application.html.haml:17: syntax error, unexpected `end', expecting end-of-input
+Started GET "/" for ::1 at 2022-11-06 18:37:56 -0300
+Processing by StaticPagesController#landing_page as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering static_pages/landing_page.html.haml within layouts/application
+  Rendered static_pages/landing_page.html.haml within layouts/application (Duration: 13.9ms | Allocations: 15729)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 33.0ms | Allocations: 26924)
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 1.1ms | Allocations: 29853)
+
+
+  
+ActionView::Template::Error (Missing partial layouts/_header with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :haml, :jbuilder]}. Searched in:
+  * "/home/fakichi/Documents/usp/GPTI/TestMaker/app/views"
+  * "/usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views"
+  * "/usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views"
+  * "/usr/share/rvm/gems/ruby-3.1.2/gems/actionmailbox-6.1.7/app/views"
+):
+     9:     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    10:     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true
+    11:   %body
+    12:     = render 'layouts/header'
+    13:     %p.notice= notice
+    14:     %p.alert= alert
+    15:     = yield
+  
+app/views/layouts/application.html.haml:12
+Started GET "/" for ::1 at 2022-11-06 18:38:53 -0300
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#landing_page as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering static_pages/landing_page.html.haml within layouts/application
+  Rendered static_pages/landing_page.html.haml within layouts/application (Duration: 18.4ms | Allocations: 20088)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.haml (Duration: 53.2ms | Allocations: 36386)
+Completed 500 Internal Server Error in 91ms (ActiveRecord: 11.6ms | Allocations: 47857)
+
+
+  
+ActionView::Template::Error (Missing partial layouts/_header with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :haml, :jbuilder]}. Searched in:
+  * "/home/fakichi/Documents/usp/GPTI/TestMaker/app/views"
+  * "/usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views"
+  * "/usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views"
+  * "/usr/share/rvm/gems/ruby-3.1.2/gems/actionmailbox-6.1.7/app/views"
+):
+     9:     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    10:     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true
+    11:   %body
+    12:     = render 'layouts/header'
+    13:     %p.notice= notice
+    14:     %p.alert= alert
+    15:     = yield
+  
+app/views/layouts/application.html.haml:12
+Started GET "/" for ::1 at 2022-11-06 18:40:01 -0300
+Processing by StaticPagesController#landing_page as HTML
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering static_pages/landing_page.html.haml within layouts/application
+  Rendered static_pages/landing_page.html.haml within layouts/application (Duration: 31.7ms | Allocations: 15730)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 4.7ms | Allocations: 2464)
+  Rendered layout layouts/application.html.haml (Duration: 65.3ms | Allocations: 28331)
+Completed 500 Internal Server Error in 80ms (ActiveRecord: 2.7ms | Allocations: 31275)
+
+
+  
+ActionView::Template::Error (Illegal nesting: nesting within plain text is illegal.):
+    1: if current_user
+    2:     = current_user.email
+    3:     = link_to "Configurações da Conta", edit_user_registration_path
+    4:     = link_to "Sair", destroy_user_registration_path, method: :delete
+    5: else
+  
+app/views/layouts/_header.html.haml:2
+app/views/layouts/application.html.haml:12
+Started GET "/" for ::1 at 2022-11-06 18:41:08 -0300
+Processing by StaticPagesController#landing_page as HTML
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering static_pages/landing_page.html.haml within layouts/application
+  Rendered static_pages/landing_page.html.haml within layouts/application (Duration: 29.3ms | Allocations: 15730)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 8.2ms | Allocations: 3459)
+  Rendered layout layouts/application.html.haml (Duration: 64.1ms | Allocations: 29374)
+Completed 200 OK in 78ms (Views: 67.7ms | ActiveRecord: 2.1ms | Allocations: 32380)
+
+
+Started GET "/users/edit" for ::1 at 2022-11-06 18:41:12 -0300
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/registrations/edit.html.erb within layouts/application
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/shared/_error_messages.html.erb (Duration: 0.6ms | Allocations: 226)
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/registrations/edit.html.erb within layouts/application (Duration: 260.5ms | Allocations: 279951)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 0.2ms | Allocations: 109)
+  Rendered layout layouts/application.html.haml (Duration: 266.4ms | Allocations: 284352)
+Completed 200 OK in 278ms (Views: 269.7ms | ActiveRecord: 1.5ms | Allocations: 287864)
+
+
