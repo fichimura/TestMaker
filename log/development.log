@@ -4906,3 +4906,2182 @@ Processing by CoursesController#index as HTML
 Completed 200 OK in 128ms (Views: 111.9ms | ActiveRecord: 8.3ms | Allocations: 52241)
 
 
+Started GET "/" for ::1 at 2022-11-09 17:14:19 -0300
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#landing_page as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering static_pages/landing_page.html.haml within layouts/application
+  Rendered static_pages/landing_page.html.haml within layouts/application (Duration: 14.4ms | Allocations: 20088)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 4.7ms | Allocations: 3471)
+  Rendered layout layouts/application.html.haml (Duration: 47.1ms | Allocations: 38681)
+Completed 200 OK in 81ms (Views: 49.7ms | ActiveRecord: 10.8ms | Allocations: 49804)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2022-11-09 17:14:21 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 322ms (ActiveRecord: 2.3ms | Allocations: 279338)
+
+
+Started GET "/" for ::1 at 2022-11-09 17:14:22 -0300
+Processing by StaticPagesController#landing_page as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 344)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-11-09 17:14:22 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 1.3ms | Allocations: 653)
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 6.4ms | Allocations: 3666)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 0.3ms | Allocations: 133)
+  Rendered layout layouts/application.html.haml (Duration: 13.2ms | Allocations: 8154)
+Completed 200 OK in 18ms (Views: 16.6ms | ActiveRecord: 0.0ms | Allocations: 10326)
+
+
+Started GET "/" for ::1 at 2022-11-09 17:36:04 -0300
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#landing_page as HTML
+Completed 401 Unauthorized in 10ms (ActiveRecord: 0.0ms | Allocations: 2129)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-11-09 17:36:05 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 1.0ms | Allocations: 667)
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 5.3ms | Allocations: 3915)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 19.4ms | Allocations: 18483)
+  Rendered layout layouts/application.html.haml (Duration: 53.2ms | Allocations: 41717)
+Completed 500 Internal Server Error in 72ms (ActiveRecord: 7.1ms | Allocations: 49837)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `about_path' for #<ActionView::Base:0x000000000098d0>):
+    3:     %li.nav-item.active
+    4:       = link_to 'Home', root_path, class: 'nav-link'
+    5:     %li.nav-item
+    6:     %li{:class => "nav-item #{active_class(about_path)}"}
+    7:       = link_to 'Políticas de privacidade', policy_privacy_path, class: 'nav-link'
+    8:     - if user_signed_in?
+    9:       %li.nav-item
+  
+app/views/layouts/_header.html.haml:6
+app/views/layouts/application.html.haml:12
+Started GET "/users/sign_in" for ::1 at 2022-11-09 17:39:22 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 2.1ms | Allocations: 518)
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 8.7ms | Allocations: 2384)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Invalid configuration object. Webpack has been initialised using a configuration object that does not match the API schema.
+ - configuration has an unknown property 'resolvedModules'. These properties are valid:
+   object { amd?, bail?, cache?, context?, dependencies?, devServer?, devtool?, entry?, externals?, infrastructureLogging?, loader?, mode?, module?, name?, node?, optimization?, output?, parallelism?, performance?, plugins?, profile?, recordsInputPath?, recordsOutputPath?, recordsPath?, resolve?, resolveLoader?, serve?, stats?, target?, watch?, watchOptions? }
+   For typos: please correct them.
+   For loader options: webpack >= v2.0.0 no longer allows custom properties in configuration.
+     Loaders should be updated to allow passing options via loader options in module.rules.
+     Until loaders are updated one can use the LoaderOptionsPlugin to pass these options to the loader:
+     plugins: [
+       new webpack.LoaderOptionsPlugin({
+         // test: /\.xxx$/, // may apply this only for some modules
+         options: {
+           resolvedModules: …
+         }
+       })
+     ]
+ - configuration.plugins[0] misses the property 'apply'.
+   function
+   -> The run point of the plugin, required method.
+ - configuration.plugins[1] misses the property 'apply'.
+   function
+   -> The run point of the plugin, required method.
+ - configuration.plugins[2] misses the property 'apply'.
+   function
+   -> The run point of the plugin, required method.
+ - configuration.plugins[3] misses the property 'apply'.
+   function
+   -> The run point of the plugin, required method.
+ - configuration.plugins[4] misses the property 'apply'.
+   function
+   -> The run point of the plugin, required method.
+
+  Rendered layouts/_header.html.erb (Duration: 11.6ms | Allocations: 5421)
+  Rendered layout layouts/application.html.haml (Duration: 1972.5ms | Allocations: 18955)
+Completed 500 Internal Server Error in 1982ms (ActiveRecord: 0.0ms | Allocations: 21056)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `about_path' for #<ActionView::Base:0x00000000009e48>):
+    4:     <li class="nav-item active">
+    5:       <%= link_to 'Home', root_path, class: 'nav-link' %>
+    6:     <li class="nav-item">
+    7:     <li class="nav-item <%= active_class(about_path) %>">
+    8:       <%= link_to 'Políticas de privacidade', policy_privacy_path, class: 'nav-link' %>
+    9:     </li>
+   10:     <% if user_signed_in? %>
+  
+app/views/layouts/_header.html.erb:7
+app/views/layouts/application.html.haml:12
+Started GET "/" for ::1 at 2022-11-09 17:39:26 -0300
+Processing by StaticPagesController#landing_page as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 289)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-11-09 17:39:26 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 130)
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 10.4ms | Allocations: 1275)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 29.7ms | Allocations: 4961)
+  Rendered layout layouts/application.html.haml (Duration: 68.8ms | Allocations: 10312)
+Completed 500 Internal Server Error in 73ms (ActiveRecord: 0.0ms | Allocations: 10924)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `about_path' for #<ActionView::Base:0x0000000000a2d0>):
+    4:     <li class="nav-item active">
+    5:       <%= link_to 'Home', root_path, class: 'nav-link' %>
+    6:     <li class="nav-item">
+    7:     <li class="nav-item <%= active_class(about_path) %>">
+    8:       <%= link_to 'Políticas de privacidade', policy_privacy_path, class: 'nav-link' %>
+    9:     </li>
+   10:     <% if user_signed_in? %>
+  
+app/views/layouts/_header.html.erb:7
+app/views/layouts/application.html.haml:12
+Started GET "/users/sign_in" for ::1 at 2022-11-09 17:40:17 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 2.0ms | Allocations: 518)
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 8.6ms | Allocations: 2386)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 2.3ms | Allocations: 1421)
+  Rendered layout layouts/application.html.haml (Duration: 36.7ms | Allocations: 14136)
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 0.0ms | Allocations: 16141)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check 
+<div class="collapse navbar-collapse" id="navbarColor01">
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item active">
+      <%= link_to 'Home', root_path, class: 'nav-link' %>
+    <li class="nav-item">
+    <li class="nav-item <%= active_class(policy_privacy_path %>">
+      <%= link_to 'Políticas de privacidade', policy_privacy_path, class: 'nav-link' %>
+    </li>
+    <% if user_signed_in? %>
+      <li class="nav-item">
+      <li class="nav-item <%= active_class(quizzes_path) %>">
+        <%= link_to 'Cursos', courses_path, class: 'nav-link' %>
+      </li>
+      <li class="nav-item">
+    <% end %>
+  </ul>
+  <ul class="navbar-nav">
+    <% if user_signed_in? %>
+      <li class="nav-item">
+      <li class="nav-item <%= active_class(edit_user_registration_path) %>">
+        <%= link_to "Hi, #{current_user.email}", edit_user_registration_path, class: 'nav-link' %>
+      </li>
+      <li class="nav-item">
+      <li class="nav-item <%= active_class(destroy_user_session_path) %>">
+        <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+      </li>
+    <% else %>
+      <li class="nav-item">
+      <li class="nav-item <%= active_class(new_user_session_path) %>">
+        <%= link_to 'Sign In', new_user_session_path, class: 'nav-link' %>
+      </li>
+      <li class="nav-item">
+      <li class="nav-item <%= active_class(new_user_registration_path) %>">
+        <%= link_to 'Sign Up', new_user_registration_path, class: 'nav-link' %>
+      </li>
+    <% end %>'
+):
+1:    
+2:    <div class="collapse navbar-collapse" id="navbarColor01">
+3:      <ul class="navbar-nav mr-auto">
+4:        <li class="nav-item active">
+5:          <%= link_to 'Home', root_path, class: 'nav-link' %>
+6:        <li class="nav-item">
+7:        <li class="nav-item <%= active_class(policy_privacy_path %>">
+8:          <%= link_to 'Políticas de privacidade', policy_privacy_path, class: 'nav-link' %>
+9:        </li>
+10:        <% if user_signed_in? %>
+11:          <li class="nav-item">
+12:          <li class="nav-item <%= active_class(quizzes_path) %>">
+13:            <%= link_to 'Cursos', courses_path, class: 'nav-link' %>
+14:          </li>
+15:          <li class="nav-item">
+16:        <% end %>
+17:      </ul>
+18:      <ul class="navbar-nav">
+19:        <% if user_signed_in? %>
+20:          <li class="nav-item">
+21:          <li class="nav-item <%= active_class(edit_user_registration_path) %>">
+22:            <%= link_to "Hi, #{current_user.email}", edit_user_registration_path, class: 'nav-link' %>
+23:          </li>
+24:          <li class="nav-item">
+25:          <li class="nav-item <%= active_class(destroy_user_session_path) %>">
+26:            <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+27:          </li>
+28:        <% else %>
+29:          <li class="nav-item">
+30:          <li class="nav-item <%= active_class(new_user_session_path) %>">
+31:            <%= link_to 'Sign In', new_user_session_path, class: 'nav-link' %>
+32:          </li>
+33:          <li class="nav-item">
+34:          <li class="nav-item <%= active_class(new_user_registration_path) %>">
+35:            <%= link_to 'Sign Up', new_user_registration_path, class: 'nav-link' %>
+36:          </li>
+37:        <% end %>'
+  
+app/views/layouts/_header.html.erb:39: syntax error, unexpected `end', expecting ')'
+app/views/layouts/_header.html.erb:39: syntax error, unexpected `end', expecting ')'
+app/views/layouts/_header.html.erb:39: syntax error, unexpected `end', expecting ')'
+app/views/layouts/_header.html.erb:39: syntax error, unexpected `end', expecting ')'
+app/views/layouts/_header.html.erb:39: syntax error, unexpected `end', expecting ')'
+app/views/layouts/_header.html.erb:39: syntax error, unexpected `end', expecting ')'
+app/views/layouts/application.html.haml:12
+Started GET "/users/sign_in" for ::1 at 2022-11-09 17:40:35 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 1.0ms | Allocations: 518)
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 4.4ms | Allocations: 2386)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 1398)
+  Rendered layout layouts/application.html.haml (Duration: 19.6ms | Allocations: 14110)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.0ms | Allocations: 16193)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check 
+<div class="collapse navbar-collapse" id="navbarColor01">
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item active">
+      <%= link_to 'Home', root_path, class: 'nav-link' %>
+    <li class="nav-item">
+    <li class="nav-item <%= active_class(policy_privacy_path %>">
+      <%= link_to 'Políticas de privacidade', policy_privacy_path, class: 'nav-link' %>
+    </li>
+    <% if user_signed_in? %>
+      <li class="nav-item">
+      <li class="nav-item <%= active_class(quizzes_path) %>">
+        <%= link_to 'Cursos', courses_path, class: 'nav-link' %>
+      </li>
+      <li class="nav-item">
+    <% end %>
+  </ul>
+  <ul class="navbar-nav">
+    <% if user_signed_in? %>
+      <li class="nav-item">
+      <li class="nav-item <%= active_class(edit_user_registration_path) %>">
+        <%= link_to "Hi, #{current_user.email}", edit_user_registration_path, class: 'nav-link' %>
+      </li>
+      <li class="nav-item">
+      <li class="nav-item <%= active_class(destroy_user_session_path) %>">
+        <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+      </li>
+    <% else %>
+      <li class="nav-item">
+      <li class="nav-item <%= active_class(new_user_session_path) %>">
+        <%= link_to 'Sign In', new_user_session_path, class: 'nav-link' %>
+      </li>
+      <li class="nav-item">
+      <li class="nav-item <%= active_class(new_user_registration_path) %>">
+        <%= link_to 'Sign Up', new_user_registration_path, class: 'nav-link' %>
+      </li>
+    <% end %>
+):
+1:    
+2:    <div class="collapse navbar-collapse" id="navbarColor01">
+3:      <ul class="navbar-nav mr-auto">
+4:        <li class="nav-item active">
+5:          <%= link_to 'Home', root_path, class: 'nav-link' %>
+6:        <li class="nav-item">
+7:        <li class="nav-item <%= active_class(policy_privacy_path %>">
+8:          <%= link_to 'Políticas de privacidade', policy_privacy_path, class: 'nav-link' %>
+9:        </li>
+10:        <% if user_signed_in? %>
+11:          <li class="nav-item">
+12:          <li class="nav-item <%= active_class(quizzes_path) %>">
+13:            <%= link_to 'Cursos', courses_path, class: 'nav-link' %>
+14:          </li>
+15:          <li class="nav-item">
+16:        <% end %>
+17:      </ul>
+18:      <ul class="navbar-nav">
+19:        <% if user_signed_in? %>
+20:          <li class="nav-item">
+21:          <li class="nav-item <%= active_class(edit_user_registration_path) %>">
+22:            <%= link_to "Hi, #{current_user.email}", edit_user_registration_path, class: 'nav-link' %>
+23:          </li>
+24:          <li class="nav-item">
+25:          <li class="nav-item <%= active_class(destroy_user_session_path) %>">
+26:            <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+27:          </li>
+28:        <% else %>
+29:          <li class="nav-item">
+30:          <li class="nav-item <%= active_class(new_user_session_path) %>">
+31:            <%= link_to 'Sign In', new_user_session_path, class: 'nav-link' %>
+32:          </li>
+33:          <li class="nav-item">
+34:          <li class="nav-item <%= active_class(new_user_registration_path) %>">
+35:            <%= link_to 'Sign Up', new_user_registration_path, class: 'nav-link' %>
+36:          </li>
+37:        <% end %>
+  
+app/views/layouts/_header.html.erb:39: syntax error, unexpected `end', expecting ')'
+app/views/layouts/_header.html.erb:39: syntax error, unexpected `end', expecting ')'
+app/views/layouts/_header.html.erb:39: syntax error, unexpected `end', expecting ')'
+app/views/layouts/_header.html.erb:39: syntax error, unexpected `end', expecting ')'
+app/views/layouts/_header.html.erb:39: syntax error, unexpected `end', expecting ')'
+app/views/layouts/_header.html.erb:39: syntax error, unexpected `end', expecting ')'
+app/views/layouts/application.html.haml:12
+Started GET "/users/sign_in" for ::1 at 2022-11-09 17:45:53 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 2.8ms | Allocations: 518)
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 8.5ms | Allocations: 2388)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 13.7ms | Allocations: 5473)
+  Rendered layout layouts/application.html.haml (Duration: 44.5ms | Allocations: 18191)
+Completed 500 Internal Server Error in 53ms (Allocations: 20285)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `about_path' for #<ActionView::Base:0x0000000000b220>):
+     9:       <li class="nav-item active">
+    10:         <%= link_to 'Home', root_path, class: 'nav-link' %>
+    11:       <li class="nav-item">
+    12:       <li class="nav-item <%= active_class(about_path) %>">
+    13:         <%= link_to 'Políticas de privacidade', policy_privacy_path, class: 'nav-link' %>
+    14:       </li>
+    15:       <% if user_signed_in? %>
+  
+app/views/layouts/_header.html.erb:12
+app/views/layouts/application.html.haml:12
+Started GET "/users/sign_in" for ::1 at 2022-11-09 17:46:15 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 1.8ms | Allocations: 518)
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 8.5ms | Allocations: 2384)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 26.2ms | Allocations: 5469)
+  Rendered layout layouts/application.html.haml (Duration: 53.1ms | Allocations: 18136)
+Completed 500 Internal Server Error in 61ms (Allocations: 20200)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `policy_privacy_path' for #<ActionView::Base:0x0000000000b6f8>
+Did you mean?  privacy_policy_path):
+     9:       <li class="nav-item active">
+    10:         <%= link_to 'Home', root_path, class: 'nav-link' %>
+    11:       <li class="nav-item">
+    12:       <li class="nav-item <%= active_class(policy_privacy_path) %>">
+    13:         <%= link_to 'Políticas de privacidade', policy_privacy_path, class: 'nav-link' %>
+    14:       </li>
+    15:       <% if user_signed_in? %>
+  
+app/views/layouts/_header.html.erb:12
+app/views/layouts/application.html.haml:12
+Started GET "/users/sign_in" for ::1 at 2022-11-09 17:46:49 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 1.2ms | Allocations: 518)
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 4.6ms | Allocations: 2386)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 14.6ms | Allocations: 5196)
+  Rendered layout layouts/application.html.haml (Duration: 33.7ms | Allocations: 17908)
+Completed 500 Internal Server Error in 39ms (Allocations: 19985)
+
+
+  
+ActionView::Template::Error (undefined method `active_class' for #<ActionView::Base:0x0000000000bbf8>):
+     9:       <li class="nav-item active">
+    10:         <%= link_to 'Home', root_path, class: 'nav-link' %>
+    11:       <li class="nav-item">
+    12:       <li class="nav-item <%= active_class(privacy_policy_path) %>">
+    13:         <%= link_to 'Políticas de privacidade', privacy_policy_path, class: 'nav-link' %>
+    14:       </li>
+    15:       <% if user_signed_in? %>
+  
+app/views/layouts/_header.html.erb:12
+app/views/layouts/application.html.haml:12
+Started GET "/users/sign_in" for ::1 at 2022-11-09 17:48:20 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 1.8ms | Allocations: 518)
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 7.9ms | Allocations: 2387)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 27.2ms | Allocations: 5221)
+  Rendered layout layouts/application.html.haml (Duration: 59.1ms | Allocations: 17932)
+Completed 500 Internal Server Error in 67ms (Allocations: 20007)
+
+
+  
+ActionView::Template::Error (undefined method `active_class' for #<ActionView::Base:0x0000000000c120>):
+    29:         </li>
+    30:       <% else %>
+    31:         <li class="nav-item">
+    32:         <li class="nav-item <%= active_class(new_user_session_path) %>">
+    33:           <%= link_to 'Sign In', new_user_session_path, class: 'nav-link' %>
+    34:         </li>
+    35:         <li class="nav-item">
+  
+app/views/layouts/_header.html.erb:32
+app/views/layouts/application.html.haml:12
+Started GET "/" for ::1 at 2022-11-09 17:57:58 -0300
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#landing_page as HTML
+Completed 401 Unauthorized in 8ms (ActiveRecord: 0.0ms | Allocations: 2134)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-11-09 17:57:58 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 1.0ms | Allocations: 663)
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 5.3ms | Allocations: 3911)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 13.7ms | Allocations: 19715)
+  Rendered layout layouts/application.html.haml (Duration: 50.4ms | Allocations: 42977)
+Completed 200 OK in 68ms (Views: 53.9ms | ActiveRecord: 5.3ms | Allocations: 51142)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-11-09 17:57:58 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 130)
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1354)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 0.3ms | Allocations: 126)
+  Rendered layout layouts/application.html.haml (Duration: 8.8ms | Allocations: 5550)
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.0ms | Allocations: 6233)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-11-09 17:58:02 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 132)
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1398)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 0.8ms | Allocations: 139)
+  Rendered layout layouts/application.html.haml (Duration: 18.4ms | Allocations: 5741)
+Completed 200 OK in 21ms (Views: 19.5ms | ActiveRecord: 0.0ms | Allocations: 6493)
+
+
+Started GET "/users/sign_up" for ::1 at 2022-11-09 17:58:02 -0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/shared/_error_messages.html.erb (Duration: 0.6ms | Allocations: 192)
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 128)
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 5.3ms | Allocations: 2371)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 0.4ms | Allocations: 167)
+  Rendered layout layouts/application.html.haml (Duration: 13.7ms | Allocations: 6793)
+Completed 200 OK in 18ms (Views: 16.5ms | ActiveRecord: 0.0ms | Allocations: 8429)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-11-09 17:58:03 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 130)
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 6.2ms | Allocations: 1279)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 0.5ms | Allocations: 126)
+  Rendered layout layouts/application.html.haml (Duration: 21.3ms | Allocations: 5472)
+Completed 200 OK in 25ms (Views: 22.6ms | ActiveRecord: 0.0ms | Allocations: 6143)
+
+
+Started GET "/users/sign_up" for ::1 at 2022-11-09 17:58:04 -0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 9)
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 76)
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 6.9ms | Allocations: 1292)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 0.5ms | Allocations: 126)
+  Rendered layout layouts/application.html.haml (Duration: 23.7ms | Allocations: 5487)
+Completed 200 OK in 27ms (Views: 25.0ms | ActiveRecord: 0.0ms | Allocations: 6030)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-11-09 17:58:04 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 130)
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 5.1ms | Allocations: 1275)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 0.7ms | Allocations: 126)
+  Rendered layout layouts/application.html.haml (Duration: 20.8ms | Allocations: 5470)
+Completed 200 OK in 24ms (Views: 22.1ms | ActiveRecord: 0.0ms | Allocations: 6071)
+
+
+Started POST "/users/sign_in" for ::1 at 2022-11-09 17:58:08 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"abc@abc.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "abc@abc.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 249ms (ActiveRecord: 3.0ms | Allocations: 5911)
+
+
+Started GET "/" for ::1 at 2022-11-09 17:58:09 -0300
+Processing by StaticPagesController#landing_page as HTML
+  [1m[36mUser Load (24.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering static_pages/landing_page.html.haml within layouts/application
+  Rendered static_pages/landing_page.html.haml within layouts/application (Duration: 2.8ms | Allocations: 2566)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 1.1ms | Allocations: 616)
+  Rendered layout layouts/application.html.haml (Duration: 10.5ms | Allocations: 7476)
+Completed 200 OK in 41ms (Views: 12.0ms | ActiveRecord: 24.5ms | Allocations: 10312)
+
+
+Started GET "/users/edit" for ::1 at 2022-11-09 17:58:12 -0300
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/registrations/edit.html.erb within layouts/application
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 10)
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/registrations/edit.html.erb within layouts/application (Duration: 15.6ms | Allocations: 2355)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 0.9ms | Allocations: 520)
+  Rendered layout layouts/application.html.haml (Duration: 23.3ms | Allocations: 6917)
+Completed 200 OK in 36ms (Views: 25.6ms | ActiveRecord: 2.2ms | Allocations: 9205)
+
+
+Started GET "/users/edit" for ::1 at 2022-11-09 17:58:14 -0300
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/registrations/edit.html.erb within layouts/application
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 9)
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/registrations/edit.html.erb within layouts/application (Duration: 4.9ms | Allocations: 1732)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 1.3ms | Allocations: 500)
+  Rendered layout layouts/application.html.haml (Duration: 17.8ms | Allocations: 6330)
+Completed 200 OK in 27ms (Views: 18.7ms | ActiveRecord: 2.1ms | Allocations: 8168)
+
+
+Started GET "/" for ::1 at 2022-11-09 17:58:14 -0300
+Processing by StaticPagesController#landing_page as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering static_pages/landing_page.html.haml within layouts/application
+  Rendered static_pages/landing_page.html.haml within layouts/application (Duration: 0.5ms | Allocations: 79)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 1.5ms | Allocations: 536)
+  Rendered layout layouts/application.html.haml (Duration: 16.5ms | Allocations: 4669)
+Completed 200 OK in 22ms (Views: 17.1ms | ActiveRecord: 1.1ms | Allocations: 6445)
+
+
+Started GET "/courses" for ::1 at 2022-11-09 17:58:15 -0300
+Processing by CoursesController#index as HTML
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering courses/index.html.haml within layouts/application
+  [1m[36mCourse Load (1.9ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.haml:14
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  Rendered courses/index.html.haml within layouts/application (Duration: 103.3ms | Allocations: 57820)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 1.1ms | Allocations: 588)
+  Rendered layout layouts/application.html.haml (Duration: 110.9ms | Allocations: 62642)
+Completed 200 OK in 136ms (Views: 102.9ms | ActiveRecord: 12.3ms | Allocations: 66519)
+
+
+Started GET "/courses" for ::1 at 2022-11-09 17:58:16 -0300
+Processing by CoursesController#index as HTML
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering courses/index.html.haml within layouts/application
+  [1m[36mCourse Load (2.5ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.haml:14
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  Rendered courses/index.html.haml within layouts/application (Duration: 95.4ms | Allocations: 45695)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 0.7ms | Allocations: 514)
+  Rendered layout layouts/application.html.haml (Duration: 101.6ms | Allocations: 50320)
+Completed 200 OK in 111ms (Views: 97.9ms | ActiveRecord: 6.5ms | Allocations: 52204)
+
+
+Started GET "/courses" for ::1 at 2022-11-09 17:58:17 -0300
+Processing by CoursesController#index as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering courses/index.html.haml within layouts/application
+  [1m[36mCourse Load (2.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.haml:14
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  Rendered courses/index.html.haml within layouts/application (Duration: 106.0ms | Allocations: 45689)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 0.8ms | Allocations: 514)
+  Rendered layout layouts/application.html.haml (Duration: 113.3ms | Allocations: 50313)
+Completed 200 OK in 121ms (Views: 109.0ms | ActiveRecord: 6.5ms | Allocations: 52106)
+
+
+Started GET "/courses" for ::1 at 2022-11-09 17:58:17 -0300
+Processing by CoursesController#index as HTML
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering courses/index.html.haml within layouts/application
+  [1m[36mCourse Load (2.7ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.haml:14
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  Rendered courses/index.html.haml within layouts/application (Duration: 122.6ms | Allocations: 45689)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 0.6ms | Allocations: 514)
+  Rendered layout layouts/application.html.haml (Duration: 130.5ms | Allocations: 50257)
+Completed 200 OK in 141ms (Views: 125.1ms | ActiveRecord: 8.4ms | Allocations: 52049)
+
+
+Started GET "/courses" for ::1 at 2022-11-09 17:58:17 -0300
+Processing by CoursesController#index as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering courses/index.html.haml within layouts/application
+  [1m[36mCourse Load (2.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.haml:14
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  Rendered courses/index.html.haml within layouts/application (Duration: 130.9ms | Allocations: 45687)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 0.9ms | Allocations: 514)
+  Rendered layout layouts/application.html.haml (Duration: 138.2ms | Allocations: 50311)
+Completed 200 OK in 147ms (Views: 133.1ms | ActiveRecord: 7.5ms | Allocations: 52104)
+
+
+Started GET "/users/sign_out" for ::1 at 2022-11-09 17:58:18 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_out"):
+  
+Started GET "/users/sign_out" for ::1 at 2022-11-09 17:59:21 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_out"):
+  
+Started GET "/users/sign_out" for ::1 at 2022-11-09 17:59:22 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_out"):
+  
+Started GET "/" for ::1 at 2022-11-09 17:59:24 -0300
+Processing by StaticPagesController#landing_page as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering static_pages/landing_page.html.haml within layouts/application
+  Rendered static_pages/landing_page.html.haml within layouts/application (Duration: 6.2ms | Allocations: 2553)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 31.7ms | Allocations: 19953)
+  Rendered layout layouts/application.html.haml (Duration: 63.0ms | Allocations: 32721)
+Completed 200 OK in 77ms (Views: 66.2ms | ActiveRecord: 1.7ms | Allocations: 35632)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2022-11-09 17:59:27 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 19ms (ActiveRecord: 1.7ms | Allocations: 6984)
+
+
+Started GET "/" for ::1 at 2022-11-09 17:59:27 -0300
+Processing by StaticPagesController#landing_page as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 274)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-11-09 17:59:27 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 1.7ms | Allocations: 518)
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 9.6ms | Allocations: 2394)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 0.6ms | Allocations: 165)
+  Rendered layout layouts/application.html.haml (Duration: 22.2ms | Allocations: 6851)
+Completed 200 OK in 29ms (Views: 26.7ms | ActiveRecord: 0.0ms | Allocations: 8668)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-11-09 19:13:32 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 1.0ms | Allocations: 518)
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 5.7ms | Allocations: 2388)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 14.0ms | Allocations: 19511)
+  Rendered layout layouts/application.html.haml (Duration: 37.8ms | Allocations: 32284)
+Completed 200 OK in 44ms (Views: 42.4ms | Allocations: 34376)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-11-09 19:13:35 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 130)
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 5.3ms | Allocations: 1275)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 0.5ms | Allocations: 126)
+  Rendered layout layouts/application.html.haml (Duration: 16.6ms | Allocations: 5468)
+Completed 200 OK in 19ms (Views: 17.4ms | Allocations: 6133)
+
+
+Started POST "/users/sign_in" for ::1 at 2022-11-09 19:14:14 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"abc@abc.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "abc@abc.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 299ms (ActiveRecord: 20.3ms | Allocations: 8831)
+
+
+Started GET "/" for ::1 at 2022-11-09 19:14:14 -0300
+Processing by StaticPagesController#landing_page as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering static_pages/landing_page.html.haml within layouts/application
+  Rendered static_pages/landing_page.html.haml within layouts/application (Duration: 2.4ms | Allocations: 2550)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 0.7ms | Allocations: 626)
+  Rendered layout layouts/application.html.haml (Duration: 9.1ms | Allocations: 7454)
+Completed 200 OK in 15ms (Views: 10.5ms | ActiveRecord: 0.9ms | Allocations: 9935)
+
+
+Started GET "/" for ::1 at 2022-11-09 19:15:19 -0300
+Processing by StaticPagesController#landing_page as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering static_pages/landing_page.html.haml within layouts/application
+  Rendered static_pages/landing_page.html.haml within layouts/application (Duration: 3.6ms | Allocations: 2546)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 17.7ms | Allocations: 19279)
+  Rendered layout layouts/application.html.haml (Duration: 44.8ms | Allocations: 31982)
+Completed 200 OK in 53ms (Views: 46.8ms | ActiveRecord: 1.4ms | Allocations: 34936)
+
+
+Started GET "/?name=" for ::1 at 2022-11-09 19:15:20 -0300
+Processing by StaticPagesController#landing_page as HTML
+  Parameters: {"name"=>""}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering static_pages/landing_page.html.haml within layouts/application
+  Rendered static_pages/landing_page.html.haml within layouts/application (Duration: 0.5ms | Allocations: 79)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 1.2ms | Allocations: 559)
+  Rendered layout layouts/application.html.haml (Duration: 16.1ms | Allocations: 4692)
+Completed 200 OK in 25ms (Views: 17.1ms | ActiveRecord: 1.7ms | Allocations: 6681)
+
+
+Started GET "/?name=" for ::1 at 2022-11-09 19:15:21 -0300
+Processing by StaticPagesController#landing_page as HTML
+  Parameters: {"name"=>""}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering static_pages/landing_page.html.haml within layouts/application
+  Rendered static_pages/landing_page.html.haml within layouts/application (Duration: 0.4ms | Allocations: 79)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 1.5ms | Allocations: 559)
+  Rendered layout layouts/application.html.haml (Duration: 15.9ms | Allocations: 4693)
+Completed 200 OK in 26ms (Views: 16.9ms | ActiveRecord: 1.8ms | Allocations: 6467)
+
+
+Started GET "/?name=" for ::1 at 2022-11-09 19:15:23 -0300
+Processing by StaticPagesController#landing_page as HTML
+  Parameters: {"name"=>""}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering static_pages/landing_page.html.haml within layouts/application
+  Rendered static_pages/landing_page.html.haml within layouts/application (Duration: 0.4ms | Allocations: 79)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 1.4ms | Allocations: 559)
+  Rendered layout layouts/application.html.haml (Duration: 16.7ms | Allocations: 4748)
+Completed 200 OK in 25ms (Views: 17.6ms | ActiveRecord: 1.6ms | Allocations: 6524)
+
+
+Started GET "/courses" for ::1 at 2022-11-09 19:17:55 -0300
+Processing by CoursesController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering courses/index.html.haml within layouts/application
+  [1m[36mCourse Load (1.6ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.haml:14
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  Rendered courses/index.html.haml within layouts/application (Duration: 109.8ms | Allocations: 56493)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 80.2ms | Allocations: 19250)
+  Rendered layout layouts/application.html.haml (Duration: 240.8ms | Allocations: 85959)
+Completed 200 OK in 267ms (Views: 234.2ms | ActiveRecord: 17.8ms | Allocations: 95132)
+
+
+Started GET "/courses" for ::1 at 2022-11-09 19:18:00 -0300
+Processing by CoursesController#index as HTML
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering courses/index.html.haml within layouts/application
+  [1m[36mCourse Load (3.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.haml:14
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  Rendered courses/index.html.haml within layouts/application (Duration: 105.6ms | Allocations: 45689)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 0.7ms | Allocations: 526)
+  Rendered layout layouts/application.html.haml (Duration: 112.2ms | Allocations: 50325)
+Completed 200 OK in 125ms (Views: 106.5ms | ActiveRecord: 8.9ms | Allocations: 52216)
+
+
+Started GET "/courses" for ::1 at 2022-11-09 19:18:01 -0300
+Processing by CoursesController#index as HTML
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering courses/index.html.haml within layouts/application
+  [1m[36mCourse Load (2.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.haml:14
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  Rendered courses/index.html.haml within layouts/application (Duration: 90.2ms | Allocations: 45687)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 1.3ms | Allocations: 526)
+  Rendered layout layouts/application.html.haml (Duration: 97.3ms | Allocations: 50295)
+Completed 200 OK in 107ms (Views: 92.7ms | ActiveRecord: 7.4ms | Allocations: 52106)
+
+
+Started GET "/" for ::1 at 2022-11-09 19:18:02 -0300
+Processing by StaticPagesController#landing_page as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering static_pages/landing_page.html.haml within layouts/application
+  Rendered static_pages/landing_page.html.haml within layouts/application (Duration: 3.2ms | Allocations: 2515)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 0.9ms | Allocations: 627)
+  Rendered layout layouts/application.html.haml (Duration: 11.8ms | Allocations: 7368)
+Completed 200 OK in 22ms (Views: 14.0ms | ActiveRecord: 1.4ms | Allocations: 10267)
+
+
+Started GET "/courses?titulo=Medicine+" for ::1 at 2022-11-09 19:18:03 -0300
+Processing by CoursesController#index as HTML
+  Parameters: {"titulo"=>"Medicine "}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering courses/index.html.haml within layouts/application
+  [1m[36mCourse Load (2.5ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.haml:14
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  Rendered courses/index.html.haml within layouts/application (Duration: 120.9ms | Allocations: 45742)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 0.6ms | Allocations: 533)
+  Rendered layout layouts/application.html.haml (Duration: 127.6ms | Allocations: 50385)
+Completed 200 OK in 138ms (Views: 122.4ms | ActiveRecord: 7.8ms | Allocations: 52413)
+
+
+Started GET "/courses?titulo=art+" for ::1 at 2022-11-09 19:18:27 -0300
+Processing by CoursesController#index as HTML
+  Parameters: {"titulo"=>"art "}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering courses/index.html.haml within layouts/application
+  [1m[36mCourse Load (2.5ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.haml:14
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  Rendered courses/index.html.haml within layouts/application (Duration: 111.6ms | Allocations: 45687)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 0.7ms | Allocations: 533)
+  Rendered layout layouts/application.html.haml (Duration: 118.4ms | Allocations: 50330)
+Completed 200 OK in 127ms (Views: 113.5ms | ActiveRecord: 7.3ms | Allocations: 52141)
+
+
+Started GET "/courses?titulo=art+" for ::1 at 2022-11-09 19:19:54 -0300
+Processing by CoursesController#index as HTML
+  Parameters: {"titulo"=>"art "}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering courses/index.html.haml within layouts/application
+  [1m[36mCourse Load (1.5ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE (titulo ILIKE '%art %')[0m
+  ↳ app/views/courses/index.html.haml:14
+  Rendered courses/index.html.haml within layouts/application (Duration: 3.0ms | Allocations: 987)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 0.8ms | Allocations: 608)
+  Rendered layout layouts/application.html.haml (Duration: 11.1ms | Allocations: 5928)
+Completed 200 OK in 31ms (Views: 10.6ms | ActiveRecord: 6.7ms | Allocations: 14159)
+
+
+Started GET "/courses?titulo=medicine" for ::1 at 2022-11-09 19:19:59 -0300
+Processing by CoursesController#index as HTML
+  Parameters: {"titulo"=>"medicine"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering courses/index.html.haml within layouts/application
+  [1m[36mCourse Load (1.4ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE (titulo ILIKE '%medicine%')[0m
+  ↳ app/views/courses/index.html.haml:14
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  Rendered courses/index.html.haml within layouts/application (Duration: 25.4ms | Allocations: 7381)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 0.7ms | Allocations: 532)
+  Rendered layout layouts/application.html.haml (Duration: 36.1ms | Allocations: 11866)
+Completed 200 OK in 43ms (Views: 29.0ms | ActiveRecord: 9.4ms | Allocations: 13838)
+
+
+Started GET "/courses?titulo=arts" for ::1 at 2022-11-09 19:20:04 -0300
+Processing by CoursesController#index as HTML
+  Parameters: {"titulo"=>"arts"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering courses/index.html.haml within layouts/application
+  [1m[36mCourse Load (1.4ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE (titulo ILIKE '%arts%')[0m
+  ↳ app/views/courses/index.html.haml:14
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.haml:18
+  Rendered courses/index.html.haml within layouts/application (Duration: 18.4ms | Allocations: 7600)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 0.7ms | Allocations: 532)
+  Rendered layout layouts/application.html.haml (Duration: 26.0ms | Allocations: 12186)
+Completed 200 OK in 33ms (Views: 24.0ms | ActiveRecord: 4.0ms | Allocations: 14019)
+
+
