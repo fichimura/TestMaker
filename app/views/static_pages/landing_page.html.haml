@@ -1,3 +1,57 @@
-%h1 Hello World
-= link_to "Cursos", courses_path, class:'btn btn-success'
-= link_to "Privacy Policy",  privacy_policy_path
+.jumbotron
+  .display-4
+    Aqui o método é micro, mas o aprendizado é macro
+
+  .p-4
+    .form-inline.my-2.my-lg-0
+    = form_tag(courses_path, method: :get) do
+      .input-group
+        = text_field_tag :title, params[:title], autocomplete: 'off', placeholder: "Pesquisar", class: 'form-control-sm'
+        %span.input-group-append
+          %button.btn.btn-primary.btn-sm{:type => "submit"}
+            Pesquisar
+
+.card-group
+  .card.card-body
+    %h1
+      .fa.fa-graduation-cap
+    = Course.count
+    cursos
+    .row
+    cursos disponíveis para você aprender DevOps
+  .card.card-body
+    %h1
+    = Course.distinct.count(:user_id)
+    Professores
+    .row
+    Encontre o professor que deseja
+  .card.card-body
+    %h1
+    = User.count
+    estudantes
+    .row
+    Conheça seus colegas e interaja com eles para ampliar seu conhcecimento
+
+
+%hr
+%h2
+  Cursos populares
+.card-columns
+  - @courses.each do |course|
+    = render 'courses/course', course: course
+
+%hr
+%h2 
+  Cursos mais bem avaliados
+.card-columns
+  - @courses.each do |course|
+    = render 'courses/course', course: course
+
+%hr
+%h2 
+  Últimos cursos
+.card-columns
+  - @latest_couses.each do |course|
+    = render 'courses/course', course: course
+
+%hr

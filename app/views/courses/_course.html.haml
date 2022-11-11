@@ -1,0 +1,13 @@
+.card
+  .card-header
+    = link_to course.titulo, course_path(course)
+  .card-body
+    = course.descricao
+  .card-footer
+    = course.created_at.strftime('%d-%b-%Y')
+    .row
+    = course.user
+  .card-footer
+    = link_to 'Detalhes', course, class: 'btn btn-sm btn-primary'
+    = link_to 'Editar', edit_course_path(course), class: 'btn btn-sm btn-warning'
+    = link_to 'Deletar', course, method: :delete, data: { confirm: 'Você tem certeza que deseja deletar este curso?' }, class: 'btn btn-sm btn-danger'
