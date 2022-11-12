@@ -7,7 +7,8 @@
     = f.input :titulo
     = f.input :descricao
     = f.input :linguagens
-    = f.input :nivel, collection: [ "Iniciante", "Intermediário", "Avançado"]
+    = f.input :nivel, collection: Course.niveis, include_blank: true
+    /= f.input :nivel, collection: [ "Iniciante", "Intermediário", "Avançado"]
 
 
 

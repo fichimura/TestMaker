@@ -14,7 +14,7 @@
   .card-footer
     = course.created_at.strftime('%d-%b-%Y')
     .row
-    = course.user
+    = course.user.username
   .card-footer
     = link_to 'Detalhes', course, class: 'btn btn-sm btn-primary'
     = link_to 'Editar', edit_course_path(course), class: 'btn btn-sm btn-warning'
