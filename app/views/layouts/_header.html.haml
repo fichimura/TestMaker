@@ -13,8 +13,10 @@
             Cursos
         %li.nav-item{class: "#{'active font-weight-bold' if current_page?(new_course_path)}"}
           = link_to new_course_path, class: 'nav-link' do
-            .fa.fa-plus
             Novo Curso
+        %li.nav-item{class: "#{'active font-weight-bold' if current_page?(users_path)}"}
+          = link_to users_path, class: 'nav-link' do
+            Usuarios
 
 
 

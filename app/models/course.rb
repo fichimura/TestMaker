@@ -7,5 +7,7 @@ class Course < ApplicationRecord
         titulo
     end
    
+    extend FriendlyId
+    friendly_id :titulo, use: :slugged
 
 end
