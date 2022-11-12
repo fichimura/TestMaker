@@ -1,5 +1,5 @@
 class Course < ApplicationRecord
-    validates :titulo,  presence: true
+    validates :titulo, :linguagens, :nivel,  presence: true
     validates :descricao, presence: true, length: { :minimum => 5 }
     
     belongs_to :user

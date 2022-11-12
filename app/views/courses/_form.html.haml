@@ -6,7 +6,10 @@
   .form-inputs
     = f.input :titulo
     = f.input :descricao
+    = f.input :linguagens
+    = f.input :nivel, collection: [ "Iniciante", "Intermediário", "Avançado"]
+
 
 
   .form-actions
-    = f.button :submit
+    = f.button :submit, class: 'btn btn-success'

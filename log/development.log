@@ -11513,3 +11513,1691 @@ Migrating to AddTrackableToDevise (20221112190348)
   [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(2039971103330730045)[0m
   [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2039971103330730045)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddFieldsToCourses (20221112192633)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.6ms)[0m  [1m[35mALTER TABLE "courses" ADD "linguagens" character varying NOT NULL[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(2039971103330730045)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2039971103330730045)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddFieldsToCourses (20221112192633)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "courses" ADD "linguagens" character varying[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "courses" ADD "nivel" character varying DEFAULT 'Iniciante' NOT NULL[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221112192633"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(2039971103330730045)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users" for ::1 at 2022-11-12 16:30:58 -0300
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering users/index.html.haml within layouts/application
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."created_at" DESC[0m
+  ↳ app/views/users/index.html.haml:2
+  Rendered users/_user.html.haml (Duration: 486.3ms | Allocations: 283067)
+  Rendered users/_user.html.haml (Duration: 0.7ms | Allocations: 345)
+  Rendered users/index.html.haml within layouts/application (Duration: 505.4ms | Allocations: 291218)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 19.8ms | Allocations: 19270)
+  Rendered layout layouts/application.html.haml (Duration: 562.1ms | Allocations: 326644)
+Completed 200 OK in 624ms (Views: 566.0ms | ActiveRecord: 16.2ms | Allocations: 340268)
+
+
+Started GET "/" for ::1 at 2022-11-12 16:31:00 -0300
+Processing by StaticPagesController#landing_page as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering static_pages/landing_page.html.haml within layouts/application
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "courses"[0m
+  ↳ app/views/static_pages/landing_page.html.haml:18
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT COUNT(DISTINCT "courses"."user_id") FROM "courses"[0m
+  ↳ app/views/static_pages/landing_page.html.haml:24
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/views/static_pages/landing_page.html.haml:30
+  [1m[36mCourse Load (1.5ms)[0m  [1m[34mSELECT "courses".* FROM "courses" LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/views/static_pages/landing_page.html.haml:40
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 18.6ms | Allocations: 9051)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 3.8ms | Allocations: 856)
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 3.5ms | Allocations: 824)
+  Rendered courses/_course.html.haml (Duration: 0.5ms | Allocations: 209)
+  Rendered courses/_course.html.haml (Duration: 0.4ms | Allocations: 206)
+  Rendered courses/_course.html.haml (Duration: 0.4ms | Allocations: 211)
+  [1m[36mCourse Load (2.4ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."created_at" DESC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/views/static_pages/landing_page.html.haml:54
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 4.1ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 3.1ms | Allocations: 825)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.8ms | Allocations: 820)
+  Rendered static_pages/landing_page.html.haml within layouts/application (Duration: 85.0ms | Allocations: 34410)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.haml:6
+  Rendered layouts/_header.html.haml (Duration: 6.9ms | Allocations: 1656)
+  Rendered layout layouts/application.html.haml (Duration: 103.5ms | Allocations: 40274)
+Completed 200 OK in 127ms (Views: 89.1ms | ActiveRecord: 20.6ms | Allocations: 45188)
+
+
+Started GET "/courses" for ::1 at 2022-11-12 16:31:03 -0300
+Processing by CoursesController#index as HTML
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering courses/index.html.haml within layouts/application
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "courses"[0m
+  ↳ app/views/courses/index.html.haml:3
+  [1m[36mCourse Load (2.6ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.haml:6
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 7.2ms | Allocations: 1282)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 4.2ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 3.0ms | Allocations: 824)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.8ms | Allocations: 821)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 3.1ms | Allocations: 821)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 3.8ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 3.1ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.7ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.9ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 3.4ms | Allocations: 824)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 3.6ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 3.1ms | Allocations: 819)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.9ms | Allocations: 824)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.7ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 3.7ms | Allocations: 823)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.7ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.3ms | Allocations: 821)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.6ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.9ms | Allocations: 818)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.9ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.2ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.4ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.8ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.8ms | Allocations: 821)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.6ms | Allocations: 823)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 4.2ms | Allocations: 823)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 3.2ms | Allocations: 818)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.5ms | Allocations: 824)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.7ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 3.7ms | Allocations: 825)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 3.4ms | Allocations: 820)
+  Rendered courses/index.html.haml within layouts/application (Duration: 128.4ms | Allocations: 34336)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 1.6ms | Allocations: 662)
+  Rendered layout layouts/application.html.haml (Duration: 140.3ms | Allocations: 39207)
+Completed 200 OK in 156ms (Views: 135.1ms | ActiveRecord: 12.3ms | Allocations: 42834)
+
+
+Started GET "/courses/new" for ::1 at 2022-11-12 16:31:07 -0300
+Processing by CoursesController#new as HTML
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering courses/new.html.haml within layouts/application
+  Rendered courses/_form.html.haml (Duration: 98.7ms | Allocations: 27201)
+  Rendered courses/new.html.haml within layouts/application (Duration: 106.3ms | Allocations: 30450)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 1.2ms | Allocations: 637)
+  Rendered layout layouts/application.html.haml (Duration: 117.7ms | Allocations: 35287)
+Completed 200 OK in 132ms (Views: 118.9ms | ActiveRecord: 2.1ms | Allocations: 37919)
+
+
+Started POST "/courses" for ::1 at 2022-11-12 16:31:11 -0300
+Processing by CoursesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "course"=>{"titulo"=>"", "descricao"=>"", "linguagens"=>"", "nivel"=>"cvvcxv"}, "commit"=>"Create Course"}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering courses/new.html.haml within layouts/application
+  Rendered courses/_form.html.haml (Duration: 32.9ms | Allocations: 18428)
+  Rendered courses/new.html.haml within layouts/application (Duration: 33.6ms | Allocations: 18577)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 1.1ms | Allocations: 562)
+  Rendered layout layouts/application.html.haml (Duration: 44.5ms | Allocations: 23251)
+Completed 422 Unprocessable Entity in 74ms (Views: 45.6ms | ActiveRecord: 2.2ms | Allocations: 37162)
+
+
+Started POST "/courses" for ::1 at 2022-11-12 16:31:16 -0300
+Processing by CoursesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "course"=>{"titulo"=>"", "descricao"=>"", "linguagens"=>"", "nivel"=>""}, "commit"=>"Create Course"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering courses/new.html.haml within layouts/application
+  Rendered courses/_form.html.haml (Duration: 38.8ms | Allocations: 18052)
+  Rendered courses/new.html.haml within layouts/application (Duration: 39.5ms | Allocations: 18176)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 1.4ms | Allocations: 536)
+  Rendered layout layouts/application.html.haml (Duration: 54.0ms | Allocations: 22664)
+Completed 422 Unprocessable Entity in 68ms (Views: 54.9ms | ActiveRecord: 2.0ms | Allocations: 25568)
+
+
+Started POST "/courses" for ::1 at 2022-11-12 16:31:17 -0300
+Processing by CoursesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "course"=>{"titulo"=>"", "descricao"=>"", "linguagens"=>"", "nivel"=>""}, "commit"=>"Create Course"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering courses/new.html.haml within layouts/application
+  Rendered courses/_form.html.haml (Duration: 40.1ms | Allocations: 18052)
+  Rendered courses/new.html.haml within layouts/application (Duration: 41.8ms | Allocations: 18176)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 1.4ms | Allocations: 536)
+  Rendered layout layouts/application.html.haml (Duration: 56.9ms | Allocations: 22666)
+Completed 422 Unprocessable Entity in 69ms (Views: 57.9ms | ActiveRecord: 1.6ms | Allocations: 25340)
+
+
+Started GET "/courses" for ::1 at 2022-11-12 16:34:12 -0300
+Processing by CoursesController#index as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering courses/index.html.haml within layouts/application
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "courses"[0m
+  ↳ app/views/courses/index.html.haml:3
+  [1m[36mCourse Load (1.8ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.haml:6
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 7.7ms | Allocations: 2325)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.3ms | Allocations: 819)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.9ms | Allocations: 824)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 3.9ms | Allocations: 821)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.4ms | Allocations: 821)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 1.8ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.8ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 3.3ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 4.4ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.9ms | Allocations: 824)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.4ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.3ms | Allocations: 819)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 3.8ms | Allocations: 824)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 3.2ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.7ms | Allocations: 823)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.9ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.8ms | Allocations: 821)
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 5.3ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 3.1ms | Allocations: 818)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.6ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.1ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 3.9ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 3.7ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.2ms | Allocations: 821)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.6ms | Allocations: 823)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.7ms | Allocations: 823)
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 4.7ms | Allocations: 818)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.7ms | Allocations: 824)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.6ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.3ms | Allocations: 825)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 3.0ms | Allocations: 820)
+  Rendered courses/index.html.haml within layouts/application (Duration: 141.0ms | Allocations: 36598)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 1.2ms | Allocations: 667)
+  Rendered layout layouts/application.html.haml (Duration: 153.4ms | Allocations: 41528)
+Completed 200 OK in 215ms (Views: 140.2ms | ActiveRecord: 26.1ms | Allocations: 52347)
+
+
+Started GET "/courses/psychology-279/edit" for ::1 at 2022-11-12 16:34:14 -0300
+Processing by CoursesController#edit as HTML
+  Parameters: {"id"=>"psychology-279"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCourse Load (2.6ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."slug" = $1 LIMIT $2[0m  [["slug", "psychology-279"], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:68:in `set_course'
+  Rendering layout layouts/application.html.haml
+  Rendering courses/edit.html.haml within layouts/application
+  Rendered courses/_form.html.haml (Duration: 35.4ms | Allocations: 16279)
+  Rendered courses/edit.html.haml within layouts/application (Duration: 44.7ms | Allocations: 19898)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 1.3ms | Allocations: 593)
+  Rendered layout layouts/application.html.haml (Duration: 58.8ms | Allocations: 24518)
+Completed 200 OK in 83ms (Views: 60.3ms | ActiveRecord: 4.6ms | Allocations: 28050)
+
+
+Started GET "/courses/psychology-279/edit" for ::1 at 2022-11-12 16:36:47 -0300
+Processing by CoursesController#edit as HTML
+  Parameters: {"id"=>"psychology-279"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCourse Load (1.7ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."slug" = $1 LIMIT $2[0m  [["slug", "psychology-279"], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:68:in `set_course'
+  Rendering layout layouts/application.html.haml
+  Rendering courses/edit.html.haml within layouts/application
+  Rendered courses/_form.html.haml (Duration: 42.2ms | Allocations: 20563)
+  Rendered courses/edit.html.haml within layouts/application (Duration: 53.1ms | Allocations: 24332)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 39.7ms | Allocations: 18959)
+  Rendered layout layouts/application.html.haml (Duration: 116.1ms | Allocations: 54463)
+Completed 200 OK in 134ms (Views: 120.1ms | ActiveRecord: 3.3ms | Allocations: 58062)
+
+
+Started GET "/courses/psychology-279/edit" for ::1 at 2022-11-12 16:37:30 -0300
+Processing by CoursesController#edit as HTML
+  Parameters: {"id"=>"psychology-279"}
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCourse Load (1.9ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."slug" = $1 LIMIT $2[0m  [["slug", "psychology-279"], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:68:in `set_course'
+  Rendering layout layouts/application.html.haml
+  Rendering courses/edit.html.haml within layouts/application
+  Rendered courses/_form.html.haml (Duration: 48.2ms | Allocations: 20587)
+  Rendered courses/edit.html.haml within layouts/application (Duration: 58.3ms | Allocations: 24366)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 22.4ms | Allocations: 18947)
+  Rendered layout layouts/application.html.haml (Duration: 102.7ms | Allocations: 54515)
+Completed 200 OK in 122ms (Views: 106.3ms | ActiveRecord: 4.2ms | Allocations: 58334)
+
+
+Started GET "/" for ::1 at 2022-11-12 16:37:32 -0300
+Processing by StaticPagesController#landing_page as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering static_pages/landing_page.html.haml within layouts/application
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "courses"[0m
+  ↳ app/views/static_pages/landing_page.html.haml:18
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT COUNT(DISTINCT "courses"."user_id") FROM "courses"[0m
+  ↳ app/views/static_pages/landing_page.html.haml:24
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/views/static_pages/landing_page.html.haml:30
+  [1m[36mCourse Load (1.9ms)[0m  [1m[34mSELECT "courses".* FROM "courses" LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/views/static_pages/landing_page.html.haml:40
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 14.8ms | Allocations: 6922)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 3.1ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 3.9ms | Allocations: 824)
+  Rendered courses/_course.html.haml (Duration: 0.6ms | Allocations: 207)
+  Rendered courses/_course.html.haml (Duration: 0.5ms | Allocations: 206)
+  Rendered courses/_course.html.haml (Duration: 0.6ms | Allocations: 211)
+  [1m[36mCourse Load (2.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."created_at" DESC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/views/static_pages/landing_page.html.haml:54
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 3.9ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 3.4ms | Allocations: 825)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.6ms | Allocations: 820)
+  Rendered static_pages/landing_page.html.haml within layouts/application (Duration: 75.7ms | Allocations: 28092)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.haml:6
+  Rendered layouts/_header.html.haml (Duration: 5.5ms | Allocations: 1656)
+  Rendered layout layouts/application.html.haml (Duration: 90.9ms | Allocations: 33951)
+Completed 200 OK in 99ms (Views: 80.5ms | ActiveRecord: 14.3ms | Allocations: 35710)
+
+
+Started GET "/courses/new" for ::1 at 2022-11-12 16:37:32 -0300
+Processing by CoursesController#new as HTML
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering courses/new.html.haml within layouts/application
+  Rendered courses/_form.html.haml (Duration: 121.9ms | Allocations: 15617)
+  Rendered courses/new.html.haml within layouts/application (Duration: 153.5ms | Allocations: 18697)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 1.5ms | Allocations: 598)
+  Rendered layout layouts/application.html.haml (Duration: 164.1ms | Allocations: 23303)
+Completed 200 OK in 196ms (Views: 171.5ms | ActiveRecord: 1.9ms | Allocations: 25404)
+
+
+Started GET "/courses" for ::1 at 2022-11-12 16:37:33 -0300
+Processing by CoursesController#index as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering courses/index.html.haml within layouts/application
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "courses"[0m
+  ↳ app/views/courses/index.html.haml:3
+  [1m[36mCourse Load (3.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.haml:6
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 7.5ms | Allocations: 1126)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 3.4ms | Allocations: 819)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 3.9ms | Allocations: 824)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 3.1ms | Allocations: 821)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.8ms | Allocations: 821)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 4.0ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 3.4ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 3.6ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 3.3ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 3.2ms | Allocations: 824)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 3.0ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 3.0ms | Allocations: 819)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 3.3ms | Allocations: 824)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 3.2ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 4.1ms | Allocations: 823)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.8ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.3ms | Allocations: 821)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.5ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.6ms | Allocations: 818)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.2ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.2ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.2ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.5ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.8ms | Allocations: 821)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 3.1ms | Allocations: 823)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 3.0ms | Allocations: 823)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.2ms | Allocations: 818)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.5ms | Allocations: 824)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.4ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.4ms | Allocations: 825)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.8ms | Allocations: 820)
+  Rendered courses/index.html.haml within layouts/application (Duration: 128.6ms | Allocations: 33940)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 1.5ms | Allocations: 591)
+  Rendered layout layouts/application.html.haml (Duration: 142.7ms | Allocations: 38959)
+Completed 200 OK in 154ms (Views: 134.5ms | ActiveRecord: 10.9ms | Allocations: 40914)
+
+
+Started GET "/courses/new" for ::1 at 2022-11-12 16:37:35 -0300
+Processing by CoursesController#new as HTML
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering courses/new.html.haml within layouts/application
+  Rendered courses/_form.html.haml (Duration: 31.3ms | Allocations: 16060)
+  Rendered courses/new.html.haml within layouts/application (Duration: 32.2ms | Allocations: 16191)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 1.5ms | Allocations: 598)
+  Rendered layout layouts/application.html.haml (Duration: 46.1ms | Allocations: 20896)
+Completed 200 OK in 58ms (Views: 47.2ms | ActiveRecord: 2.1ms | Allocations: 22709)
+
+
+Started GET "/courses" for ::1 at 2022-11-12 16:37:36 -0300
+Processing by CoursesController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering courses/index.html.haml within layouts/application
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "courses"[0m
+  ↳ app/views/courses/index.html.haml:3
+  [1m[36mCourse Load (1.9ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.haml:6
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 6.1ms | Allocations: 1118)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 4.6ms | Allocations: 818)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.9ms | Allocations: 824)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 3.7ms | Allocations: 821)
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 7.7ms | Allocations: 1292)
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 5.5ms | Allocations: 845)
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 5.8ms | Allocations: 829)
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 6.2ms | Allocations: 897)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 4.0ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.7ms | Allocations: 824)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 4.4ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 4.0ms | Allocations: 819)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.6ms | Allocations: 824)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 4.0ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 5.1ms | Allocations: 823)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.5ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.4ms | Allocations: 821)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.5ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 4.3ms | Allocations: 818)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 3.3ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.6ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 3.1ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 3.0ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 4.4ms | Allocations: 821)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.6ms | Allocations: 823)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.6ms | Allocations: 823)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.3ms | Allocations: 818)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 3.0ms | Allocations: 824)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 4.0ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 3.1ms | Allocations: 825)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.9ms | Allocations: 820)
+  Rendered courses/index.html.haml within layouts/application (Duration: 146.7ms | Allocations: 31227)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 1.4ms | Allocations: 591)
+  Rendered layout layouts/application.html.haml (Duration: 160.1ms | Allocations: 35872)
+Completed 200 OK in 170ms (Views: 154.0ms | ActiveRecord: 8.5ms | Allocations: 37699)
+
+
+Started GET "/courses/psychology-279/edit" for ::1 at 2022-11-12 16:37:37 -0300
+Processing by CoursesController#edit as HTML
+  Parameters: {"id"=>"psychology-279"}
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCourse Load (2.4ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."slug" = $1 LIMIT $2[0m  [["slug", "psychology-279"], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:68:in `set_course'
+  Rendering layout layouts/application.html.haml
+  Rendering courses/edit.html.haml within layouts/application
+  Rendered courses/_form.html.haml (Duration: 36.7ms | Allocations: 15680)
+  Rendered courses/edit.html.haml within layouts/application (Duration: 38.0ms | Allocations: 15852)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 1.4ms | Allocations: 593)
+  Rendered layout layouts/application.html.haml (Duration: 56.7ms | Allocations: 20563)
+Completed 200 OK in 77ms (Views: 60.4ms | ActiveRecord: 5.1ms | Allocations: 23665)
+
+
+Started GET "/courses/psychology-279/edit" for ::1 at 2022-11-12 16:39:14 -0300
+Processing by CoursesController#edit as HTML
+  Parameters: {"id"=>"psychology-279"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCourse Load (2.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."slug" = $1 LIMIT $2[0m  [["slug", "psychology-279"], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:68:in `set_course'
+  Rendering layout layouts/application.html.haml
+  Rendering courses/edit.html.haml within layouts/application
+  Rendered courses/_form.html.haml (Duration: 41.3ms | Allocations: 20601)
+  Rendered courses/edit.html.haml within layouts/application (Duration: 50.4ms | Allocations: 24384)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 24.0ms | Allocations: 18958)
+  Rendered layout layouts/application.html.haml (Duration: 97.2ms | Allocations: 54679)
+Completed 200 OK in 116ms (Views: 100.6ms | ActiveRecord: 3.9ms | Allocations: 58277)
+
+
+Started GET "/courses/psychology-279/edit" for ::1 at 2022-11-12 16:39:15 -0300
+Processing by CoursesController#edit as HTML
+  Parameters: {"id"=>"psychology-279"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCourse Load (2.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."slug" = $1 LIMIT $2[0m  [["slug", "psychology-279"], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:68:in `set_course'
+  Rendering layout layouts/application.html.haml
+  Rendering courses/edit.html.haml within layouts/application
+  Rendered courses/_form.html.haml (Duration: 32.9ms | Allocations: 15648)
+  Rendered courses/edit.html.haml within layouts/application (Duration: 34.1ms | Allocations: 15807)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 2.2ms | Allocations: 593)
+  Rendered layout layouts/application.html.haml (Duration: 47.8ms | Allocations: 20376)
+Completed 200 OK in 64ms (Views: 48.6ms | ActiveRecord: 3.8ms | Allocations: 23240)
+
+
+Started GET "/courses/psychology-279/edit" for ::1 at 2022-11-12 16:40:55 -0300
+Processing by CoursesController#edit as HTML
+  Parameters: {"id"=>"psychology-279"}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCourse Load (1.7ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."slug" = $1 LIMIT $2[0m  [["slug", "psychology-279"], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:68:in `set_course'
+  Rendering layout layouts/application.html.haml
+  Rendering courses/edit.html.haml within layouts/application
+  Rendered courses/_form.html.haml (Duration: 49.1ms | Allocations: 15645)
+  Rendered courses/edit.html.haml within layouts/application (Duration: 50.8ms | Allocations: 15804)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Invalid configuration object. Webpack has been initialised using a configuration object that does not match the API schema.
+ - configuration has an unknown property 'resolvedModules'. These properties are valid:
+   object { amd?, bail?, cache?, context?, dependencies?, devServer?, devtool?, entry?, externals?, infrastructureLogging?, loader?, mode?, module?, name?, node?, optimization?, output?, parallelism?, performance?, plugins?, profile?, recordsInputPath?, recordsOutputPath?, recordsPath?, resolve?, resolveLoader?, serve?, stats?, target?, watch?, watchOptions? }
+   For typos: please correct them.
+   For loader options: webpack >= v2.0.0 no longer allows custom properties in configuration.
+     Loaders should be updated to allow passing options via loader options in module.rules.
+     Until loaders are updated one can use the LoaderOptionsPlugin to pass these options to the loader:
+     plugins: [
+       new webpack.LoaderOptionsPlugin({
+         // test: /\.xxx$/, // may apply this only for some modules
+         options: {
+           resolvedModules: …
+         }
+       })
+     ]
+ - configuration.plugins[0] misses the property 'apply'.
+   function
+   -> The run point of the plugin, required method.
+ - configuration.plugins[1] misses the property 'apply'.
+   function
+   -> The run point of the plugin, required method.
+ - configuration.plugins[2] misses the property 'apply'.
+   function
+   -> The run point of the plugin, required method.
+ - configuration.plugins[3] misses the property 'apply'.
+   function
+   -> The run point of the plugin, required method.
+ - configuration.plugins[4] misses the property 'apply'.
+   function
+   -> The run point of the plugin, required method.
+
+  Rendered layouts/_header.html.haml (Duration: 2.0ms | Allocations: 593)
+  Rendered layout layouts/application.html.haml (Duration: 3268.1ms | Allocations: 21227)
+Completed 200 OK in 3284ms (Views: 3269.3ms | ActiveRecord: 3.8ms | Allocations: 23869)
+
+
+Started GET "/courses" for ::1 at 2022-11-12 16:41:01 -0300
+Processing by CoursesController#index as HTML
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering courses/index.html.haml within layouts/application
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "courses"[0m
+  ↳ app/views/courses/index.html.haml:3
+  [1m[36mCourse Load (2.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.haml:6
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 24.2ms | Allocations: 6886)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 3.5ms | Allocations: 819)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 3.4ms | Allocations: 824)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 3.2ms | Allocations: 821)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 3.0ms | Allocations: 821)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.9ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.8ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.6ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.4ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.2ms | Allocations: 824)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 3.2ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 3.1ms | Allocations: 819)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 3.6ms | Allocations: 824)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.4ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.1ms | Allocations: 823)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.5ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.8ms | Allocations: 821)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 3.1ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.8ms | Allocations: 818)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.6ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 3.0ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.5ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 3.4ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 3.3ms | Allocations: 821)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 3.5ms | Allocations: 823)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.3ms | Allocations: 823)
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.9ms | Allocations: 818)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.6ms | Allocations: 824)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.8ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 3.6ms | Allocations: 825)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.5ms | Allocations: 820)
+  Rendered courses/index.html.haml within layouts/application (Duration: 143.0ms | Allocations: 39789)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 1.5ms | Allocations: 591)
+  Rendered layout layouts/application.html.haml (Duration: 154.7ms | Allocations: 44398)
+Completed 200 OK in 168ms (Views: 149.1ms | ActiveRecord: 9.1ms | Allocations: 46863)
+
+
+Started GET "/courses/new" for ::1 at 2022-11-12 16:41:01 -0300
+Processing by CoursesController#new as HTML
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering courses/new.html.haml within layouts/application
+  Rendered courses/_form.html.haml (Duration: 26.0ms | Allocations: 15590)
+  Rendered courses/new.html.haml within layouts/application (Duration: 32.4ms | Allocations: 18691)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 1.1ms | Allocations: 598)
+  Rendered layout layouts/application.html.haml (Duration: 43.5ms | Allocations: 23308)
+Completed 200 OK in 57ms (Views: 44.6ms | ActiveRecord: 2.3ms | Allocations: 25755)
+
+
+Started GET "/users" for ::1 at 2022-11-12 16:41:02 -0300
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering users/index.html.haml within layouts/application
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."created_at" DESC[0m
+  ↳ app/views/users/index.html.haml:2
+  Rendered users/_user.html.haml (Duration: 12.9ms | Allocations: 7471)
+  Rendered users/_user.html.haml (Duration: 0.8ms | Allocations: 344)
+  Rendered users/index.html.haml within layouts/application (Duration: 25.9ms | Allocations: 11249)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 2.5ms | Allocations: 716)
+  Rendered layout layouts/application.html.haml (Duration: 41.7ms | Allocations: 16193)
+Completed 200 OK in 56ms (Views: 43.2ms | ActiveRecord: 3.8ms | Allocations: 19138)
+
+
+Started GET "/courses/new" for ::1 at 2022-11-12 16:41:03 -0300
+Processing by CoursesController#new as HTML
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering courses/new.html.haml within layouts/application
+  Rendered courses/_form.html.haml (Duration: 33.3ms | Allocations: 16218)
+  Rendered courses/new.html.haml within layouts/application (Duration: 34.6ms | Allocations: 16368)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 1.8ms | Allocations: 598)
+  Rendered layout layouts/application.html.haml (Duration: 51.8ms | Allocations: 21051)
+Completed 200 OK in 64ms (Views: 53.0ms | ActiveRecord: 2.4ms | Allocations: 22998)
+
+
+Started POST "/courses" for ::1 at 2022-11-12 16:41:10 -0300
+Processing by CoursesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "course"=>{"titulo"=>"", "descricao"=>"", "linguagens"=>"", "nivel"=>"Iniciante"}, "commit"=>"Create Course"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering courses/new.html.haml within layouts/application
+  Rendered courses/_form.html.haml (Duration: 60.1ms | Allocations: 19047)
+  Rendered courses/new.html.haml within layouts/application (Duration: 61.3ms | Allocations: 19174)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 1.2ms | Allocations: 536)
+  Rendered layout layouts/application.html.haml (Duration: 73.5ms | Allocations: 23718)
+Completed 422 Unprocessable Entity in 89ms (Views: 74.6ms | ActiveRecord: 1.6ms | Allocations: 26703)
+
+
+Started GET "/courses" for ::1 at 2022-11-12 16:43:06 -0300
+Processing by CoursesController#index as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering courses/index.html.haml within layouts/application
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "courses"[0m
+  ↳ app/views/courses/index.html.haml:3
+  [1m[36mCourse Load (2.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.haml:6
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 17.5ms | Allocations: 6990)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 4.5ms | Allocations: 819)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 3.9ms | Allocations: 824)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 3.7ms | Allocations: 821)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.8ms | Allocations: 821)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 3.7ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 3.8ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.9ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 3.2ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 3.1ms | Allocations: 824)
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 4.8ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 3.1ms | Allocations: 819)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.4ms | Allocations: 824)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.5ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 3.4ms | Allocations: 823)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 3.7ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.3ms | Allocations: 821)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 1.9ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 1.9ms | Allocations: 818)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.2ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 4.3ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 3.0ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.2ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.1ms | Allocations: 821)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.6ms | Allocations: 823)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 4.4ms | Allocations: 823)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.6ms | Allocations: 818)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.0ms | Allocations: 824)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.3ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 2.0ms | Allocations: 825)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:9
+  Rendered courses/_course.html.haml (Duration: 4.8ms | Allocations: 820)
+  Rendered courses/index.html.haml within layouts/application (Duration: 140.8ms | Allocations: 40029)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 23.6ms | Allocations: 18965)
+  Rendered layout layouts/application.html.haml (Duration: 186.5ms | Allocations: 70355)
+Completed 200 OK in 200ms (Views: 182.5ms | ActiveRecord: 9.1ms | Allocations: 73133)
+
+
+Started GET "/courses/new" for ::1 at 2022-11-12 16:43:09 -0300
+Processing by CoursesController#new as HTML
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering courses/new.html.haml within layouts/application
+  Rendered courses/_form.html.haml (Duration: 70.0ms | Allocations: 32558)
+  Rendered courses/new.html.haml within layouts/application (Duration: 79.3ms | Allocations: 35822)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 1.2ms | Allocations: 636)
+  Rendered layout layouts/application.html.haml (Duration: 92.1ms | Allocations: 40608)
+Completed 200 OK in 108ms (Views: 93.4ms | ActiveRecord: 2.6ms | Allocations: 43156)
+
+
+Started GET "/courses/new" for ::1 at 2022-11-12 16:45:24 -0300
+Processing by CoursesController#new as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering courses/new.html.haml within layouts/application
+  Rendered courses/_form.html.haml (Duration: 59.2ms | Allocations: 26931)
+  Rendered courses/new.html.haml within layouts/application (Duration: 66.4ms | Allocations: 30270)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 19.9ms | Allocations: 18973)
+  Rendered layout layouts/application.html.haml (Duration: 105.0ms | Allocations: 60589)
+Completed 200 OK in 120ms (Views: 109.1ms | ActiveRecord: 1.7ms | Allocations: 63610)
+
+
+Started GET "/courses" for ::1 at 2022-11-12 16:45:26 -0300
+Processing by CoursesController#index as HTML
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering courses/index.html.haml within layouts/application
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "courses"[0m
+  ↳ app/views/courses/index.html.haml:3
+  [1m[36mCourse Load (2.4ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.haml:6
+  Rendered courses/_course.html.haml (Duration: 38.1ms | Allocations: 18048)
+  Rendered courses/index.html.haml within layouts/application (Duration: 54.9ms | Allocations: 23412)
+  Rendered layout layouts/application.html.haml (Duration: 55.6ms | Allocations: 23532)
+Completed 500 Internal Server Error in 70ms (ActiveRecord: 6.9ms | Allocations: 26187)
+
+
+  
+ActionView::Template::Error (undefined method `language' for #<Course id: 23, titulo: "Psychology 279", descricao: "When the snows fall and the white winds blow, the ...", created_at: "2022-11-12 18:53:04.204132000 +0000", updated_at: "2022-11-12 18:58:44.285856000 +0000", user_id: 1, slug: "psychology-279", linguagens: nil, nivel: "Iniciante">):
+     7:   .card-footer
+     8:   .row
+     9:     .col-md-6
+    10:       = course.language
+    11:     .col-md-6
+    12:       .text-right
+    13:         = course.level
+  
+app/views/courses/_course.html.haml:10
+app/views/courses/index.html.haml:7
+app/views/courses/index.html.haml:6
+Started GET "/courses" for ::1 at 2022-11-12 16:45:45 -0300
+Processing by CoursesController#index as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering courses/index.html.haml within layouts/application
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "courses"[0m
+  ↳ app/views/courses/index.html.haml:3
+  [1m[36mCourse Load (2.5ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.haml:6
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 20.5ms | Allocations: 8759)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 3.8ms | Allocations: 821)
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 5.5ms | Allocations: 826)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 6.6ms | Allocations: 822)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 4.4ms | Allocations: 822)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 4.8ms | Allocations: 821)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 2.4ms | Allocations: 821)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 2.0ms | Allocations: 821)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 3.7ms | Allocations: 821)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 4.2ms | Allocations: 825)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 3.5ms | Allocations: 821)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 2.3ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 2.0ms | Allocations: 825)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 16.8ms | Allocations: 821)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 3.6ms | Allocations: 824)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 4.1ms | Allocations: 821)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 2.7ms | Allocations: 822)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 3.3ms | Allocations: 821)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 3.1ms | Allocations: 819)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 3.6ms | Allocations: 821)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 3.1ms | Allocations: 821)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 2.9ms | Allocations: 821)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 2.8ms | Allocations: 821)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 3.4ms | Allocations: 822)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 3.3ms | Allocations: 824)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 3.0ms | Allocations: 824)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 2.1ms | Allocations: 819)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 2.7ms | Allocations: 825)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 3.0ms | Allocations: 821)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 3.6ms | Allocations: 826)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 4.1ms | Allocations: 821)
+  Rendered courses/index.html.haml within layouts/application (Duration: 172.4ms | Allocations: 41835)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 26.3ms | Allocations: 18965)
+  Rendered layout layouts/application.html.haml (Duration: 219.8ms | Allocations: 72166)
+Completed 200 OK in 235ms (Views: 216.2ms | ActiveRecord: 9.7ms | Allocations: 75170)
+
+
+Started GET "/courses/new" for ::1 at 2022-11-12 16:45:57 -0300
+Processing by CoursesController#new as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering courses/new.html.haml within layouts/application
+  Rendered courses/_form.html.haml (Duration: 45.0ms | Allocations: 27007)
+  Rendered courses/new.html.haml within layouts/application (Duration: 52.2ms | Allocations: 30239)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 1.2ms | Allocations: 599)
+  Rendered layout layouts/application.html.haml (Duration: 63.7ms | Allocations: 34791)
+Completed 200 OK in 76ms (Views: 64.8ms | ActiveRecord: 1.4ms | Allocations: 37308)
+
+
+Started POST "/courses" for ::1 at 2022-11-12 16:46:16 -0300
+Processing by CoursesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "course"=>{"titulo"=>"teste-ling-nivel", "descricao"=>"abcqwewqdnask", "linguagens"=>"Javascript", "nivel"=>"Avançado"}, "commit"=>"Create Course"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/courses_controller.rb:32:in `block in create'
+  [1m[36mCourse Exists? (2.0ms)[0m  [1m[34mSELECT 1 AS one FROM "courses" WHERE "courses"."id" IS NOT NULL AND "courses"."slug" = $1 LIMIT $2[0m  [["slug", "teste-ling-nivel"], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:32:in `block in create'
+  [1m[36mCourse Create (3.1ms)[0m  [1m[32mINSERT INTO "courses" ("titulo", "descricao", "created_at", "updated_at", "user_id", "slug", "linguagens", "nivel") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["titulo", "teste-ling-nivel"], ["descricao", "abcqwewqdnask"], ["created_at", "2022-11-12 19:46:16.086012"], ["updated_at", "2022-11-12 19:46:16.086012"], ["user_id", 2], ["slug", "teste-ling-nivel"], ["linguagens", "Javascript"], ["nivel", "Avançado"]]
+  ↳ app/controllers/courses_controller.rb:32:in `block in create'
+  [1m[36mTRANSACTION (11.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/courses_controller.rb:32:in `block in create'
+Redirected to http://localhost:3000/courses/teste-ling-nivel
+Completed 302 Found in 42ms (ActiveRecord: 19.5ms | Allocations: 5995)
+
+
+Started GET "/courses/teste-ling-nivel" for ::1 at 2022-11-12 16:46:16 -0300
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"teste-ling-nivel"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCourse Load (1.6ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."slug" = $1 LIMIT $2[0m  [["slug", "teste-ling-nivel"], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:68:in `set_course'
+  Rendering layout layouts/application.html.haml
+  Rendering courses/show.html.haml within layouts/application
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 6.2ms | Allocations: 1099)
+  Rendered courses/show.html.haml within layouts/application (Duration: 15.0ms | Allocations: 3940)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 1.5ms | Allocations: 593)
+  Rendered layout layouts/application.html.haml (Duration: 27.6ms | Allocations: 8489)
+Completed 200 OK in 46ms (Views: 26.6ms | ActiveRecord: 5.5ms | Allocations: 11261)
+
+
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "courses" WHERE "courses"."id" IS NOT NULL AND "courses"."slug" = $1 LIMIT $2[0m  [["slug", "communications-244"], ["LIMIT", 1]]
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCourse Create (1.5ms)[0m  [1m[32mINSERT INTO "courses" ("titulo", "descricao", "created_at", "updated_at", "user_id", "slug", "linguagens") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["titulo", "Communications 244"], ["descricao", "Some old wounds never truly heal, and bleed again at the slightest word."], ["created_at", "2022-11-12 19:48:34.292565"], ["updated_at", "2022-11-12 19:48:34.292565"], ["user_id", 1], ["slug", "communications-244"], ["linguagens", "Reason"]]
+  [1m[36mTRANSACTION (9.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "courses" WHERE "courses"."id" IS NOT NULL AND "courses"."slug" = $1 LIMIT $2[0m  [["slug", "arts-570"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCourse Create (0.9ms)[0m  [1m[32mINSERT INTO "courses" ("titulo", "descricao", "created_at", "updated_at", "user_id", "slug", "linguagens") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["titulo", "Arts 570"], ["descricao", "When the snows fall and the white winds blow, the lone wolf dies but the pack survives."], ["created_at", "2022-11-12 19:48:34.323871"], ["updated_at", "2022-11-12 19:48:34.323871"], ["user_id", 1], ["slug", "arts-570"], ["linguagens", "@Formula"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "courses" WHERE "courses"."id" IS NOT NULL AND "courses"."slug" = $1 LIMIT $2[0m  [["slug", "communications-125"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCourse Create (0.8ms)[0m  [1m[32mINSERT INTO "courses" ("titulo", "descricao", "created_at", "updated_at", "user_id", "slug", "linguagens") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["titulo", "Communications 125"], ["descricao", "Nothing burns like the cold."], ["created_at", "2022-11-12 19:48:34.345987"], ["updated_at", "2022-11-12 19:48:34.345987"], ["user_id", 1], ["slug", "communications-125"], ["linguagens", "Magma"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "courses" WHERE "courses"."id" IS NOT NULL AND "courses"."slug" = $1 LIMIT $2[0m  [["slug", "applied-science-psychology-515"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCourse Create (0.8ms)[0m  [1m[32mINSERT INTO "courses" ("titulo", "descricao", "created_at", "updated_at", "user_id", "slug", "linguagens") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["titulo", "Applied Science (Psychology) 515"], ["descricao", "The things I do for love."], ["created_at", "2022-11-12 19:48:34.366639"], ["updated_at", "2022-11-12 19:48:34.366639"], ["user_id", 1], ["slug", "applied-science-psychology-515"], ["linguagens", "VSXu"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "courses" WHERE "courses"."id" IS NOT NULL AND "courses"."slug" = $1 LIMIT $2[0m  [["slug", "business-239"], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCourse Create (0.9ms)[0m  [1m[32mINSERT INTO "courses" ("titulo", "descricao", "created_at", "updated_at", "user_id", "slug", "linguagens") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["titulo", "Business 239"], ["descricao", "Fear cuts deeper than swords."], ["created_at", "2022-11-12 19:48:34.388954"], ["updated_at", "2022-11-12 19:48:34.388954"], ["user_id", 1], ["slug", "business-239"], ["linguagens", "PPL"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "courses" WHERE "courses"."id" IS NOT NULL AND "courses"."slug" = $1 LIMIT $2[0m  [["slug", "biological-science-118"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCourse Create (1.4ms)[0m  [1m[32mINSERT INTO "courses" ("titulo", "descricao", "created_at", "updated_at", "user_id", "slug", "linguagens") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["titulo", "Biological Science 118"], ["descricao", "When you play a game of thrones you win or you die."], ["created_at", "2022-11-12 19:48:34.411363"], ["updated_at", "2022-11-12 19:48:34.411363"], ["user_id", 1], ["slug", "biological-science-118"], ["linguagens", "Ease"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "courses" WHERE "courses"."id" IS NOT NULL AND "courses"."slug" = $1 LIMIT $2[0m  [["slug", "engineering-245"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCourse Create (0.6ms)[0m  [1m[32mINSERT INTO "courses" ("titulo", "descricao", "created_at", "updated_at", "user_id", "slug", "linguagens") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["titulo", "Engineering 245"], ["descricao", "Never forget who you are. The rest of the world won't. Wear it like an armor and it can never be used against you."], ["created_at", "2022-11-12 19:48:34.432723"], ["updated_at", "2022-11-12 19:48:34.432723"], ["user_id", 1], ["slug", "engineering-245"], ["linguagens", "OPS5"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "courses" WHERE "courses"."id" IS NOT NULL AND "courses"."slug" = $1 LIMIT $2[0m  [["slug", "business-297"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCourse Create (1.6ms)[0m  [1m[32mINSERT INTO "courses" ("titulo", "descricao", "created_at", "updated_at", "user_id", "slug", "linguagens") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["titulo", "Business 297"], ["descricao", "Summer will end soon enough, and childhood as well."], ["created_at", "2022-11-12 19:48:34.452958"], ["updated_at", "2022-11-12 19:48:34.452958"], ["user_id", 1], ["slug", "business-297"], ["linguagens", "PowerBuilder – 4GL GUI application generator from Sybase"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "courses" WHERE "courses"."id" IS NOT NULL AND "courses"."slug" = $1 LIMIT $2[0m  [["slug", "biomedical-science-289"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCourse Create (0.8ms)[0m  [1m[32mINSERT INTO "courses" ("titulo", "descricao", "created_at", "updated_at", "user_id", "slug", "linguagens") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["titulo", "Biomedical Science 289"], ["descricao", "Power is a curious thing. Who lives, Who dies. Power resides where men believe it resides. It is a trick, A shadow on the wall."], ["created_at", "2022-11-12 19:48:34.476268"], ["updated_at", "2022-11-12 19:48:34.476268"], ["user_id", 1], ["slug", "biomedical-science-289"], ["linguagens", "AngelScript"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "courses" WHERE "courses"."id" IS NOT NULL AND "courses"."slug" = $1 LIMIT $2[0m  [["slug", "psychology-376"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCourse Create (0.6ms)[0m  [1m[32mINSERT INTO "courses" ("titulo", "descricao", "created_at", "updated_at", "user_id", "slug", "linguagens") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["titulo", "Psychology 376"], ["descricao", "Once you’ve accepted your flaws, no one can use them against you."], ["created_at", "2022-11-12 19:48:34.497777"], ["updated_at", "2022-11-12 19:48:34.497777"], ["user_id", 1], ["slug", "psychology-376"], ["linguagens", "OpenEdge ABL"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "courses" WHERE "courses"."id" IS NOT NULL AND "courses"."slug" = $1 LIMIT $2[0m  [["slug", "biomedical-science-346"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCourse Create (1.3ms)[0m  [1m[32mINSERT INTO "courses" ("titulo", "descricao", "created_at", "updated_at", "user_id", "slug", "linguagens") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["titulo", "Biomedical Science 346"], ["descricao", "All dwarfs are bastards in their father's eyes"], ["created_at", "2022-11-12 19:48:34.520863"], ["updated_at", "2022-11-12 19:48:34.520863"], ["user_id", 1], ["slug", "biomedical-science-346"], ["linguagens", "MPD"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "courses" WHERE "courses"."id" IS NOT NULL AND "courses"."slug" = $1 LIMIT $2[0m  [["slug", "architectural-technology-359"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCourse Create (0.8ms)[0m  [1m[32mINSERT INTO "courses" ("titulo", "descricao", "created_at", "updated_at", "user_id", "slug", "linguagens") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["titulo", "Architectural Technology 359"], ["descricao", "Once you’ve accepted your flaws, no one can use them against you."], ["created_at", "2022-11-12 19:48:34.543790"], ["updated_at", "2022-11-12 19:48:34.543790"], ["user_id", 1], ["slug", "architectural-technology-359"], ["linguagens", "Pizza"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "courses" WHERE "courses"."id" IS NOT NULL AND "courses"."slug" = $1 LIMIT $2[0m  [["slug", "biomedical-science-557"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCourse Create (0.7ms)[0m  [1m[32mINSERT INTO "courses" ("titulo", "descricao", "created_at", "updated_at", "user_id", "slug", "linguagens") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["titulo", "Biomedical Science 557"], ["descricao", "When you play a game of thrones you win or you die."], ["created_at", "2022-11-12 19:48:34.565201"], ["updated_at", "2022-11-12 19:48:34.565201"], ["user_id", 1], ["slug", "biomedical-science-557"], ["linguagens", "QtScript"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "courses" WHERE "courses"."id" IS NOT NULL AND "courses"."slug" = $1 LIMIT $2[0m  [["slug", "business-386"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCourse Create (1.5ms)[0m  [1m[32mINSERT INTO "courses" ("titulo", "descricao", "created_at", "updated_at", "user_id", "slug", "linguagens") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["titulo", "Business 386"], ["descricao", "And so he spoke, and so he spoke, that Lord of Castamere, but now the rains weep o'er his hall, with no one there to hear. Yes, now the rains weep o'er his hall, and not a soul to hear."], ["created_at", "2022-11-12 19:48:34.584949"], ["updated_at", "2022-11-12 19:48:34.584949"], ["user_id", 1], ["slug", "business-386"], ["linguagens", "DIBOL"]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCourse Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "courses" WHERE "courses"."id" IS NOT NULL AND "courses"."slug" = $1 LIMIT $2[0m  [["slug", "biomedical-science-442"], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCourse Create (0.7ms)[0m  [1m[32mINSERT INTO "courses" ("titulo", "descricao", "created_at", "updated_at", "user_id", "slug", "linguagens") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["titulo", "Biomedical Science 442"], ["descricao", "A lion doesn't concern itself with the opinion of sheep."], ["created_at", "2022-11-12 19:48:34.608678"], ["updated_at", "2022-11-12 19:48:34.608678"], ["user_id", 1], ["slug", "biomedical-science-442"], ["linguagens", "Sather"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/courses/teste-ling-nivel" for ::1 at 2022-11-12 16:48:42 -0300
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"teste-ling-nivel"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCourse Load (2.4ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."slug" = $1 LIMIT $2[0m  [["slug", "teste-ling-nivel"], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:68:in `set_course'
+  Rendering layout layouts/application.html.haml
+  Rendering courses/show.html.haml within layouts/application
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 23.8ms | Allocations: 10892)
+  Rendered courses/show.html.haml within layouts/application (Duration: 37.0ms | Allocations: 18491)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 22.7ms | Allocations: 19165)
+  Rendered layout layouts/application.html.haml (Duration: 100.7ms | Allocations: 53992)
+Completed 200 OK in 189ms (Views: 103.5ms | ActiveRecord: 26.7ms | Allocations: 75041)
+
+
+Started GET "/" for ::1 at 2022-11-12 16:48:45 -0300
+Processing by StaticPagesController#landing_page as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering static_pages/landing_page.html.haml within layouts/application
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "courses"[0m
+  ↳ app/views/static_pages/landing_page.html.haml:18
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT COUNT(DISTINCT "courses"."user_id") FROM "courses"[0m
+  ↳ app/views/static_pages/landing_page.html.haml:24
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/views/static_pages/landing_page.html.haml:30
+  [1m[36mCourse Load (1.9ms)[0m  [1m[34mSELECT "courses".* FROM "courses" LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/views/static_pages/landing_page.html.haml:40
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 6.2ms | Allocations: 1217)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 3.9ms | Allocations: 830)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 3.6ms | Allocations: 825)
+  Rendered courses/_course.html.haml (Duration: 0.6ms | Allocations: 209)
+  Rendered courses/_course.html.haml (Duration: 0.6ms | Allocations: 206)
+  Rendered courses/_course.html.haml (Duration: 0.5ms | Allocations: 211)
+  [1m[36mCourse Load (2.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."created_at" DESC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/views/static_pages/landing_page.html.haml:54
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 4.2ms | Allocations: 826)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 3.7ms | Allocations: 823)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 2.9ms | Allocations: 825)
+  Rendered static_pages/landing_page.html.haml within layouts/application (Duration: 73.5ms | Allocations: 22568)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.haml:6
+  Rendered layouts/_header.html.haml (Duration: 5.9ms | Allocations: 1654)
+  Rendered layout layouts/application.html.haml (Duration: 90.3ms | Allocations: 28440)
+Completed 200 OK in 101ms (Views: 79.9ms | ActiveRecord: 16.0ms | Allocations: 30692)
+
+
+Started GET "/courses/new" for ::1 at 2022-11-12 16:48:48 -0300
+Processing by CoursesController#new as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering courses/new.html.haml within layouts/application
+Started GET "/courses" for ::1 at 2022-11-12 16:48:48 -0300
+  Rendered courses/_form.html.haml (Duration: 578.4ms | Allocations: 311869)
+  Rendered courses/new.html.haml within layouts/application (Duration: 586.8ms | Allocations: 315589)
+Processing by CoursesController#index as HTML
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 1.2ms | Allocations: 628)
+  Rendered layout layouts/application.html.haml (Duration: 612.4ms | Allocations: 323104)
+Completed 200 OK in 623ms (Views: 613.7ms | ActiveRecord: 1.6ms | Allocations: 325160)
+
+
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering courses/index.html.haml within layouts/application
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "courses"[0m
+  ↳ app/views/courses/index.html.haml:3
+  [1m[36mCourse Load (1.6ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.haml:6
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 5.5ms | Allocations: 1181)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 2.8ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 2.4ms | Allocations: 825)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 2.4ms | Allocations: 822)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 3.4ms | Allocations: 822)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 2.7ms | Allocations: 821)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 2.5ms | Allocations: 821)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 3.1ms | Allocations: 821)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 2.5ms | Allocations: 821)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 3.0ms | Allocations: 825)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 3.8ms | Allocations: 821)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 3.3ms | Allocations: 820)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 4.1ms | Allocations: 825)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 4.2ms | Allocations: 821)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 2.8ms | Allocations: 824)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 2.1ms | Allocations: 821)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 2.0ms | Allocations: 822)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 2.3ms | Allocations: 821)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 2.3ms | Allocations: 819)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 2.1ms | Allocations: 821)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 2.0ms | Allocations: 821)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 1.9ms | Allocations: 821)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 2.2ms | Allocations: 821)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 2.4ms | Allocations: 822)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 2.7ms | Allocations: 824)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 2.9ms | Allocations: 824)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 2.6ms | Allocations: 819)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 2.1ms | Allocations: 825)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 2.0ms | Allocations: 821)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 2.1ms | Allocations: 826)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 2.4ms | Allocations: 821)
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 4.5ms | Allocations: 1114)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 2.4ms | Allocations: 825)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 2.1ms | Allocations: 821)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 3.2ms | Allocations: 825)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 2.6ms | Allocations: 827)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 3.4ms | Allocations: 822)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 2.4ms | Allocations: 825)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 2.3ms | Allocations: 826)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 2.4ms | Allocations: 823)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 3.1ms | Allocations: 825)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 2.3ms | Allocations: 822)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 2.3ms | Allocations: 826)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 2.3ms | Allocations: 827)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 3.2ms | Allocations: 825)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 3.1ms | Allocations: 835)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 2.3ms | Allocations: 826)
+  Rendered courses/index.html.haml within layouts/application (Duration: 163.0ms | Allocations: 49300)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 1.0ms | Allocations: 591)
+  Rendered layout layouts/application.html.haml (Duration: 173.0ms | Allocations: 53845)
+Completed 200 OK in 218ms (Views: 165.8ms | ActiveRecord: 32.0ms | Allocations: 65611)
+
+
+Started GET "/courses/psychology-279/edit" for ::1 at 2022-11-12 16:49:07 -0300
+Processing by CoursesController#edit as HTML
+  Parameters: {"id"=>"psychology-279"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCourse Load (2.5ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."slug" = $1 LIMIT $2[0m  [["slug", "psychology-279"], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:68:in `set_course'
+  Rendering layout layouts/application.html.haml
+  Rendering courses/edit.html.haml within layouts/application
+  Rendered courses/_form.html.haml (Duration: 37.6ms | Allocations: 21946)
+  Rendered courses/edit.html.haml within layouts/application (Duration: 44.5ms | Allocations: 25465)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 1.1ms | Allocations: 593)
+  Rendered layout layouts/application.html.haml (Duration: 55.7ms | Allocations: 30015)
+Completed 200 OK in 77ms (Views: 57.1ms | ActiveRecord: 4.3ms | Allocations: 33344)
+
+
+Started PATCH "/courses/psychology-279" for ::1 at 2022-11-12 16:49:12 -0300
+Processing by CoursesController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "course"=>{"titulo"=>"Psychology 279", "descricao"=>"When the snows fall and the white winds blow, the lone wolf dies but the pack survives.", "linguagens"=>"Javascript", "nivel"=>"Iniciante"}, "commit"=>"Update Course", "id"=>"psychology-279"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCourse Load (2.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."slug" = $1 LIMIT $2[0m  [["slug", "psychology-279"], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:68:in `set_course'
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/courses_controller.rb:45:in `block in update'
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:45:in `block in update'
+  [1m[36mCourse Update (2.6ms)[0m  [1m[33mUPDATE "courses" SET "updated_at" = $1, "linguagens" = $2 WHERE "courses"."id" = $3[0m  [["updated_at", "2022-11-12 19:49:12.236120"], ["linguagens", "Javascript"], ["id", 23]]
+  ↳ app/controllers/courses_controller.rb:45:in `block in update'
+  [1m[36mTRANSACTION (11.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/courses_controller.rb:45:in `block in update'
+Redirected to http://localhost:3000/courses/psychology-279
+Completed 302 Found in 48ms (ActiveRecord: 21.6ms | Allocations: 7163)
+
+
+Started GET "/courses/psychology-279" for ::1 at 2022-11-12 16:49:12 -0300
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"psychology-279"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCourse Load (2.4ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."slug" = $1 LIMIT $2[0m  [["slug", "psychology-279"], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:68:in `set_course'
+  Rendering layout layouts/application.html.haml
+  Rendering courses/show.html.haml within layouts/application
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 5.8ms | Allocations: 1097)
+  Rendered courses/show.html.haml within layouts/application (Duration: 6.7ms | Allocations: 1269)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 1.4ms | Allocations: 587)
+  Rendered layout layouts/application.html.haml (Duration: 21.1ms | Allocations: 5913)
+Completed 200 OK in 37ms (Views: 19.8ms | ActiveRecord: 6.3ms | Allocations: 8559)
+
+
+Started GET "/" for ::1 at 2022-11-12 16:49:16 -0300
+Processing by StaticPagesController#landing_page as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering static_pages/landing_page.html.haml within layouts/application
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "courses"[0m
+  ↳ app/views/static_pages/landing_page.html.haml:18
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT COUNT(DISTINCT "courses"."user_id") FROM "courses"[0m
+  ↳ app/views/static_pages/landing_page.html.haml:24
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/views/static_pages/landing_page.html.haml:30
+  [1m[36mCourse Load (1.7ms)[0m  [1m[34mSELECT "courses".* FROM "courses" LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/views/static_pages/landing_page.html.haml:40
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 7.6ms | Allocations: 1108)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 3.0ms | Allocations: 826)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 2.6ms | Allocations: 822)
+  Rendered courses/_course.html.haml (Duration: 0.6ms | Allocations: 206)
+  Rendered courses/_course.html.haml (Duration: 0.5ms | Allocations: 211)
+  Rendered courses/_course.html.haml (Duration: 0.5ms | Allocations: 208)
+  [1m[36mCourse Load (2.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."created_at" DESC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/views/static_pages/landing_page.html.haml:54
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 3.5ms | Allocations: 826)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 2.7ms | Allocations: 823)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 2.6ms | Allocations: 825)
+  Rendered static_pages/landing_page.html.haml within layouts/application (Duration: 49.9ms | Allocations: 10582)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.haml:6
+  Rendered layouts/_header.html.haml (Duration: 6.2ms | Allocations: 1576)
+  Rendered layout layouts/application.html.haml (Duration: 68.4ms | Allocations: 16270)
+Completed 200 OK in 73ms (Views: 54.1ms | ActiveRecord: 15.3ms | Allocations: 16863)
+
+

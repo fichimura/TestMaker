@@ -5,3 +5,8 @@
 
 // External libraries
 @import "bootstrap/scss/bootstrap";
+
+// body { background: #f8f0e6; }
+
+.form-control.is-invalid{ background-image: none; }
+.form-control.is-valid{ background-image: none; }
