@@ -15972,3 +15972,704 @@ Processing by CoursesController#show as HTML
 Completed 200 OK in 47ms (Views: 26.7ms | ActiveRecord: 8.3ms | Allocations: 9572)
 
 
+Started GET "/courses" for ::1 at 2022-11-13 16:41:40 -0300
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CoursesController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering courses/index.html.haml within layouts/application
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "courses"[0m
+  ↳ app/views/courses/index.html.haml:3
+  [1m[36mCourse Load (1.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.haml:26
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3)[0m  [["id", 1], ["id", 2], ["id", 3]]
+  ↳ app/views/courses/index.html.haml:26
+  Rendered courses/_course.html.haml (Duration: 6.2ms | Allocations: 8106)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 230)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 227)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 227)
+  Rendered courses/_course.html.haml (Duration: 0.2ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.2ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 230)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 225)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 230)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 229)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 227)
+  Rendered courses/_course.html.haml (Duration: 0.4ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 224)
+  Rendered courses/_course.html.haml (Duration: 0.4ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.4ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 227)
+  Rendered courses/_course.html.haml (Duration: 0.4ms | Allocations: 229)
+  Rendered courses/_course.html.haml (Duration: 0.4ms | Allocations: 229)
+  Rendered courses/_course.html.haml (Duration: 0.4ms | Allocations: 224)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 230)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 231)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.4ms | Allocations: 230)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 230)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 230)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 232)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 227)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 230)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 231)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 228)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 230)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 227)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 231)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 232)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 230)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 228)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 231)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 227)
+  Rendered courses/_course.html.haml (Duration: 0.4ms | Allocations: 230)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 225)
+  Rendered courses/_course.html.haml (Duration: 0.2ms | Allocations: 229)
+  Rendered courses/index.html.haml within layouts/application (Duration: 306.7ms | Allocations: 330562)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 12.8ms | Allocations: 21025)
+  Rendered layout layouts/application.html.haml (Duration: 346.3ms | Allocations: 367798)
+Completed 200 OK in 394ms (Views: 337.5ms | ActiveRecord: 26.0ms | Allocations: 387850)
+
+
+Started GET "/courses" for ::1 at 2022-11-13 16:42:08 -0300
+Processing by CoursesController#index as HTML
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering courses/index.html.haml within layouts/application
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "courses"[0m
+  ↳ app/views/courses/index.html.haml:5
+  [1m[36mCourse Load (2.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.haml:29
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3)[0m  [["id", 1], ["id", 2], ["id", 3]]
+  ↳ app/views/courses/index.html.haml:29
+  Rendered courses/_course.html.haml (Duration: 15.1ms | Allocations: 7778)
+  Rendered courses/_course.html.haml (Duration: 1.0ms | Allocations: 230)
+  Rendered courses/_course.html.haml (Duration: 0.7ms | Allocations: 227)
+  Rendered courses/_course.html.haml (Duration: 0.6ms | Allocations: 227)
+  Rendered courses/_course.html.haml (Duration: 0.6ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.6ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.6ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.5ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 230)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 225)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 230)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 229)
+  Rendered courses/_course.html.haml (Duration: 0.5ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.5ms | Allocations: 227)
+  Rendered courses/_course.html.haml (Duration: 0.5ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.5ms | Allocations: 224)
+  Rendered courses/_course.html.haml (Duration: 0.4ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 227)
+  Rendered courses/_course.html.haml (Duration: 0.4ms | Allocations: 229)
+  Rendered courses/_course.html.haml (Duration: 0.4ms | Allocations: 229)
+  Rendered courses/_course.html.haml (Duration: 0.4ms | Allocations: 224)
+  Rendered courses/_course.html.haml (Duration: 0.4ms | Allocations: 230)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 231)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 230)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 230)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 230)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 232)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 227)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 230)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 231)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 228)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 230)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 227)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 231)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 232)
+  Rendered courses/_course.html.haml (Duration: 0.4ms | Allocations: 230)
+  Rendered courses/_course.html.haml (Duration: 0.4ms | Allocations: 228)
+  Rendered courses/_course.html.haml (Duration: 0.4ms | Allocations: 231)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 227)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 230)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 225)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 229)
+  Rendered courses/index.html.haml within layouts/application (Duration: 92.2ms | Allocations: 40328)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 15.3ms | Allocations: 20860)
+  Rendered layout layouts/application.html.haml (Duration: 119.8ms | Allocations: 72494)
+Completed 200 OK in 135ms (Views: 116.0ms | ActiveRecord: 9.7ms | Allocations: 75707)
+
+
+Started GET "/courses" for ::1 at 2022-11-13 16:42:23 -0300
+Processing by CoursesController#index as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering courses/index.html.haml within layouts/application
+  Rendered courses/index.html.haml within layouts/application (Duration: 19.3ms | Allocations: 7413)
+  Rendered layout layouts/application.html.haml (Duration: 20.0ms | Allocations: 7551)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 1.8ms | Allocations: 10544)
+
+
+  
+ActionView::Template::Error (Illegal nesting: nesting within plain text is illegal.):
+    1: %h3
+    2:   .text-center
+    3:     Courses
+    4:       = @courses.count
+    5: %p
+    6: 
+    7:   .row
+  
+app/views/courses/index.html.haml:4
+Started GET "/courses" for ::1 at 2022-11-13 16:42:44 -0300
+Processing by CoursesController#index as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering courses/index.html.haml within layouts/application
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "courses"[0m
+  ↳ app/views/courses/index.html.haml:4
+  [1m[36mCourse Load (2.5ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.haml:28
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3)[0m  [["id", 1], ["id", 2], ["id", 3]]
+  ↳ app/views/courses/index.html.haml:28
+  Rendered courses/_course.html.haml (Duration: 7.0ms | Allocations: 7783)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 230)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 227)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 227)
+  Rendered courses/_course.html.haml (Duration: 0.5ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 230)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 225)
+  Rendered courses/_course.html.haml (Duration: 0.4ms | Allocations: 230)
+  Rendered courses/_course.html.haml (Duration: 0.9ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.6ms | Allocations: 229)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 227)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 224)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.4ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 227)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 229)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 229)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 224)
+  Rendered courses/_course.html.haml (Duration: 0.6ms | Allocations: 230)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 231)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 230)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 230)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.5ms | Allocations: 230)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 232)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 227)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 230)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 231)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 228)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 230)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 227)
+  Rendered courses/_course.html.haml (Duration: 0.9ms | Allocations: 231)
+  Rendered courses/_course.html.haml (Duration: 0.6ms | Allocations: 232)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 230)
+  Rendered courses/_course.html.haml (Duration: 0.4ms | Allocations: 228)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 231)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 227)
+  Rendered courses/_course.html.haml (Duration: 0.4ms | Allocations: 230)
+  Rendered courses/_course.html.haml (Duration: 0.5ms | Allocations: 225)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 229)
+  Rendered courses/index.html.haml within layouts/application (Duration: 80.8ms | Allocations: 40122)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 26.7ms | Allocations: 20885)
+  Rendered layout layouts/application.html.haml (Duration: 121.0ms | Allocations: 72375)
+Completed 200 OK in 134ms (Views: 116.2ms | ActiveRecord: 10.1ms | Allocations: 75537)
+
+
+Started GET "/courses" for ::1 at 2022-11-13 16:43:05 -0300
+Processing by CoursesController#index as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering courses/index.html.haml within layouts/application
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "courses"[0m
+  ↳ app/views/courses/index.html.haml:3
+  [1m[36mCourse Load (2.8ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.haml:28
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3)[0m  [["id", 1], ["id", 2], ["id", 3]]
+  ↳ app/views/courses/index.html.haml:28
+  Rendered courses/_course.html.haml (Duration: 14.2ms | Allocations: 7783)
+  Rendered courses/_course.html.haml (Duration: 0.8ms | Allocations: 230)
+  Rendered courses/_course.html.haml (Duration: 0.8ms | Allocations: 227)
+  Rendered courses/_course.html.haml (Duration: 0.7ms | Allocations: 227)
+  Rendered courses/_course.html.haml (Duration: 0.7ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.8ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.9ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.7ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.8ms | Allocations: 230)
+  Rendered courses/_course.html.haml (Duration: 0.7ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.5ms | Allocations: 225)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 230)
+  Rendered courses/_course.html.haml (Duration: 0.4ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 229)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 227)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 224)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 227)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 229)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 229)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 224)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 230)
+  Rendered courses/_course.html.haml (Duration: 0.5ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 231)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 230)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 230)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 230)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 232)
+  Rendered courses/_course.html.haml (Duration: 0.4ms | Allocations: 227)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 230)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 231)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 228)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 230)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 227)
+  Rendered courses/_course.html.haml (Duration: 0.4ms | Allocations: 231)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 232)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 230)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 228)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 231)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 227)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 230)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 225)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 229)
+  Rendered courses/index.html.haml within layouts/application (Duration: 91.2ms | Allocations: 40105)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 15.0ms | Allocations: 20864)
+  Rendered layout layouts/application.html.haml (Duration: 118.9ms | Allocations: 72307)
+Completed 200 OK in 132ms (Views: 115.4ms | ActiveRecord: 9.5ms | Allocations: 75310)
+
+
+Started GET "/activity" for ::1 at 2022-11-13 16:43:50 -0300
+Processing by StaticPagesController#activity as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering static_pages/activity.html.haml within layouts/application
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "activities"[0m
+  ↳ app/views/static_pages/activity.html.haml:3
+  [1m[36mPublicActivity::Activity Load (1.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/static_pages/activity.html.haml:8
+  [1m[36mCourse Load (1.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/views/static_pages/activity.html.haml:13
+  [1m[36mCACHE Course Load (0.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/views/static_pages/activity.html.haml:13
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/static_pages/activity.html.haml:16
+  Rendered static_pages/activity.html.haml within layouts/application (Duration: 35.2ms | Allocations: 15488)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 24.6ms | Allocations: 20949)
+  Rendered layout layouts/application.html.haml (Duration: 73.8ms | Allocations: 47941)
+Completed 200 OK in 83ms (Views: 66.5ms | ActiveRecord: 10.8ms | Allocations: 51649)
+
+
+Started GET "/activity" for ::1 at 2022-11-13 16:48:31 -0300
+Processing by StaticPagesController#activity as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering static_pages/activity.html.haml within layouts/application
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "activities"[0m
+  ↳ app/views/static_pages/activity.html.haml:3
+  [1m[36mPublicActivity::Activity Load (1.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/static_pages/activity.html.haml:8
+  [1m[36mCourse Load (1.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/views/static_pages/activity.html.haml:13
+  [1m[36mCACHE Course Load (0.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/views/static_pages/activity.html.haml:13
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/static_pages/activity.html.haml:16
+  Rendered static_pages/activity.html.haml within layouts/application (Duration: 19.8ms | Allocations: 9207)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 20.3ms | Allocations: 20911)
+  Rendered layout layouts/application.html.haml (Duration: 57.7ms | Allocations: 43334)
+Completed 500 Internal Server Error in 67ms (ActiveRecord: 7.8ms | Allocations: 46246)
+
+
+  
+ActionView::Template::Error (Missing partial layouts/_footer with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :haml, :jbuilder]}. Searched in:
+  * "/home/fakichi/Documents/usp/GPTI/TestMaker/app/views"
+  * "/usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views"
+  * "/usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views"
+  * "/usr/share/rvm/gems/ruby-3.1.2/gems/actionmailbox-6.1.7/app/views"
+):
+    18:     = yield
+    19:   %br
+    20:   .bg-dark.text-white
+    21:     = render 'layouts/footer'
+  
+app/views/layouts/application.html.haml:21
+Started GET "/activity" for ::1 at 2022-11-13 16:50:24 -0300
+Processing by StaticPagesController#activity as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering static_pages/activity.html.haml within layouts/application
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "activities"[0m
+  ↳ app/views/static_pages/activity.html.haml:3
+  [1m[36mPublicActivity::Activity Load (3.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/static_pages/activity.html.haml:8
+  [1m[36mCourse Load (2.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/views/static_pages/activity.html.haml:13
+  [1m[36mCACHE Course Load (0.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/views/static_pages/activity.html.haml:13
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/static_pages/activity.html.haml:16
+  Rendered static_pages/activity.html.haml within layouts/application (Duration: 32.7ms | Allocations: 9213)
+  Rendered layout layouts/application.html.haml (Duration: 78.8ms | Allocations: 23993)
+Completed 500 Internal Server Error in 93ms (ActiveRecord: 11.7ms | Allocations: 26906)
+
+
+  
+ActionView::Template::Error (undefined method `javascript_pack_stag' for #<ActionView::Base:0x0000000000cb20>
+Did you mean?  javascript_pack_tag):
+     9:     = csrf_meta_tags
+    10:     = csp_meta_tag
+    11:     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    12:     = javascript_pack_stag 'application', 'data-turbolinks-track': 'reload', defer: true
+    13:   %body
+    14:     = render 'layouts/header'
+    15:     %p.notice= notice
+  
+app/views/layouts/application.html.haml:12
+Started GET "/activity" for ::1 at 2022-11-13 16:52:04 -0300
+Processing by StaticPagesController#activity as HTML
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering static_pages/activity.html.haml within layouts/application
+  [1m[35m (3.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "activities"[0m
+  ↳ app/views/static_pages/activity.html.haml:3
+  [1m[36mPublicActivity::Activity Load (2.0ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/static_pages/activity.html.haml:8
+  [1m[36mCourse Load (2.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/views/static_pages/activity.html.haml:13
+  [1m[36mCACHE Course Load (0.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/views/static_pages/activity.html.haml:13
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/static_pages/activity.html.haml:16
+  Rendered static_pages/activity.html.haml within layouts/application (Duration: 32.4ms | Allocations: 9214)
+  Rendered layout layouts/application.html.haml (Duration: 80.4ms | Allocations: 23945)
+Completed 500 Internal Server Error in 93ms (ActiveRecord: 11.4ms | Allocations: 26885)
+
+
+  
+ActionView::Template::Error (undefined method `javascript_pack_stag' for #<ActionView::Base:0x0000000000d048>
+Did you mean?  javascript_pack_tag):
+     9:     = csrf_meta_tags
+    10:     = csp_meta_tag
+    11:     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    12:     = javascript_pack_stag 'application', 'data-turbolinks-track': 'reload', defer: true
+    13:   %body
+    14:     = render 'layouts/header'
+    15:     %p.notice= notice
+  
+app/views/layouts/application.html.haml:12
+Started GET "/activity" for ::1 at 2022-11-13 16:52:06 -0300
+Processing by StaticPagesController#activity as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering static_pages/activity.html.haml within layouts/application
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "activities"[0m
+  ↳ app/views/static_pages/activity.html.haml:3
+  [1m[36mPublicActivity::Activity Load (1.3ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/static_pages/activity.html.haml:8
+  [1m[36mCourse Load (1.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/views/static_pages/activity.html.haml:13
+  [1m[36mCACHE Course Load (0.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/views/static_pages/activity.html.haml:13
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/static_pages/activity.html.haml:16
+  Rendered static_pages/activity.html.haml within layouts/application (Duration: 11.0ms | Allocations: 3843)
+  Rendered layout layouts/application.html.haml (Duration: 33.7ms | Allocations: 10892)
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 6.3ms | Allocations: 12872)
+
+
+  
+ActionView::Template::Error (undefined method `javascript_pack_stag' for #<ActionView::Base:0x0000000000d458>
+Did you mean?  javascript_pack_tag):
+     9:     = csrf_meta_tags
+    10:     = csp_meta_tag
+    11:     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    12:     = javascript_pack_stag 'application', 'data-turbolinks-track': 'reload', defer: true
+    13:   %body
+    14:     = render 'layouts/header'
+    15:     %p.notice= notice
+  
+app/views/layouts/application.html.haml:12
+Started GET "/" for ::1 at 2022-11-13 16:52:14 -0300
+Processing by StaticPagesController#landing_page as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering static_pages/landing_page.html.haml within layouts/application
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "courses"[0m
+  ↳ app/views/static_pages/landing_page.html.haml:18
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT COUNT(DISTINCT "courses"."user_id") FROM "courses"[0m
+  ↳ app/views/static_pages/landing_page.html.haml:24
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/views/static_pages/landing_page.html.haml:30
+  [1m[36mCourse Load (2.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses" LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/views/static_pages/landing_page.html.haml:40
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 21.3ms | Allocations: 8851)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 3.6ms | Allocations: 834)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 2.7ms | Allocations: 830)
+  Rendered courses/_course.html.haml (Duration: 0.6ms | Allocations: 212)
+  Rendered courses/_course.html.haml (Duration: 0.6ms | Allocations: 217)
+  Rendered courses/_course.html.haml (Duration: 1.0ms | Allocations: 214)
+  [1m[36mCourse Load (1.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."created_at" DESC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/views/static_pages/landing_page.html.haml:54
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 2.6ms | Allocations: 832)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 3.3ms | Allocations: 1124)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 1.5ms | Allocations: 832)
+  Rendered static_pages/landing_page.html.haml within layouts/application (Duration: 84.3ms | Allocations: 30160)
+  Rendered layout layouts/application.html.haml (Duration: 103.2ms | Allocations: 37114)
+Completed 500 Internal Server Error in 113ms (ActiveRecord: 15.4ms | Allocations: 39164)
+
+
+  
+ActionView::Template::Error (undefined method `javascript_pack_stag' for #<ActionView::Base:0x0000000000d7a0>
+Did you mean?  javascript_pack_tag):
+     9:     = csrf_meta_tags
+    10:     = csp_meta_tag
+    11:     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    12:     = javascript_pack_stag 'application', 'data-turbolinks-track': 'reload', defer: true
+    13:   %body
+    14:     = render 'layouts/header'
+    15:     %p.notice= notice
+  
+app/views/layouts/application.html.haml:12
+Started GET "/" for ::1 at 2022-11-13 16:53:13 -0300
+Processing by StaticPagesController#landing_page as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering static_pages/landing_page.html.haml within layouts/application
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "courses"[0m
+  ↳ app/views/static_pages/landing_page.html.haml:18
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT COUNT(DISTINCT "courses"."user_id") FROM "courses"[0m
+  ↳ app/views/static_pages/landing_page.html.haml:24
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/views/static_pages/landing_page.html.haml:30
+  [1m[36mCourse Load (2.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses" LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/views/static_pages/landing_page.html.haml:40
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 20.0ms | Allocations: 8727)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 3.6ms | Allocations: 834)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 3.8ms | Allocations: 830)
+  Rendered courses/_course.html.haml (Duration: 0.7ms | Allocations: 212)
+  Rendered courses/_course.html.haml (Duration: 0.8ms | Allocations: 217)
+  Rendered courses/_course.html.haml (Duration: 0.6ms | Allocations: 214)
+  [1m[36mCourse Load (2.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."created_at" DESC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/views/static_pages/landing_page.html.haml:54
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 4.6ms | Allocations: 832)
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 4.2ms | Allocations: 1124)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 1.5ms | Allocations: 832)
+  Rendered static_pages/landing_page.html.haml within layouts/application (Duration: 80.7ms | Allocations: 30297)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 17.3ms | Allocations: 20884)
+  Rendered layout layouts/application.html.haml (Duration: 110.7ms | Allocations: 62510)
+Completed 200 OK in 118ms (Views: 98.6ms | ActiveRecord: 15.1ms | Allocations: 65384)
+
+
+Started GET "/" for ::1 at 2022-11-13 16:53:37 -0300
+Processing by StaticPagesController#landing_page as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering static_pages/landing_page.html.haml within layouts/application
+  [1m[35m (5.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "courses"[0m
+  ↳ app/views/static_pages/landing_page.html.haml:18
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(DISTINCT "courses"."user_id") FROM "courses"[0m
+  ↳ app/views/static_pages/landing_page.html.haml:24
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/views/static_pages/landing_page.html.haml:30
+  [1m[36mCourse Load (1.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/views/static_pages/landing_page.html.haml:40
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 10.3ms | Allocations: 8739)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 2.5ms | Allocations: 835)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 1.5ms | Allocations: 830)
+  Rendered courses/_course.html.haml (Duration: 0.2ms | Allocations: 212)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 217)
+  Rendered courses/_course.html.haml (Duration: 0.2ms | Allocations: 214)
+  [1m[36mCourse Load (1.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."created_at" DESC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/views/static_pages/landing_page.html.haml:54
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 1.7ms | Allocations: 832)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 3.1ms | Allocations: 1124)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 1.7ms | Allocations: 832)
+  Rendered static_pages/landing_page.html.haml within layouts/application (Duration: 123.0ms | Allocations: 30284)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 14.1ms | Allocations: 20889)
+  Rendered layout layouts/application.html.haml (Duration: 151.6ms | Allocations: 64343)
+Completed 500 Internal Server Error in 180ms (ActiveRecord: 14.1ms | Allocations: 67292)
+
+
+  
+ActionView::Template::Error (Missing partial layouts/_footer with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :haml, :jbuilder]}. Searched in:
+  * "/home/fakichi/Documents/usp/GPTI/TestMaker/app/views"
+  * "/usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views"
+  * "/usr/share/rvm/gems/ruby-3.1.2/gems/actiontext-6.1.7/app/views"
+  * "/usr/share/rvm/gems/ruby-3.1.2/gems/actionmailbox-6.1.7/app/views"
+):
+    18:     = yield
+    19:   %br
+    20:   .bg-dark.text-white
+    21:     = render 'layouts/footer'
+  
+app/views/layouts/application.html.haml:21
+Started GET "/" for ::1 at 2022-11-13 16:54:50 -0300
+Processing by StaticPagesController#landing_page as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering static_pages/landing_page.html.haml within layouts/application
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "courses"[0m
+  ↳ app/views/static_pages/landing_page.html.haml:18
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(DISTINCT "courses"."user_id") FROM "courses"[0m
+  ↳ app/views/static_pages/landing_page.html.haml:24
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/views/static_pages/landing_page.html.haml:30
+  [1m[36mCourse Load (0.9ms)[0m  [1m[34mSELECT "courses".* FROM "courses" LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/views/static_pages/landing_page.html.haml:40
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 10.0ms | Allocations: 9641)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 1.8ms | Allocations: 834)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 2.2ms | Allocations: 830)
+  Rendered courses/_course.html.haml (Duration: 0.5ms | Allocations: 212)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 217)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 214)
+  [1m[36mCourse Load (1.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."created_at" DESC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/views/static_pages/landing_page.html.haml:54
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 1.7ms | Allocations: 832)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 2.8ms | Allocations: 1124)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 1.4ms | Allocations: 832)
+  Rendered static_pages/landing_page.html.haml within layouts/application (Duration: 52.8ms | Allocations: 35081)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 14.4ms | Allocations: 20887)
+  Rendered layouts/_footer.html.haml (Duration: 4.0ms | Allocations: 4967)
+  Rendered layout layouts/application.html.haml (Duration: 84.7ms | Allocations: 73080)
+Completed 200 OK in 119ms (Views: 75.8ms | ActiveRecord: 23.8ms | Allocations: 86268)
+
+
+Started GET "/" for ::1 at 2022-11-13 16:55:31 -0300
+Processing by StaticPagesController#landing_page as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering static_pages/landing_page.html.haml within layouts/application
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "courses"[0m
+  ↳ app/views/static_pages/landing_page.html.haml:18
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT COUNT(DISTINCT "courses"."user_id") FROM "courses"[0m
+  ↳ app/views/static_pages/landing_page.html.haml:24
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/views/static_pages/landing_page.html.haml:30
+  [1m[36mCourse Load (2.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/views/static_pages/landing_page.html.haml:40
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 19.4ms | Allocations: 8722)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 3.0ms | Allocations: 834)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 3.3ms | Allocations: 830)
+  Rendered courses/_course.html.haml (Duration: 0.9ms | Allocations: 212)
+  Rendered courses/_course.html.haml (Duration: 0.7ms | Allocations: 217)
+  Rendered courses/_course.html.haml (Duration: 0.6ms | Allocations: 214)
+  [1m[36mCourse Load (2.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."created_at" DESC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/views/static_pages/landing_page.html.haml:54
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 3.0ms | Allocations: 832)
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 4.4ms | Allocations: 1124)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 2.0ms | Allocations: 832)
+  Rendered static_pages/landing_page.html.haml within layouts/application (Duration: 78.1ms | Allocations: 30264)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 12.9ms | Allocations: 20873)
+  Rendered layouts/_footer.html.haml (Duration: 3.9ms | Allocations: 4953)
+  Rendered layout layouts/application.html.haml (Duration: 106.3ms | Allocations: 68186)
+Completed 200 OK in 118ms (Views: 94.2ms | ActiveRecord: 16.3ms | Allocations: 71164)
+
+
+Started GET "/courses/new" for ::1 at 2022-11-13 16:55:57 -0300
+Processing by CoursesController#new as HTML
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering courses/new.html.haml within layouts/application
+  Rendered courses/_form.html.haml (Duration: 63.0ms | Allocations: 33514)
+  Rendered courses/new.html.haml within layouts/application (Duration: 70.2ms | Allocations: 36826)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 15.2ms | Allocations: 20912)
+  Rendered layouts/_footer.html.haml (Duration: 4.0ms | Allocations: 4958)
+  Rendered layout layouts/application.html.haml (Duration: 101.4ms | Allocations: 74973)
+Completed 200 OK in 119ms (Views: 105.2ms | ActiveRecord: 1.9ms | Allocations: 78873)
+
+

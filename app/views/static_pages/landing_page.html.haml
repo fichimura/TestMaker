@@ -3,10 +3,10 @@
     Aqui o método é micro, mas o aprendizado é macro
 
   .p-4
-    .form-inline.my-2.my-lg-0
-    = form_tag(courses_path, method: :get) do
+  - if current_user
+    = search_form_for @ransack_courses, as: :courses_search, url: courses_path do |f|
       .input-group
-        = text_field_tag :title, params[:title], autocomplete: 'off', placeholder: "Pesquisar", class: 'form-control-sm'
+        = f.search_field :titulo_cont, class: 'form-control-sm', style: 'float: left; width: 150px; ', placeholder: 'Encontre o curso', :autocomplete => :off
         %span.input-group-append
           %button.btn.btn-primary.btn-sm{:type => "submit"}
             Pesquisar
