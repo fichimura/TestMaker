@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   resources :users, only: [:index]
   root 'static_pages#landing_page'
   get 'privacy_policy', to: 'static_pages#privacy_policy'
+  get 'activity', to: 'static_pages#activity'
 
-  get 'static_pages/landing_page'
-  get 'static_pages/privacy_policy'
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

@@ -14284,3 +14284,1691 @@ Processing by CoursesController#index as HTML
 Completed 200 OK in 46ms (Views: 30.5ms | ActiveRecord: 8.4ms | Allocations: 12653)
 
 
+Started GET "/" for ::1 at 2022-11-13 15:58:41 -0300
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#landing_page as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering static_pages/landing_page.html.haml within layouts/application
+  [1m[35m (4.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "courses"[0m
+  ↳ app/views/static_pages/landing_page.html.haml:18
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT COUNT(DISTINCT "courses"."user_id") FROM "courses"[0m
+  ↳ app/views/static_pages/landing_page.html.haml:24
+  [1m[35m (3.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/views/static_pages/landing_page.html.haml:30
+  [1m[36mCourse Load (1.5ms)[0m  [1m[34mSELECT "courses".* FROM "courses" LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/views/static_pages/landing_page.html.haml:40
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 30.4ms | Allocations: 17059)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 2.0ms | Allocations: 874)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 2.0ms | Allocations: 828)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 214)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 217)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 214)
+  [1m[36mCourse Load (1.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."created_at" DESC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/views/static_pages/landing_page.html.haml:54
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 3.6ms | Allocations: 1120)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 1.8ms | Allocations: 830)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 2.7ms | Allocations: 832)
+  Rendered static_pages/landing_page.html.haml within layouts/application (Duration: 116.8ms | Allocations: 49000)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 36.1ms | Allocations: 19565)
+  Rendered layout layouts/application.html.haml (Duration: 187.5ms | Allocations: 84911)
+Completed 200 OK in 222ms (Views: 165.2ms | ActiveRecord: 33.6ms | Allocations: 91234)
+
+
+Started GET "/" for ::1 at 2022-11-13 15:58:41 -0300
+Processing by StaticPagesController#landing_page as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering static_pages/landing_page.html.haml within layouts/application
+  [1m[35m (4.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "courses"[0m
+  ↳ app/views/static_pages/landing_page.html.haml:18
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(DISTINCT "courses"."user_id") FROM "courses"[0m
+  ↳ app/views/static_pages/landing_page.html.haml:24
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/views/static_pages/landing_page.html.haml:30
+  [1m[36mCourse Load (1.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/views/static_pages/landing_page.html.haml:40
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 3.5ms | Allocations: 1199)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 1.9ms | Allocations: 832)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 1.8ms | Allocations: 828)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 212)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 217)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 214)
+  [1m[36mCourse Load (1.5ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."created_at" DESC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/views/static_pages/landing_page.html.haml:54
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 3.9ms | Allocations: 1120)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 1.7ms | Allocations: 830)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 1.5ms | Allocations: 832)
+  Rendered static_pages/landing_page.html.haml within layouts/application (Duration: 35.6ms | Allocations: 11138)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 0.3ms | Allocations: 115)
+  Rendered layout layouts/application.html.haml (Duration: 42.2ms | Allocations: 15441)
+Completed 200 OK in 46ms (Views: 30.5ms | ActiveRecord: 12.5ms | Allocations: 16264)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-11-13 15:58:44 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.haml
+  Rendering /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 1.4ms | Allocations: 657)
+  Rendered /usr/share/rvm/gems/ruby-3.1.2/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 246.5ms | Allocations: 281972)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 0.4ms | Allocations: 146)
+  Rendered layout layouts/application.html.haml (Duration: 253.6ms | Allocations: 286427)
+Completed 200 OK in 264ms (Views: 260.5ms | ActiveRecord: 0.0ms | Allocations: 289081)
+
+
+Started POST "/users/sign_in" for ::1 at 2022-11-13 15:58:48 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"abc@abc.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "abc@abc.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (10.8ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "sign_in_count" = $2, "current_sign_in_at" = $3, "last_sign_in_at" = $4, "current_sign_in_ip" = $5, "last_sign_in_ip" = $6 WHERE "users"."id" = $7[0m  [["updated_at", "2022-11-13 18:58:48.514065"], ["sign_in_count", 1], ["current_sign_in_at", "2022-11-13 18:58:48.513462"], ["last_sign_in_at", "2022-11-13 18:58:48.513462"], ["current_sign_in_ip", "::1/128"], ["last_sign_in_ip", "::1/128"], ["id", 1]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 308ms (ActiveRecord: 16.2ms | Allocations: 10443)
+
+
+Started GET "/" for ::1 at 2022-11-13 15:58:48 -0300
+Processing by StaticPagesController#landing_page as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering static_pages/landing_page.html.haml within layouts/application
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "courses"[0m
+  ↳ app/views/static_pages/landing_page.html.haml:18
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(DISTINCT "courses"."user_id") FROM "courses"[0m
+  ↳ app/views/static_pages/landing_page.html.haml:24
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/views/static_pages/landing_page.html.haml:30
+  [1m[36mCourse Load (1.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/views/static_pages/landing_page.html.haml:40
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 5.9ms | Allocations: 1185)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 1.7ms | Allocations: 833)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 1.6ms | Allocations: 828)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 212)
+  Rendered courses/_course.html.haml (Duration: 0.4ms | Allocations: 217)
+  Rendered courses/_course.html.haml (Duration: 0.4ms | Allocations: 214)
+  [1m[36mCourse Load (1.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."created_at" DESC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/views/static_pages/landing_page.html.haml:54
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 3.8ms | Allocations: 1120)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 1.8ms | Allocations: 830)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 1.7ms | Allocations: 832)
+  Rendered static_pages/landing_page.html.haml within layouts/application (Duration: 32.0ms | Allocations: 11025)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 1.7ms | Allocations: 965)
+  Rendered layout layouts/application.html.haml (Duration: 40.6ms | Allocations: 16225)
+Completed 200 OK in 47ms (Views: 31.0ms | ActiveRecord: 11.2ms | Allocations: 18464)
+
+
+Started GET "/courses?courses_search%5Btitulo_cont%5D=art" for ::1 at 2022-11-13 15:58:55 -0300
+Processing by CoursesController#index as HTML
+  Parameters: {"courses_search"=>{"titulo_cont"=>"art"}}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering courses/index.html.haml within layouts/application
+  Rendered courses/index.html.haml within layouts/application (Duration: 5.2ms | Allocations: 2866)
+  Rendered layout layouts/application.html.haml (Duration: 5.9ms | Allocations: 2995)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 1.7ms | Allocations: 6603)
+
+
+  
+ActionView::Template::Error (The line was indented 2 levels deeper than the previous line.):
+    4: 
+    5: .row
+    6:   .col-md-2
+    7:       /= search_form_for @q do |f|
+    8:       = search_form_for @ransack_courses, as: :courses_search, url: courses_path do |f|
+    9:       = f.label :titulo
+   10:       = f.search_field :titulo_cont, placeholder: 'Titulo', class: 'form-control form-control-sm'
+  
+app/views/courses/index.html.haml:7
+Started GET "/courses?courses_search%5Btitulo_cont%5D=art" for ::1 at 2022-11-13 15:59:50 -0300
+Processing by CoursesController#index as HTML
+  Parameters: {"courses_search"=>{"titulo_cont"=>"art"}}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering courses/index.html.haml within layouts/application
+  Rendered courses/index.html.haml within layouts/application (Duration: 14.9ms | Allocations: 11076)
+  Rendered layout layouts/application.html.haml (Duration: 15.3ms | Allocations: 11207)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 1.6ms | Allocations: 14630)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check %h1 
+  Cursos:
+  = @courses.count
+
+.row
+  .col-md-2
+    /= search_form_for @q do |f|
+    = search_form_for @ransack_courses, as: :courses_search, url: courses_path do |f|
+    = f.label :titulo
+    = f.search_field :titulo_cont, placeholder: 'Titulo', class: 'form-control form-control-sm'
+    = f.label :descricao
+    = f.search_field :descricao_cont, placeholder: 'Descricao', class: 'form-control form-control-sm'
+    = f.label :linguagens
+    = f.search_field :linguagens_cont, placeholder: 'Linguagens', class: 'form-control form-control-sm'
+    
+    = f.label :nivel
+    = f.select :nivel_cont, Course.niveis, include_blank: true
+    = f.label :professor
+    = f.search_field :user_email_cont, placeholder: 'Email', class: 'form-control form-control-sm'
+    = f.submit
+    = link_to 'refresh', courses_path
+
+
+  .col-md-10
+    .card-columns
+      - @courses.each do |course|
+        = render 'courses/course', course: course
+%br
+
+= link_to 'Novo Curso', new_course_path
+
+):
+1:    %h1 
+2:      Cursos:
+3:      = @courses.count
+4:    
+5:    .row
+6:      .col-md-2
+7:        /= search_form_for @q do |f|
+8:        = search_form_for @ransack_courses, as: :courses_search, url: courses_path do |f|
+9:        = f.label :titulo
+10:        = f.search_field :titulo_cont, placeholder: 'Titulo', class: 'form-control form-control-sm'
+11:        = f.label :descricao
+12:        = f.search_field :descricao_cont, placeholder: 'Descricao', class: 'form-control form-control-sm'
+13:        = f.label :linguagens
+14:        = f.search_field :linguagens_cont, placeholder: 'Linguagens', class: 'form-control form-control-sm'
+15:        
+16:        = f.label :nivel
+17:        = f.select :nivel_cont, Course.niveis, include_blank: true
+18:        = f.label :professor
+19:        = f.search_field :user_email_cont, placeholder: 'Email', class: 'form-control form-control-sm'
+20:        = f.submit
+21:        = link_to 'refresh', courses_path
+22:    
+23:    
+24:      .col-md-10
+25:        .card-columns
+26:          - @courses.each do |course|
+27:            = render 'courses/course', course: course
+28:    %br
+29:    
+30:    = link_to 'Novo Curso', new_course_path
+  
+app/views/courses/index.html.haml:9: syntax error, unexpected ')', expecting `end'
+app/views/courses/index.html.haml:32: syntax error, unexpected `end', expecting ')'
+app/views/courses/index.html.haml:9: syntax error, unexpected ')', expecting `end'
+app/views/courses/index.html.haml:32: syntax error, unexpected `end', expecting ')'
+app/views/courses/index.html.haml:9: syntax error, unexpected ')', expecting `end'
+app/views/courses/index.html.haml:32: syntax error, unexpected `end', expecting ')'
+app/views/courses/index.html.haml:9: syntax error, unexpected ')', expecting `end'
+app/views/courses/index.html.haml:32: syntax error, unexpected `end', expecting ')'
+app/views/courses/index.html.haml:9: syntax error, unexpected ')', expecting `end'
+app/views/courses/index.html.haml:32: syntax error, unexpected `end', expecting ')'
+app/views/courses/index.html.haml:9: syntax error, unexpected ')', expecting `end'
+app/views/courses/index.html.haml:32: syntax error, unexpected `end', expecting ')'
+Started GET "/courses?courses_search%5Btitulo_cont%5D=art" for ::1 at 2022-11-13 16:01:22 -0300
+Processing by CoursesController#index as HTML
+  Parameters: {"courses_search"=>{"titulo_cont"=>"art"}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering courses/index.html.haml within layouts/application
+  Rendered courses/index.html.haml within layouts/application (Duration: 11.4ms | Allocations: 11108)
+  Rendered layout layouts/application.html.haml (Duration: 11.9ms | Allocations: 11238)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 1.2ms | Allocations: 14627)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check %h1 
+  Cursos:
+  = @courses.count
+
+  .row
+    .col-md-2
+      /= search_form_for @q do |f|
+      = search_form_for @ransack_courses, as: :courses_search, url: courses_path do |f|
+      = f.label :titulo
+      = f.search_field :titulo_cont, placeholder: 'Titulo', class: 'form-control form-control-sm'
+      = f.label :descricao
+      = f.search_field :descricao_cont, placeholder: 'Descricao', class: 'form-control form-control-sm'
+      = f.label :linguagens
+      = f.search_field :linguagens_cont, placeholder: 'Linguagens', class: 'form-control form-control-sm'
+      
+      = f.label :nivel
+      = f.select :nivel_cont, Course.niveis, include_blank: true
+      = f.label :professor
+      = f.search_field :user_email_cont, placeholder: 'Email', class: 'form-control form-control-sm'
+      = f.submit
+      = link_to 'refresh', courses_path
+
+
+    .col-md-10
+      .card-columns
+        - @courses.each do |course|
+          = render 'courses/course', course: course
+  %br
+
+= link_to 'Novo Curso', new_course_path
+
+):
+1:    %h1 
+2:      Cursos:
+3:      = @courses.count
+4:    
+5:      .row
+6:        .col-md-2
+7:          /= search_form_for @q do |f|
+8:          = search_form_for @ransack_courses, as: :courses_search, url: courses_path do |f|
+9:          = f.label :titulo
+10:          = f.search_field :titulo_cont, placeholder: 'Titulo', class: 'form-control form-control-sm'
+11:          = f.label :descricao
+12:          = f.search_field :descricao_cont, placeholder: 'Descricao', class: 'form-control form-control-sm'
+13:          = f.label :linguagens
+14:          = f.search_field :linguagens_cont, placeholder: 'Linguagens', class: 'form-control form-control-sm'
+15:          
+16:          = f.label :nivel
+17:          = f.select :nivel_cont, Course.niveis, include_blank: true
+18:          = f.label :professor
+19:          = f.search_field :user_email_cont, placeholder: 'Email', class: 'form-control form-control-sm'
+20:          = f.submit
+21:          = link_to 'refresh', courses_path
+22:    
+23:    
+24:        .col-md-10
+25:          .card-columns
+26:            - @courses.each do |course|
+27:              = render 'courses/course', course: course
+28:      %br
+29:    
+30:    = link_to 'Novo Curso', new_course_path
+  
+app/views/courses/index.html.haml:9: syntax error, unexpected ')', expecting `end'
+app/views/courses/index.html.haml:32: syntax error, unexpected `end', expecting ')'
+app/views/courses/index.html.haml:9: syntax error, unexpected ')', expecting `end'
+app/views/courses/index.html.haml:32: syntax error, unexpected `end', expecting ')'
+app/views/courses/index.html.haml:9: syntax error, unexpected ')', expecting `end'
+app/views/courses/index.html.haml:32: syntax error, unexpected `end', expecting ')'
+app/views/courses/index.html.haml:9: syntax error, unexpected ')', expecting `end'
+app/views/courses/index.html.haml:32: syntax error, unexpected `end', expecting ')'
+app/views/courses/index.html.haml:9: syntax error, unexpected ')', expecting `end'
+app/views/courses/index.html.haml:32: syntax error, unexpected `end', expecting ')'
+app/views/courses/index.html.haml:9: syntax error, unexpected ')', expecting `end'
+app/views/courses/index.html.haml:32: syntax error, unexpected `end', expecting ')'
+Started GET "/courses?courses_search%5Btitulo_cont%5D=art" for ::1 at 2022-11-13 16:02:58 -0300
+Processing by CoursesController#index as HTML
+  Parameters: {"courses_search"=>{"titulo_cont"=>"art"}}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering courses/index.html.haml within layouts/application
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "courses" WHERE "courses"."titulo" ILIKE '%art%'[0m
+  ↳ app/views/courses/index.html.haml:3
+  [1m[36mCourse Load (2.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."titulo" ILIKE '%art%'[0m
+  ↳ app/views/courses/index.html.haml:26
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  ↳ app/views/courses/index.html.haml:26
+  Rendered courses/_course.html.haml (Duration: 15.7ms | Allocations: 7890)
+  Rendered courses/_course.html.haml (Duration: 0.7ms | Allocations: 224)
+  Rendered courses/_course.html.haml (Duration: 0.6ms | Allocations: 226)
+  Rendered courses/index.html.haml within layouts/application (Duration: 89.8ms | Allocations: 29985)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 15.4ms | Allocations: 20061)
+  Rendered layout layouts/application.html.haml (Duration: 125.5ms | Allocations: 61420)
+Completed 200 OK in 140ms (Views: 122.8ms | ActiveRecord: 8.9ms | Allocations: 64870)
+
+
+Started GET "/courses?courses_search%5Btitulo_cont%5D=bio&courses_search%5Bdescricao_cont%5D=&courses_search%5Blinguagens_cont%5D=&courses_search%5Bnivel_cont%5D=&courses_search%5Buser_email_cont%5D=&commit=Search" for ::1 at 2022-11-13 16:03:18 -0300
+Processing by CoursesController#index as HTML
+  Parameters: {"courses_search"=>{"titulo_cont"=>"bio", "descricao_cont"=>"", "linguagens_cont"=>"", "nivel_cont"=>"", "user_email_cont"=>""}, "commit"=>"Search"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering courses/index.html.haml within layouts/application
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "courses" WHERE "courses"."titulo" ILIKE '%bio%'[0m
+  ↳ app/views/courses/index.html.haml:3
+  [1m[36mCourse Load (2.4ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."titulo" ILIKE '%bio%'[0m
+  ↳ app/views/courses/index.html.haml:26
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  ↳ app/views/courses/index.html.haml:26
+  Rendered courses/_course.html.haml (Duration: 1.3ms | Allocations: 231)
+  Rendered courses/_course.html.haml (Duration: 0.7ms | Allocations: 230)
+  Rendered courses/_course.html.haml (Duration: 0.7ms | Allocations: 230)
+  Rendered courses/_course.html.haml (Duration: 0.8ms | Allocations: 231)
+  Rendered courses/_course.html.haml (Duration: 0.7ms | Allocations: 230)
+  Rendered courses/_course.html.haml (Duration: 0.7ms | Allocations: 231)
+  Rendered courses/index.html.haml within layouts/application (Duration: 44.0ms | Allocations: 7441)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 2.3ms | Allocations: 699)
+  Rendered layout layouts/application.html.haml (Duration: 59.7ms | Allocations: 12253)
+Completed 200 OK in 71ms (Views: 53.5ms | ActiveRecord: 9.0ms | Allocations: 14631)
+
+
+Started GET "/courses?courses_search%5Btitulo_cont%5D=bio&courses_search%5Bdescricao_cont%5D=&courses_search%5Blinguagens_cont%5D=&courses_search%5Bnivel_cont%5D=&courses_search%5Buser_email_cont%5D=&commit=Search" for ::1 at 2022-11-13 16:04:13 -0300
+Processing by CoursesController#index as HTML
+  Parameters: {"courses_search"=>{"titulo_cont"=>"bio", "descricao_cont"=>"", "linguagens_cont"=>"", "nivel_cont"=>"", "user_email_cont"=>""}, "commit"=>"Search"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering courses/index.html.haml within layouts/application
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "courses" WHERE "courses"."titulo" ILIKE '%bio%'[0m
+  ↳ app/views/courses/index.html.haml:3
+  [1m[36mCourse Load (1.5ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."titulo" ILIKE '%bio%'[0m
+  ↳ app/views/courses/index.html.haml:26
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  ↳ app/views/courses/index.html.haml:26
+  Rendered courses/_course.html.haml (Duration: 7.5ms | Allocations: 7782)
+  Rendered courses/_course.html.haml (Duration: 0.6ms | Allocations: 230)
+  Rendered courses/_course.html.haml (Duration: 0.9ms | Allocations: 230)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 231)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 230)
+  Rendered courses/_course.html.haml (Duration: 0.7ms | Allocations: 231)
+  Rendered courses/index.html.haml within layouts/application (Duration: 42.3ms | Allocations: 24528)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 13.8ms | Allocations: 19359)
+  Rendered layout layouts/application.html.haml (Duration: 70.9ms | Allocations: 55185)
+Completed 200 OK in 79ms (Views: 69.4ms | ActiveRecord: 4.9ms | Allocations: 58331)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2039971103330730045)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateActivities (20221113190847)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (14.2ms)[0m  [1m[35mCREATE TABLE "activities" ("id" serial NOT NULL PRIMARY KEY, "trackable_type" character varying, "trackable_id" integer, "owner_type" character varying, "owner_id" integer, "key" character varying, "parameters" text, "recipient_type" character varying, "recipient_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE INDEX "index_activities_on_trackable_type_and_trackable_id" ON "activities" ("trackable_type", "trackable_id")[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE INDEX "index_activities_on_owner_type_and_owner_id" ON "activities" ("owner_type", "owner_id")[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE INDEX "index_activities_on_recipient_type_and_recipient_id" ON "activities" ("recipient_type", "recipient_id")[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE INDEX "index_activities_on_trackable_id_and_trackable_type" ON "activities" ("trackable_id", "trackable_type")[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE INDEX "index_activities_on_owner_id_and_owner_type" ON "activities" ("owner_id", "owner_type")[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE INDEX "index_activities_on_recipient_id_and_recipient_type" ON "activities" ("recipient_id", "recipient_type")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221113190847"]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(2039971103330730045)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2039971103330730045)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(2039971103330730045)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2022-11-13 16:10:04 -0300
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#landing_page as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering static_pages/landing_page.html.haml within layouts/application
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "courses"[0m
+  ↳ app/views/static_pages/landing_page.html.haml:18
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(DISTINCT "courses"."user_id") FROM "courses"[0m
+  ↳ app/views/static_pages/landing_page.html.haml:24
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/views/static_pages/landing_page.html.haml:30
+  [1m[36mCourse Load (1.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/views/static_pages/landing_page.html.haml:40
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 13.9ms | Allocations: 10884)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 1.7ms | Allocations: 869)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 1.4ms | Allocations: 828)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 214)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 217)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 214)
+  [1m[36mCourse Load (1.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."created_at" DESC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/views/static_pages/landing_page.html.haml:54
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 3.9ms | Allocations: 1120)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 1.8ms | Allocations: 830)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 1.6ms | Allocations: 832)
+  Rendered static_pages/landing_page.html.haml within layouts/application (Duration: 66.8ms | Allocations: 41082)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 14.6ms | Allocations: 19807)
+  Rendered layout layouts/application.html.haml (Duration: 112.8ms | Allocations: 77215)
+Completed 200 OK in 178ms (Views: 102.7ms | ActiveRecord: 26.6ms | Allocations: 98873)
+
+
+Started GET "/" for ::1 at 2022-11-13 16:10:05 -0300
+Processing by StaticPagesController#landing_page as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering static_pages/landing_page.html.haml within layouts/application
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "courses"[0m
+  ↳ app/views/static_pages/landing_page.html.haml:18
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT COUNT(DISTINCT "courses"."user_id") FROM "courses"[0m
+  ↳ app/views/static_pages/landing_page.html.haml:24
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/views/static_pages/landing_page.html.haml:30
+  [1m[36mCourse Load (1.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses" LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/views/static_pages/landing_page.html.haml:40
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 3.7ms | Allocations: 1184)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 2.1ms | Allocations: 832)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 2.8ms | Allocations: 828)
+  Rendered courses/_course.html.haml (Duration: 0.5ms | Allocations: 212)
+  Rendered courses/_course.html.haml (Duration: 0.4ms | Allocations: 217)
+  Rendered courses/_course.html.haml (Duration: 0.4ms | Allocations: 214)
+  [1m[36mCourse Load (1.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."created_at" DESC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/views/static_pages/landing_page.html.haml:54
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 3.2ms | Allocations: 1120)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 1.7ms | Allocations: 830)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 1.6ms | Allocations: 832)
+  Rendered static_pages/landing_page.html.haml within layouts/application (Duration: 32.5ms | Allocations: 11022)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 1.0ms | Allocations: 725)
+  Rendered layout layouts/application.html.haml (Duration: 64.4ms | Allocations: 15945)
+Completed 200 OK in 72ms (Views: 55.9ms | ActiveRecord: 10.3ms | Allocations: 18163)
+
+
+Started GET "/courses/new" for ::1 at 2022-11-13 16:10:14 -0300
+Processing by CoursesController#new as HTML
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering courses/new.html.haml within layouts/application
+  Rendered courses/_form.html.haml (Duration: 293.9ms | Allocations: 311402)
+  Rendered courses/new.html.haml within layouts/application (Duration: 305.9ms | Allocations: 314776)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 0.9ms | Allocations: 755)
+  Rendered layout layouts/application.html.haml (Duration: 312.3ms | Allocations: 319776)
+Completed 200 OK in 332ms (Views: 316.5ms | ActiveRecord: 2.4ms | Allocations: 323814)
+
+
+Started POST "/courses" for ::1 at 2022-11-13 16:10:35 -0300
+Processing by CoursesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "course"=>{"titulo"=>"public_activity", "descricao"=>"public_activity", "linguagens"=>"public_activity", "nivel"=>"Avançado"}, "commit"=>"Create Course"}
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/courses_controller.rb:37:in `block in create'
+  [1m[36mCourse Exists? (2.3ms)[0m  [1m[34mSELECT 1 AS one FROM "courses" WHERE "courses"."id" IS NOT NULL AND "courses"."slug" = $1 LIMIT $2[0m  [["slug", "public_activity"], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:37:in `block in create'
+  [1m[36mCourse Create (3.9ms)[0m  [1m[32mINSERT INTO "courses" ("titulo", "descricao", "created_at", "updated_at", "user_id", "slug", "linguagens", "nivel") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["titulo", "public_activity"], ["descricao", "public_activity"], ["created_at", "2022-11-13 19:10:35.299064"], ["updated_at", "2022-11-13 19:10:35.299064"], ["user_id", 1], ["slug", "public_activity"], ["linguagens", "public_activity"], ["nivel", "Avançado"]]
+  ↳ app/controllers/courses_controller.rb:37:in `block in create'
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/courses_controller.rb:37:in `block in create'
+Redirected to http://localhost:3000/courses/public_activity
+Completed 302 Found in 56ms (ActiveRecord: 13.0ms | Allocations: 17461)
+
+
+Started GET "/courses/public_activity" for ::1 at 2022-11-13 16:10:35 -0300
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"public_activity"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.9ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."slug" = $1 LIMIT $2[0m  [["slug", "public_activity"], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:73:in `set_course'
+  Rendering layout layouts/application.html.haml
+  Rendering courses/show.html.haml within layouts/application
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 4.2ms | Allocations: 1158)
+  Rendered courses/show.html.haml within layouts/application (Duration: 11.0ms | Allocations: 4126)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 1.4ms | Allocations: 719)
+  Rendered layout layouts/application.html.haml (Duration: 20.5ms | Allocations: 8938)
+Completed 200 OK in 28ms (Views: 19.4ms | ActiveRecord: 3.5ms | Allocations: 11977)
+
+
+Started GET "/courses/public_activity/edit" for ::1 at 2022-11-13 16:11:46 -0300
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CoursesController#edit as HTML
+  Parameters: {"id"=>"public_activity"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 10.4ms | Allocations: 22101)
+
+
+  
+NoMethodError (undefined method `racked' for Course:Class
+Did you mean?  tracked):
+  
+app/models/course.rb:19:in `<class:Course>'
+app/models/course.rb:1:in `<main>'
+app/controllers/application_controller.rb:6:in `set_global_variables'
+Started GET "/courses/public_activity/edit" for ::1 at 2022-11-13 16:11:58 -0300
+Processing by CoursesController#edit as HTML
+  Parameters: {"id"=>"public_activity"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCourse Load (1.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."slug" = $1 LIMIT $2[0m  [["slug", "public_activity"], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:73:in `set_course'
+  Rendering layout layouts/application.html.haml
+  Rendering courses/edit.html.haml within layouts/application
+  Rendered courses/_form.html.haml (Duration: 301.0ms | Allocations: 312215)
+  Rendered courses/edit.html.haml within layouts/application (Duration: 308.5ms | Allocations: 320243)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 12.8ms | Allocations: 19722)
+  Rendered layout layouts/application.html.haml (Duration: 350.1ms | Allocations: 356258)
+Completed 200 OK in 398ms (Views: 351.9ms | ActiveRecord: 16.6ms | Allocations: 375673)
+
+
+Started PATCH "/courses/public_activity" for ::1 at 2022-11-13 16:12:05 -0300
+Processing by CoursesController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "course"=>{"titulo"=>"public_activity", "descricao"=>"2public_activity", "linguagens"=>"public_activity", "nivel"=>"Avançado"}, "commit"=>"Update Course", "id"=>"public_activity"}
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCourse Load (2.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."slug" = $1 LIMIT $2[0m  [["slug", "public_activity"], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:73:in `set_course'
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/courses_controller.rb:50:in `block in update'
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:50:in `block in update'
+  [1m[36mCourse Update (2.7ms)[0m  [1m[33mUPDATE "courses" SET "descricao" = $1, "updated_at" = $2 WHERE "courses"."id" = $3[0m  [["descricao", "2public_activity"], ["updated_at", "2022-11-13 19:12:05.388128"], ["id", 50]]
+  ↳ app/controllers/courses_controller.rb:50:in `block in update'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/courses_controller.rb:50:in `block in update'
+Completed 500 Internal Server Error in 51ms (ActiveRecord: 13.9ms | Allocations: 11114)
+
+
+  
+NoMethodError (undefined method `current_user' for nil:NilClass
+
+    tracked owner: Proc.new{ |controller, model| controller.current_user }
+                                                           ^^^^^^^^^^^^^):
+  
+app/models/course.rb:19:in `block in <class:Course>'
+app/controllers/courses_controller.rb:50:in `block in update'
+app/controllers/courses_controller.rb:49:in `update'
+Started PATCH "/courses/public_activity" for ::1 at 2022-11-13 16:12:22 -0300
+Processing by CoursesController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "course"=>{"titulo"=>"public_activity", "descricao"=>"2public_activity", "linguagens"=>"public_activity", "nivel"=>"Avançado"}, "commit"=>"Update Course", "id"=>"public_activity"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCourse Load (1.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."slug" = $1 LIMIT $2[0m  [["slug", "public_activity"], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:73:in `set_course'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/courses_controller.rb:50:in `block in update'
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:50:in `block in update'
+  [1m[36mCourse Update (1.1ms)[0m  [1m[33mUPDATE "courses" SET "descricao" = $1, "updated_at" = $2 WHERE "courses"."id" = $3[0m  [["descricao", "2public_activity"], ["updated_at", "2022-11-13 19:12:22.319156"], ["id", 50]]
+  ↳ app/controllers/courses_controller.rb:50:in `block in update'
+  [1m[36mPublicActivity::Activity Create (2.4ms)[0m  [1m[32mINSERT INTO "activities" ("trackable_type", "trackable_id", "key", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["trackable_type", "Course"], ["trackable_id", 50], ["key", "course.update"], ["created_at", "2022-11-13 19:12:22.342199"], ["updated_at", "2022-11-13 19:12:22.342199"]]
+  ↳ app/controllers/courses_controller.rb:50:in `block in update'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/courses_controller.rb:50:in `block in update'
+Redirected to http://localhost:3000/courses/public_activity
+Completed 302 Found in 75ms (ActiveRecord: 22.5ms | Allocations: 31562)
+
+
+Started GET "/courses/public_activity" for ::1 at 2022-11-13 16:12:22 -0300
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"public_activity"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCourse Load (1.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."slug" = $1 LIMIT $2[0m  [["slug", "public_activity"], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:73:in `set_course'
+  Rendering layout layouts/application.html.haml
+  Rendering courses/show.html.haml within layouts/application
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 8.7ms | Allocations: 8903)
+  Rendered courses/show.html.haml within layouts/application (Duration: 12.2ms | Allocations: 12098)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 1.0ms | Allocations: 784)
+  Rendered layout layouts/application.html.haml (Duration: 30.8ms | Allocations: 17143)
+Completed 200 OK in 40ms (Views: 30.7ms | ActiveRecord: 3.5ms | Allocations: 20440)
+
+
+Started GET "/courses/public_activity" for ::1 at 2022-11-13 16:18:36 -0300
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"public_activity"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCourse Load (1.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."slug" = $1 LIMIT $2[0m  [["slug", "public_activity"], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:73:in `set_course'
+  Rendering layout layouts/application.html.haml
+  Rendering courses/show.html.haml within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 13.0ms | Allocations: 10857)
+  Rendered courses/show.html.haml within layouts/application (Duration: 20.7ms | Allocations: 18457)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 32.5ms | Allocations: 25774)
+  Rendered layout layouts/application.html.haml (Duration: 84.0ms | Allocations: 60542)
+Completed 500 Internal Server Error in 161ms (ActiveRecord: 20.2ms | Allocations: 86140)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `home_activity_path' for #<ActionView::Base:0x00000000009dd0>):
+    17:         %li.nav-item{class: "#{'active font-weight-bold' if current_page?(users_path)}"}
+    18:           = link_to users_path, class: 'nav-link' do
+    19:             Usuarios
+    20:         %li.nav-item{class: "#{'active font-weight-bold' if current_page?(home_activity_path)}"}
+    21:           = link_to home_activity_path, class: 'nav-link' do
+    22:             Atividade
+    23: 
+  
+app/views/layouts/_header.html.haml:20
+app/views/layouts/application.html.haml:14
+Started GET "/courses/public_activity" for ::1 at 2022-11-13 16:19:56 -0300
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"public_activity"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCourse Load (1.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."slug" = $1 LIMIT $2[0m  [["slug", "public_activity"], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:73:in `set_course'
+  Rendering layout layouts/application.html.haml
+  Rendering courses/show.html.haml within layouts/application
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 13.8ms | Allocations: 10848)
+  Rendered courses/show.html.haml within layouts/application (Duration: 21.3ms | Allocations: 18448)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 19.4ms | Allocations: 33265)
+  Rendered layout layouts/application.html.haml (Duration: 71.8ms | Allocations: 68020)
+Completed 500 Internal Server Error in 145ms (ActiveRecord: 24.7ms | Allocations: 93618)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check %nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+  %a.navbar-brand{:href => "/"} TestMaker
+  %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
+    %span.navbar-toggler-icon
+  #navbarSupportedContent.collapse.navbar-collapse
+    - if current_user
+      %ul.navbar-nav.mr-auto
+        %li.nav-item{class: "#{'active font-weight-bold' if current_page?(root_path)}"}
+          = link_to root_path, class: 'nav-link' do
+            Home
+        %li.nav-item{class: "#{'active font-weight-bold' if current_page?(courses_path)}"}
+          = link_to courses_path, class: 'nav-link' do
+            Cursos
+        %li.nav-item{class: "#{'active font-weight-bold' if current_page?(new_course_path)}"}
+          = link_to new_course_path, class: 'nav-link' do
+            Novo Curso
+        %li.nav-item{class: "#{'active font-weight-bold' if current_page?(users_path)}"}
+          = link_to users_path, class: 'nav-link' do
+            Usuarios
+        %li.nav-item{class: "#{'active font-weight-bold' if current_page?(static_pages_activity
+_path)}"}
+          = link_to static_pages_activity
+, class: 'nav-link' do
+            Atividade
+
+
+
+      /SEARCH IN NAVBAR
+      = search_form_for @ransack_courses, as: :courses_search, url: courses_path do |f|
+        .input-group
+          = f.search_field :titulo_cont, class: 'form-control-sm', style: 'float: left; width: 150px; ', placeholder: 'Find a course', :autocomplete => :off
+          %span.input-group-append
+            %button.btn.btn-primary.btn-sm{:type => "submit"}
+              Pesquisar
+      -# .form-inline.my-2.my-lg-0
+      -#   = form_tag(courses_path, method: :get) do
+      -#     .input-group
+      -#       = text_field_tag :titulo, params[:titulo], autocomplete: 'off', placeholder: "Search", class: 'form-control-sm'
+      -#       %span.input-group-append
+      -#         %button.btn.btn-primary.btn-sm{:type => "submit"}
+      -#           Pesquisar
+
+      %ul.navbar-nav.mr-right
+        %li.nav-item{class: "#{'active font-weight-bold' if current_page?(root_path)}"}
+          = link_to edit_user_registration_path, class: 'nav-link' do
+            Configurações da Conta
+        %li.nav-item{class: "#{'active font-weight-bold' if current_page?(root_path)}"}
+          = link_to destroy_user_session_path, method: :delete,class: 'nav-link' do
+            Sair
+
+    - else
+      %ul.navbar-nav
+        %li.nav-item= link_to 'Sign Up', new_user_registration_path, class: 'nav-link'
+        %li.nav-item= link_to 'Log In', new_user_session_path, class: 'nav-link'
+):
+1:    %nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+2:      %a.navbar-brand{:href => "/"} TestMaker
+3:      %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
+4:        %span.navbar-toggler-icon
+5:      #navbarSupportedContent.collapse.navbar-collapse
+6:        - if current_user
+7:          %ul.navbar-nav.mr-auto
+8:            %li.nav-item{class: "#{'active font-weight-bold' if current_page?(root_path)}"}
+9:              = link_to root_path, class: 'nav-link' do
+10:                Home
+11:            %li.nav-item{class: "#{'active font-weight-bold' if current_page?(courses_path)}"}
+12:              = link_to courses_path, class: 'nav-link' do
+13:                Cursos
+14:            %li.nav-item{class: "#{'active font-weight-bold' if current_page?(new_course_path)}"}
+15:              = link_to new_course_path, class: 'nav-link' do
+16:                Novo Curso
+17:            %li.nav-item{class: "#{'active font-weight-bold' if current_page?(users_path)}"}
+18:              = link_to users_path, class: 'nav-link' do
+19:                Usuarios
+20:            %li.nav-item{class: "#{'active font-weight-bold' if current_page?(static_pages_activity
+21:    _path)}"}
+22:              = link_to static_pages_activity
+23:    , class: 'nav-link' do
+24:                Atividade
+25:    
+26:    
+27:    
+28:          /SEARCH IN NAVBAR
+29:          = search_form_for @ransack_courses, as: :courses_search, url: courses_path do |f|
+30:            .input-group
+31:              = f.search_field :titulo_cont, class: 'form-control-sm', style: 'float: left; width: 150px; ', placeholder: 'Find a course', :autocomplete => :off
+32:              %span.input-group-append
+33:                %button.btn.btn-primary.btn-sm{:type => "submit"}
+34:                  Pesquisar
+35:          -# .form-inline.my-2.my-lg-0
+36:          -#   = form_tag(courses_path, method: :get) do
+37:          -#     .input-group
+38:          -#       = text_field_tag :titulo, params[:titulo], autocomplete: 'off', placeholder: "Search", class: 'form-control-sm'
+39:          -#       %span.input-group-append
+40:          -#         %button.btn.btn-primary.btn-sm{:type => "submit"}
+41:          -#           Pesquisar
+42:    
+43:          %ul.navbar-nav.mr-right
+44:            %li.nav-item{class: "#{'active font-weight-bold' if current_page?(root_path)}"}
+45:              = link_to edit_user_registration_path, class: 'nav-link' do
+46:                Configurações da Conta
+47:            %li.nav-item{class: "#{'active font-weight-bold' if current_page?(root_path)}"}
+48:              = link_to destroy_user_session_path, method: :delete,class: 'nav-link' do
+49:                Sair
+50:    
+51:        - else
+52:          %ul.navbar-nav
+53:            %li.nav-item= link_to 'Sign Up', new_user_registration_path, class: 'nav-link'
+54:            %li.nav-item= link_to 'Log In', new_user_session_path, class: 'nav-link'
+  
+app/views/layouts/_header.html.haml:21: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_header.html.haml:30: syntax error, unexpected local variable or method, expecting '}'
+app/views/layouts/_header.html.haml:35: syntax error, unexpected constant, expecting '}'
+app/views/layouts/_header.html.haml:37: syntax error, unexpected local variable or method, expecting '}'
+app/views/layouts/_header.html.haml:41: syntax error, unexpected '=', expecting '}'
+app/views/layouts/_header.html.haml:43: unknown type of %string
+app/views/layouts/_header.html.haml:43: syntax error, unexpected end-of-input, expecting `end'
+app/views/layouts/_header.html.haml:21: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_header.html.haml:30: syntax error, unexpected local variable or method, expecting '}'
+app/views/layouts/_header.html.haml:35: syntax error, unexpected constant, expecting '}'
+app/views/layouts/_header.html.haml:37: syntax error, unexpected local variable or method, expecting '}'
+app/views/layouts/_header.html.haml:41: syntax error, unexpected '=', expecting '}'
+app/views/layouts/_header.html.haml:43: unknown type of %string
+app/views/layouts/_header.html.haml:43: syntax error, unexpected end-of-input, expecting `end'
+app/views/layouts/_header.html.haml:21: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_header.html.haml:30: syntax error, unexpected local variable or method, expecting '}'
+app/views/layouts/_header.html.haml:35: syntax error, unexpected constant, expecting '}'
+app/views/layouts/_header.html.haml:37: syntax error, unexpected local variable or method, expecting '}'
+app/views/layouts/_header.html.haml:41: syntax error, unexpected '=', expecting '}'
+app/views/layouts/_header.html.haml:43: unknown type of %string
+app/views/layouts/_header.html.haml:43: syntax error, unexpected end-of-input, expecting `end'
+app/views/layouts/_header.html.haml:21: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_header.html.haml:30: syntax error, unexpected local variable or method, expecting '}'
+app/views/layouts/_header.html.haml:35: syntax error, unexpected constant, expecting '}'
+app/views/layouts/_header.html.haml:37: syntax error, unexpected local variable or method, expecting '}'
+app/views/layouts/_header.html.haml:41: syntax error, unexpected '=', expecting '}'
+app/views/layouts/_header.html.haml:43: unknown type of %string
+app/views/layouts/_header.html.haml:43: syntax error, unexpected end-of-input, expecting `end'
+app/views/layouts/_header.html.haml:21: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_header.html.haml:30: syntax error, unexpected local variable or method, expecting '}'
+app/views/layouts/_header.html.haml:35: syntax error, unexpected constant, expecting '}'
+app/views/layouts/_header.html.haml:37: syntax error, unexpected local variable or method, expecting '}'
+app/views/layouts/_header.html.haml:41: syntax error, unexpected '=', expecting '}'
+app/views/layouts/_header.html.haml:43: unknown type of %string
+app/views/layouts/_header.html.haml:43: syntax error, unexpected end-of-input, expecting `end'
+app/views/layouts/_header.html.haml:21: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_header.html.haml:30: syntax error, unexpected local variable or method, expecting '}'
+app/views/layouts/_header.html.haml:35: syntax error, unexpected constant, expecting '}'
+app/views/layouts/_header.html.haml:37: syntax error, unexpected local variable or method, expecting '}'
+app/views/layouts/_header.html.haml:41: syntax error, unexpected '=', expecting '}'
+app/views/layouts/_header.html.haml:43: unknown type of %string
+app/views/layouts/_header.html.haml:43: syntax error, unexpected end-of-input, expecting `end'
+app/views/layouts/application.html.haml:14
+Started GET "/courses/public_activity" for ::1 at 2022-11-13 16:19:58 -0300
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"public_activity"}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCourse Load (2.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."slug" = $1 LIMIT $2[0m  [["slug", "public_activity"], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:73:in `set_course'
+  Rendering layout layouts/application.html.haml
+  Rendering courses/show.html.haml within layouts/application
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 6.0ms | Allocations: 1170)
+  Rendered courses/show.html.haml within layouts/application (Duration: 6.9ms | Allocations: 1365)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 38.9ms | Allocations: 32996)
+  Rendered layout layouts/application.html.haml (Duration: 59.3ms | Allocations: 38579)
+Completed 500 Internal Server Error in 110ms (ActiveRecord: 28.7ms | Allocations: 53614)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check %nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+  %a.navbar-brand{:href => "/"} TestMaker
+  %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
+    %span.navbar-toggler-icon
+  #navbarSupportedContent.collapse.navbar-collapse
+    - if current_user
+      %ul.navbar-nav.mr-auto
+        %li.nav-item{class: "#{'active font-weight-bold' if current_page?(root_path)}"}
+          = link_to root_path, class: 'nav-link' do
+            Home
+        %li.nav-item{class: "#{'active font-weight-bold' if current_page?(courses_path)}"}
+          = link_to courses_path, class: 'nav-link' do
+            Cursos
+        %li.nav-item{class: "#{'active font-weight-bold' if current_page?(new_course_path)}"}
+          = link_to new_course_path, class: 'nav-link' do
+            Novo Curso
+        %li.nav-item{class: "#{'active font-weight-bold' if current_page?(users_path)}"}
+          = link_to users_path, class: 'nav-link' do
+            Usuarios
+        %li.nav-item{class: "#{'active font-weight-bold' if current_page?(static_pages_activity
+_path)}"}
+          = link_to static_pages_activity
+, class: 'nav-link' do
+            Atividade
+
+
+
+      /SEARCH IN NAVBAR
+      = search_form_for @ransack_courses, as: :courses_search, url: courses_path do |f|
+        .input-group
+          = f.search_field :titulo_cont, class: 'form-control-sm', style: 'float: left; width: 150px; ', placeholder: 'Find a course', :autocomplete => :off
+          %span.input-group-append
+            %button.btn.btn-primary.btn-sm{:type => "submit"}
+              Pesquisar
+      -# .form-inline.my-2.my-lg-0
+      -#   = form_tag(courses_path, method: :get) do
+      -#     .input-group
+      -#       = text_field_tag :titulo, params[:titulo], autocomplete: 'off', placeholder: "Search", class: 'form-control-sm'
+      -#       %span.input-group-append
+      -#         %button.btn.btn-primary.btn-sm{:type => "submit"}
+      -#           Pesquisar
+
+      %ul.navbar-nav.mr-right
+        %li.nav-item{class: "#{'active font-weight-bold' if current_page?(root_path)}"}
+          = link_to edit_user_registration_path, class: 'nav-link' do
+            Configurações da Conta
+        %li.nav-item{class: "#{'active font-weight-bold' if current_page?(root_path)}"}
+          = link_to destroy_user_session_path, method: :delete,class: 'nav-link' do
+            Sair
+
+    - else
+      %ul.navbar-nav
+        %li.nav-item= link_to 'Sign Up', new_user_registration_path, class: 'nav-link'
+        %li.nav-item= link_to 'Log In', new_user_session_path, class: 'nav-link'
+):
+1:    %nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+2:      %a.navbar-brand{:href => "/"} TestMaker
+3:      %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
+4:        %span.navbar-toggler-icon
+5:      #navbarSupportedContent.collapse.navbar-collapse
+6:        - if current_user
+7:          %ul.navbar-nav.mr-auto
+8:            %li.nav-item{class: "#{'active font-weight-bold' if current_page?(root_path)}"}
+9:              = link_to root_path, class: 'nav-link' do
+10:                Home
+11:            %li.nav-item{class: "#{'active font-weight-bold' if current_page?(courses_path)}"}
+12:              = link_to courses_path, class: 'nav-link' do
+13:                Cursos
+14:            %li.nav-item{class: "#{'active font-weight-bold' if current_page?(new_course_path)}"}
+15:              = link_to new_course_path, class: 'nav-link' do
+16:                Novo Curso
+17:            %li.nav-item{class: "#{'active font-weight-bold' if current_page?(users_path)}"}
+18:              = link_to users_path, class: 'nav-link' do
+19:                Usuarios
+20:            %li.nav-item{class: "#{'active font-weight-bold' if current_page?(static_pages_activity
+21:    _path)}"}
+22:              = link_to static_pages_activity
+23:    , class: 'nav-link' do
+24:                Atividade
+25:    
+26:    
+27:    
+28:          /SEARCH IN NAVBAR
+29:          = search_form_for @ransack_courses, as: :courses_search, url: courses_path do |f|
+30:            .input-group
+31:              = f.search_field :titulo_cont, class: 'form-control-sm', style: 'float: left; width: 150px; ', placeholder: 'Find a course', :autocomplete => :off
+32:              %span.input-group-append
+33:                %button.btn.btn-primary.btn-sm{:type => "submit"}
+34:                  Pesquisar
+35:          -# .form-inline.my-2.my-lg-0
+36:          -#   = form_tag(courses_path, method: :get) do
+37:          -#     .input-group
+38:          -#       = text_field_tag :titulo, params[:titulo], autocomplete: 'off', placeholder: "Search", class: 'form-control-sm'
+39:          -#       %span.input-group-append
+40:          -#         %button.btn.btn-primary.btn-sm{:type => "submit"}
+41:          -#           Pesquisar
+42:    
+43:          %ul.navbar-nav.mr-right
+44:            %li.nav-item{class: "#{'active font-weight-bold' if current_page?(root_path)}"}
+45:              = link_to edit_user_registration_path, class: 'nav-link' do
+46:                Configurações da Conta
+47:            %li.nav-item{class: "#{'active font-weight-bold' if current_page?(root_path)}"}
+48:              = link_to destroy_user_session_path, method: :delete,class: 'nav-link' do
+49:                Sair
+50:    
+51:        - else
+52:          %ul.navbar-nav
+53:            %li.nav-item= link_to 'Sign Up', new_user_registration_path, class: 'nav-link'
+54:            %li.nav-item= link_to 'Log In', new_user_session_path, class: 'nav-link'
+  
+app/views/layouts/_header.html.haml:21: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_header.html.haml:30: syntax error, unexpected local variable or method, expecting '}'
+app/views/layouts/_header.html.haml:35: syntax error, unexpected constant, expecting '}'
+app/views/layouts/_header.html.haml:37: syntax error, unexpected local variable or method, expecting '}'
+app/views/layouts/_header.html.haml:41: syntax error, unexpected '=', expecting '}'
+app/views/layouts/_header.html.haml:43: unknown type of %string
+app/views/layouts/_header.html.haml:43: syntax error, unexpected end-of-input, expecting `end'
+app/views/layouts/_header.html.haml:21: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_header.html.haml:30: syntax error, unexpected local variable or method, expecting '}'
+app/views/layouts/_header.html.haml:35: syntax error, unexpected constant, expecting '}'
+app/views/layouts/_header.html.haml:37: syntax error, unexpected local variable or method, expecting '}'
+app/views/layouts/_header.html.haml:41: syntax error, unexpected '=', expecting '}'
+app/views/layouts/_header.html.haml:43: unknown type of %string
+app/views/layouts/_header.html.haml:43: syntax error, unexpected end-of-input, expecting `end'
+app/views/layouts/_header.html.haml:21: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_header.html.haml:30: syntax error, unexpected local variable or method, expecting '}'
+app/views/layouts/_header.html.haml:35: syntax error, unexpected constant, expecting '}'
+app/views/layouts/_header.html.haml:37: syntax error, unexpected local variable or method, expecting '}'
+app/views/layouts/_header.html.haml:41: syntax error, unexpected '=', expecting '}'
+app/views/layouts/_header.html.haml:43: unknown type of %string
+app/views/layouts/_header.html.haml:43: syntax error, unexpected end-of-input, expecting `end'
+app/views/layouts/_header.html.haml:21: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_header.html.haml:30: syntax error, unexpected local variable or method, expecting '}'
+app/views/layouts/_header.html.haml:35: syntax error, unexpected constant, expecting '}'
+app/views/layouts/_header.html.haml:37: syntax error, unexpected local variable or method, expecting '}'
+app/views/layouts/_header.html.haml:41: syntax error, unexpected '=', expecting '}'
+app/views/layouts/_header.html.haml:43: unknown type of %string
+app/views/layouts/_header.html.haml:43: syntax error, unexpected end-of-input, expecting `end'
+app/views/layouts/_header.html.haml:21: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_header.html.haml:30: syntax error, unexpected local variable or method, expecting '}'
+app/views/layouts/_header.html.haml:35: syntax error, unexpected constant, expecting '}'
+app/views/layouts/_header.html.haml:37: syntax error, unexpected local variable or method, expecting '}'
+app/views/layouts/_header.html.haml:41: syntax error, unexpected '=', expecting '}'
+app/views/layouts/_header.html.haml:43: unknown type of %string
+app/views/layouts/_header.html.haml:43: syntax error, unexpected end-of-input, expecting `end'
+app/views/layouts/_header.html.haml:21: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_header.html.haml:30: syntax error, unexpected local variable or method, expecting '}'
+app/views/layouts/_header.html.haml:35: syntax error, unexpected constant, expecting '}'
+app/views/layouts/_header.html.haml:37: syntax error, unexpected local variable or method, expecting '}'
+app/views/layouts/_header.html.haml:41: syntax error, unexpected '=', expecting '}'
+app/views/layouts/_header.html.haml:43: unknown type of %string
+app/views/layouts/_header.html.haml:43: syntax error, unexpected end-of-input, expecting `end'
+app/views/layouts/application.html.haml:14
+Started GET "/courses/public_activity" for ::1 at 2022-11-13 16:19:59 -0300
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"public_activity"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCourse Load (1.9ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."slug" = $1 LIMIT $2[0m  [["slug", "public_activity"], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:73:in `set_course'
+  Rendering layout layouts/application.html.haml
+  Rendering courses/show.html.haml within layouts/application
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 7.1ms | Allocations: 1408)
+  Rendered courses/show.html.haml within layouts/application (Duration: 8.0ms | Allocations: 1590)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 39.1ms | Allocations: 32940)
+  Rendered layout layouts/application.html.haml (Duration: 68.4ms | Allocations: 41961)
+Completed 500 Internal Server Error in 83ms (ActiveRecord: 6.8ms | Allocations: 45412)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check %nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+  %a.navbar-brand{:href => "/"} TestMaker
+  %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
+    %span.navbar-toggler-icon
+  #navbarSupportedContent.collapse.navbar-collapse
+    - if current_user
+      %ul.navbar-nav.mr-auto
+        %li.nav-item{class: "#{'active font-weight-bold' if current_page?(root_path)}"}
+          = link_to root_path, class: 'nav-link' do
+            Home
+        %li.nav-item{class: "#{'active font-weight-bold' if current_page?(courses_path)}"}
+          = link_to courses_path, class: 'nav-link' do
+            Cursos
+        %li.nav-item{class: "#{'active font-weight-bold' if current_page?(new_course_path)}"}
+          = link_to new_course_path, class: 'nav-link' do
+            Novo Curso
+        %li.nav-item{class: "#{'active font-weight-bold' if current_page?(users_path)}"}
+          = link_to users_path, class: 'nav-link' do
+            Usuarios
+        %li.nav-item{class: "#{'active font-weight-bold' if current_page?(static_pages_activity
+_path)}"}
+          = link_to static_pages_activity
+, class: 'nav-link' do
+            Atividade
+
+
+
+      /SEARCH IN NAVBAR
+      = search_form_for @ransack_courses, as: :courses_search, url: courses_path do |f|
+        .input-group
+          = f.search_field :titulo_cont, class: 'form-control-sm', style: 'float: left; width: 150px; ', placeholder: 'Find a course', :autocomplete => :off
+          %span.input-group-append
+            %button.btn.btn-primary.btn-sm{:type => "submit"}
+              Pesquisar
+      -# .form-inline.my-2.my-lg-0
+      -#   = form_tag(courses_path, method: :get) do
+      -#     .input-group
+      -#       = text_field_tag :titulo, params[:titulo], autocomplete: 'off', placeholder: "Search", class: 'form-control-sm'
+      -#       %span.input-group-append
+      -#         %button.btn.btn-primary.btn-sm{:type => "submit"}
+      -#           Pesquisar
+
+      %ul.navbar-nav.mr-right
+        %li.nav-item{class: "#{'active font-weight-bold' if current_page?(root_path)}"}
+          = link_to edit_user_registration_path, class: 'nav-link' do
+            Configurações da Conta
+        %li.nav-item{class: "#{'active font-weight-bold' if current_page?(root_path)}"}
+          = link_to destroy_user_session_path, method: :delete,class: 'nav-link' do
+            Sair
+
+    - else
+      %ul.navbar-nav
+        %li.nav-item= link_to 'Sign Up', new_user_registration_path, class: 'nav-link'
+        %li.nav-item= link_to 'Log In', new_user_session_path, class: 'nav-link'
+):
+1:    %nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+2:      %a.navbar-brand{:href => "/"} TestMaker
+3:      %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
+4:        %span.navbar-toggler-icon
+5:      #navbarSupportedContent.collapse.navbar-collapse
+6:        - if current_user
+7:          %ul.navbar-nav.mr-auto
+8:            %li.nav-item{class: "#{'active font-weight-bold' if current_page?(root_path)}"}
+9:              = link_to root_path, class: 'nav-link' do
+10:                Home
+11:            %li.nav-item{class: "#{'active font-weight-bold' if current_page?(courses_path)}"}
+12:              = link_to courses_path, class: 'nav-link' do
+13:                Cursos
+14:            %li.nav-item{class: "#{'active font-weight-bold' if current_page?(new_course_path)}"}
+15:              = link_to new_course_path, class: 'nav-link' do
+16:                Novo Curso
+17:            %li.nav-item{class: "#{'active font-weight-bold' if current_page?(users_path)}"}
+18:              = link_to users_path, class: 'nav-link' do
+19:                Usuarios
+20:            %li.nav-item{class: "#{'active font-weight-bold' if current_page?(static_pages_activity
+21:    _path)}"}
+22:              = link_to static_pages_activity
+23:    , class: 'nav-link' do
+24:                Atividade
+25:    
+26:    
+27:    
+28:          /SEARCH IN NAVBAR
+29:          = search_form_for @ransack_courses, as: :courses_search, url: courses_path do |f|
+30:            .input-group
+31:              = f.search_field :titulo_cont, class: 'form-control-sm', style: 'float: left; width: 150px; ', placeholder: 'Find a course', :autocomplete => :off
+32:              %span.input-group-append
+33:                %button.btn.btn-primary.btn-sm{:type => "submit"}
+34:                  Pesquisar
+35:          -# .form-inline.my-2.my-lg-0
+36:          -#   = form_tag(courses_path, method: :get) do
+37:          -#     .input-group
+38:          -#       = text_field_tag :titulo, params[:titulo], autocomplete: 'off', placeholder: "Search", class: 'form-control-sm'
+39:          -#       %span.input-group-append
+40:          -#         %button.btn.btn-primary.btn-sm{:type => "submit"}
+41:          -#           Pesquisar
+42:    
+43:          %ul.navbar-nav.mr-right
+44:            %li.nav-item{class: "#{'active font-weight-bold' if current_page?(root_path)}"}
+45:              = link_to edit_user_registration_path, class: 'nav-link' do
+46:                Configurações da Conta
+47:            %li.nav-item{class: "#{'active font-weight-bold' if current_page?(root_path)}"}
+48:              = link_to destroy_user_session_path, method: :delete,class: 'nav-link' do
+49:                Sair
+50:    
+51:        - else
+52:          %ul.navbar-nav
+53:            %li.nav-item= link_to 'Sign Up', new_user_registration_path, class: 'nav-link'
+54:            %li.nav-item= link_to 'Log In', new_user_session_path, class: 'nav-link'
+  
+app/views/layouts/_header.html.haml:21: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_header.html.haml:30: syntax error, unexpected local variable or method, expecting '}'
+app/views/layouts/_header.html.haml:35: syntax error, unexpected constant, expecting '}'
+app/views/layouts/_header.html.haml:37: syntax error, unexpected local variable or method, expecting '}'
+app/views/layouts/_header.html.haml:41: syntax error, unexpected '=', expecting '}'
+app/views/layouts/_header.html.haml:43: unknown type of %string
+app/views/layouts/_header.html.haml:43: syntax error, unexpected end-of-input, expecting `end'
+app/views/layouts/_header.html.haml:21: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_header.html.haml:30: syntax error, unexpected local variable or method, expecting '}'
+app/views/layouts/_header.html.haml:35: syntax error, unexpected constant, expecting '}'
+app/views/layouts/_header.html.haml:37: syntax error, unexpected local variable or method, expecting '}'
+app/views/layouts/_header.html.haml:41: syntax error, unexpected '=', expecting '}'
+app/views/layouts/_header.html.haml:43: unknown type of %string
+app/views/layouts/_header.html.haml:43: syntax error, unexpected end-of-input, expecting `end'
+app/views/layouts/_header.html.haml:21: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_header.html.haml:30: syntax error, unexpected local variable or method, expecting '}'
+app/views/layouts/_header.html.haml:35: syntax error, unexpected constant, expecting '}'
+app/views/layouts/_header.html.haml:37: syntax error, unexpected local variable or method, expecting '}'
+app/views/layouts/_header.html.haml:41: syntax error, unexpected '=', expecting '}'
+app/views/layouts/_header.html.haml:43: unknown type of %string
+app/views/layouts/_header.html.haml:43: syntax error, unexpected end-of-input, expecting `end'
+app/views/layouts/_header.html.haml:21: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_header.html.haml:30: syntax error, unexpected local variable or method, expecting '}'
+app/views/layouts/_header.html.haml:35: syntax error, unexpected constant, expecting '}'
+app/views/layouts/_header.html.haml:37: syntax error, unexpected local variable or method, expecting '}'
+app/views/layouts/_header.html.haml:41: syntax error, unexpected '=', expecting '}'
+app/views/layouts/_header.html.haml:43: unknown type of %string
+app/views/layouts/_header.html.haml:43: syntax error, unexpected end-of-input, expecting `end'
+app/views/layouts/_header.html.haml:21: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_header.html.haml:30: syntax error, unexpected local variable or method, expecting '}'
+app/views/layouts/_header.html.haml:35: syntax error, unexpected constant, expecting '}'
+app/views/layouts/_header.html.haml:37: syntax error, unexpected local variable or method, expecting '}'
+app/views/layouts/_header.html.haml:41: syntax error, unexpected '=', expecting '}'
+app/views/layouts/_header.html.haml:43: unknown type of %string
+app/views/layouts/_header.html.haml:43: syntax error, unexpected end-of-input, expecting `end'
+app/views/layouts/_header.html.haml:21: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_header.html.haml:30: syntax error, unexpected local variable or method, expecting '}'
+app/views/layouts/_header.html.haml:35: syntax error, unexpected constant, expecting '}'
+app/views/layouts/_header.html.haml:37: syntax error, unexpected local variable or method, expecting '}'
+app/views/layouts/_header.html.haml:41: syntax error, unexpected '=', expecting '}'
+app/views/layouts/_header.html.haml:43: unknown type of %string
+app/views/layouts/_header.html.haml:43: syntax error, unexpected end-of-input, expecting `end'
+app/views/layouts/application.html.haml:14
+Started GET "/" for ::1 at 2022-11-13 16:25:00 -0300
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#landing_page as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering static_pages/landing_page.html.haml within layouts/application
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "courses"[0m
+  ↳ app/views/static_pages/landing_page.html.haml:18
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT COUNT(DISTINCT "courses"."user_id") FROM "courses"[0m
+  ↳ app/views/static_pages/landing_page.html.haml:24
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/views/static_pages/landing_page.html.haml:30
+  [1m[36mCourse Load (1.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses" LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/views/static_pages/landing_page.html.haml:40
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 14.0ms | Allocations: 10906)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 1.6ms | Allocations: 871)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 1.3ms | Allocations: 830)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 214)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 217)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 214)
+  [1m[36mCourse Load (1.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."created_at" DESC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/views/static_pages/landing_page.html.haml:54
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 1.7ms | Allocations: 832)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 2.9ms | Allocations: 1124)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 1.9ms | Allocations: 832)
+  Rendered static_pages/landing_page.html.haml within layouts/application (Duration: 72.6ms | Allocations: 41144)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 17.5ms | Allocations: 33424)
+  Rendered layout layouts/application.html.haml (Duration: 114.5ms | Allocations: 90853)
+Completed 500 Internal Server Error in 173ms (ActiveRecord: 33.1ms | Allocations: 110989)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check %nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+  %a.navbar-brand{:href => "/"} TestMaker
+  %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
+    %span.navbar-toggler-icon
+  #navbarSupportedContent.collapse.navbar-collapse
+    - if current_user
+      %ul.navbar-nav.mr-auto
+        %li.nav-item{class: "#{'active font-weight-bold' if current_page?(root_path)}"}
+          = link_to root_path, class: 'nav-link' do
+            Home
+        %li.nav-item{class: "#{'active font-weight-bold' if current_page?(courses_path)}"}
+          = link_to courses_path, class: 'nav-link' do
+            Cursos
+        %li.nav-item{class: "#{'active font-weight-bold' if current_page?(new_course_path)}"}
+          = link_to new_course_path, class: 'nav-link' do
+            Novo Curso
+        %li.nav-item{class: "#{'active font-weight-bold' if current_page?(users_path)}"}
+          = link_to users_path, class: 'nav-link' do
+            Usuarios
+        %li.nav-item{class: "#{'active font-weight-bold' if current_page?(static_pages_activity
+_path)}"}
+          = link_to static_pages_activity
+, class: 'nav-link' do
+            Atividade
+
+
+
+      /SEARCH IN NAVBAR
+      = search_form_for @ransack_courses, as: :courses_search, url: courses_path do |f|
+        .input-group
+          = f.search_field :titulo_cont, class: 'form-control-sm', style: 'float: left; width: 150px; ', placeholder: 'Find a course', :autocomplete => :off
+          %span.input-group-append
+            %button.btn.btn-primary.btn-sm{:type => "submit"}
+              Pesquisar
+      -# .form-inline.my-2.my-lg-0
+      -#   = form_tag(courses_path, method: :get) do
+      -#     .input-group
+      -#       = text_field_tag :titulo, params[:titulo], autocomplete: 'off', placeholder: "Search", class: 'form-control-sm'
+      -#       %span.input-group-append
+      -#         %button.btn.btn-primary.btn-sm{:type => "submit"}
+      -#           Pesquisar
+
+      %ul.navbar-nav.mr-right
+        %li.nav-item{class: "#{'active font-weight-bold' if current_page?(root_path)}"}
+          = link_to edit_user_registration_path, class: 'nav-link' do
+            Configurações da Conta
+        %li.nav-item{class: "#{'active font-weight-bold' if current_page?(root_path)}"}
+          = link_to destroy_user_session_path, method: :delete,class: 'nav-link' do
+            Sair
+
+    - else
+      %ul.navbar-nav
+        %li.nav-item= link_to 'Sign Up', new_user_registration_path, class: 'nav-link'
+        %li.nav-item= link_to 'Log In', new_user_session_path, class: 'nav-link'
+):
+1:    %nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+2:      %a.navbar-brand{:href => "/"} TestMaker
+3:      %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
+4:        %span.navbar-toggler-icon
+5:      #navbarSupportedContent.collapse.navbar-collapse
+6:        - if current_user
+7:          %ul.navbar-nav.mr-auto
+8:            %li.nav-item{class: "#{'active font-weight-bold' if current_page?(root_path)}"}
+9:              = link_to root_path, class: 'nav-link' do
+10:                Home
+11:            %li.nav-item{class: "#{'active font-weight-bold' if current_page?(courses_path)}"}
+12:              = link_to courses_path, class: 'nav-link' do
+13:                Cursos
+14:            %li.nav-item{class: "#{'active font-weight-bold' if current_page?(new_course_path)}"}
+15:              = link_to new_course_path, class: 'nav-link' do
+16:                Novo Curso
+17:            %li.nav-item{class: "#{'active font-weight-bold' if current_page?(users_path)}"}
+18:              = link_to users_path, class: 'nav-link' do
+19:                Usuarios
+20:            %li.nav-item{class: "#{'active font-weight-bold' if current_page?(static_pages_activity
+21:    _path)}"}
+22:              = link_to static_pages_activity
+23:    , class: 'nav-link' do
+24:                Atividade
+25:    
+26:    
+27:    
+28:          /SEARCH IN NAVBAR
+29:          = search_form_for @ransack_courses, as: :courses_search, url: courses_path do |f|
+30:            .input-group
+31:              = f.search_field :titulo_cont, class: 'form-control-sm', style: 'float: left; width: 150px; ', placeholder: 'Find a course', :autocomplete => :off
+32:              %span.input-group-append
+33:                %button.btn.btn-primary.btn-sm{:type => "submit"}
+34:                  Pesquisar
+35:          -# .form-inline.my-2.my-lg-0
+36:          -#   = form_tag(courses_path, method: :get) do
+37:          -#     .input-group
+38:          -#       = text_field_tag :titulo, params[:titulo], autocomplete: 'off', placeholder: "Search", class: 'form-control-sm'
+39:          -#       %span.input-group-append
+40:          -#         %button.btn.btn-primary.btn-sm{:type => "submit"}
+41:          -#           Pesquisar
+42:    
+43:          %ul.navbar-nav.mr-right
+44:            %li.nav-item{class: "#{'active font-weight-bold' if current_page?(root_path)}"}
+45:              = link_to edit_user_registration_path, class: 'nav-link' do
+46:                Configurações da Conta
+47:            %li.nav-item{class: "#{'active font-weight-bold' if current_page?(root_path)}"}
+48:              = link_to destroy_user_session_path, method: :delete,class: 'nav-link' do
+49:                Sair
+50:    
+51:        - else
+52:          %ul.navbar-nav
+53:            %li.nav-item= link_to 'Sign Up', new_user_registration_path, class: 'nav-link'
+54:            %li.nav-item= link_to 'Log In', new_user_session_path, class: 'nav-link'
+  
+app/views/layouts/_header.html.haml:21: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_header.html.haml:30: syntax error, unexpected local variable or method, expecting '}'
+app/views/layouts/_header.html.haml:35: syntax error, unexpected constant, expecting '}'
+app/views/layouts/_header.html.haml:37: syntax error, unexpected local variable or method, expecting '}'
+app/views/layouts/_header.html.haml:41: syntax error, unexpected '=', expecting '}'
+app/views/layouts/_header.html.haml:43: unknown type of %string
+app/views/layouts/_header.html.haml:43: syntax error, unexpected end-of-input, expecting `end'
+app/views/layouts/_header.html.haml:21: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_header.html.haml:30: syntax error, unexpected local variable or method, expecting '}'
+app/views/layouts/_header.html.haml:35: syntax error, unexpected constant, expecting '}'
+app/views/layouts/_header.html.haml:37: syntax error, unexpected local variable or method, expecting '}'
+app/views/layouts/_header.html.haml:41: syntax error, unexpected '=', expecting '}'
+app/views/layouts/_header.html.haml:43: unknown type of %string
+app/views/layouts/_header.html.haml:43: syntax error, unexpected end-of-input, expecting `end'
+app/views/layouts/_header.html.haml:21: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_header.html.haml:30: syntax error, unexpected local variable or method, expecting '}'
+app/views/layouts/_header.html.haml:35: syntax error, unexpected constant, expecting '}'
+app/views/layouts/_header.html.haml:37: syntax error, unexpected local variable or method, expecting '}'
+app/views/layouts/_header.html.haml:41: syntax error, unexpected '=', expecting '}'
+app/views/layouts/_header.html.haml:43: unknown type of %string
+app/views/layouts/_header.html.haml:43: syntax error, unexpected end-of-input, expecting `end'
+app/views/layouts/_header.html.haml:21: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_header.html.haml:30: syntax error, unexpected local variable or method, expecting '}'
+app/views/layouts/_header.html.haml:35: syntax error, unexpected constant, expecting '}'
+app/views/layouts/_header.html.haml:37: syntax error, unexpected local variable or method, expecting '}'
+app/views/layouts/_header.html.haml:41: syntax error, unexpected '=', expecting '}'
+app/views/layouts/_header.html.haml:43: unknown type of %string
+app/views/layouts/_header.html.haml:43: syntax error, unexpected end-of-input, expecting `end'
+app/views/layouts/_header.html.haml:21: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_header.html.haml:30: syntax error, unexpected local variable or method, expecting '}'
+app/views/layouts/_header.html.haml:35: syntax error, unexpected constant, expecting '}'
+app/views/layouts/_header.html.haml:37: syntax error, unexpected local variable or method, expecting '}'
+app/views/layouts/_header.html.haml:41: syntax error, unexpected '=', expecting '}'
+app/views/layouts/_header.html.haml:43: unknown type of %string
+app/views/layouts/_header.html.haml:43: syntax error, unexpected end-of-input, expecting `end'
+app/views/layouts/_header.html.haml:21: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_header.html.haml:30: syntax error, unexpected local variable or method, expecting '}'
+app/views/layouts/_header.html.haml:35: syntax error, unexpected constant, expecting '}'
+app/views/layouts/_header.html.haml:37: syntax error, unexpected local variable or method, expecting '}'
+app/views/layouts/_header.html.haml:41: syntax error, unexpected '=', expecting '}'
+app/views/layouts/_header.html.haml:43: unknown type of %string
+app/views/layouts/_header.html.haml:43: syntax error, unexpected end-of-input, expecting `end'
+app/views/layouts/application.html.haml:14
+Started GET "/" for ::1 at 2022-11-13 16:25:59 -0300
+Processing by StaticPagesController#landing_page as HTML
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering static_pages/landing_page.html.haml within layouts/application
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "courses"[0m
+  ↳ app/views/static_pages/landing_page.html.haml:18
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT COUNT(DISTINCT "courses"."user_id") FROM "courses"[0m
+  ↳ app/views/static_pages/landing_page.html.haml:24
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/views/static_pages/landing_page.html.haml:30
+  [1m[36mCourse Load (2.5ms)[0m  [1m[34mSELECT "courses".* FROM "courses" LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/views/static_pages/landing_page.html.haml:40
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 18.7ms | Allocations: 8730)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 3.6ms | Allocations: 835)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 2.7ms | Allocations: 830)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 212)
+  Rendered courses/_course.html.haml (Duration: 0.2ms | Allocations: 217)
+  Rendered courses/_course.html.haml (Duration: 0.2ms | Allocations: 214)
+  [1m[36mCourse Load (1.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses" ORDER BY "courses"."created_at" DESC LIMIT $1[0m  [["LIMIT", 3]]
+  ↳ app/views/static_pages/landing_page.html.haml:54
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 1.8ms | Allocations: 832)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 2.9ms | Allocations: 1124)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 2.0ms | Allocations: 832)
+  Rendered static_pages/landing_page.html.haml within layouts/application (Duration: 81.7ms | Allocations: 30293)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 22.6ms | Allocations: 26217)
+  Rendered layout layouts/application.html.haml (Duration: 116.5ms | Allocations: 67881)
+Completed 200 OK in 130ms (Views: 105.8ms | ActiveRecord: 16.4ms | Allocations: 71097)
+
+
+Started GET "/activity" for ::1 at 2022-11-13 16:26:06 -0300
+Processing by StaticPagesController#activity as HTML
+  [1m[36mUser Load (4.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering static_pages/activity.html.haml within layouts/application
+  Rendered static_pages/activity.html.haml within layouts/application (Duration: 4.3ms | Allocations: 1444)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 3.2ms | Allocations: 813)
+  Rendered layout layouts/application.html.haml (Duration: 40.4ms | Allocations: 6588)
+Completed 200 OK in 61ms (Views: 41.5ms | ActiveRecord: 4.4ms | Allocations: 10700)
+
+
+Started GET "/activity" for ::1 at 2022-11-13 16:26:28 -0300
+Processing by StaticPagesController#activity as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering static_pages/activity.html.haml within layouts/application
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "activities"[0m
+  ↳ app/views/static_pages/activity.html.haml:5
+  [1m[36mPublicActivity::Activity Load (2.2ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/static_pages/activity.html.haml:9
+  [1m[36mCourse Load (2.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/views/static_pages/activity.html.haml:14
+  Rendered static_pages/activity.html.haml within layouts/application (Duration: 59.0ms | Allocations: 13702)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 14.4ms | Allocations: 20939)
+  Rendered layout layouts/application.html.haml (Duration: 96.1ms | Allocations: 46105)
+Completed 200 OK in 111ms (Views: 87.1ms | ActiveRecord: 14.9ms | Allocations: 49169)
+
+
+Started GET "/courses" for ::1 at 2022-11-13 16:28:12 -0300
+Processing by CoursesController#index as HTML
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering courses/index.html.haml within layouts/application
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "courses"[0m
+  ↳ app/views/courses/index.html.haml:3
+  [1m[36mCourse Load (1.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.haml:26
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN ($1, $2, $3)[0m  [["id", 1], ["id", 2], ["id", 3]]
+  ↳ app/views/courses/index.html.haml:26
+  Rendered courses/_course.html.haml (Duration: 5.5ms | Allocations: 7948)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 230)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 227)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 227)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 230)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 225)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 230)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 229)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.2ms | Allocations: 227)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 224)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.4ms | Allocations: 227)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 229)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 229)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 224)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 230)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 231)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 230)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 230)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 226)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 230)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 232)
+  Rendered courses/_course.html.haml (Duration: 0.2ms | Allocations: 227)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 230)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 231)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 228)
+  Rendered courses/_course.html.haml (Duration: 0.2ms | Allocations: 230)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 227)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 231)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 232)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 230)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 228)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 231)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 227)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 230)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 225)
+  Rendered courses/_course.html.haml (Duration: 0.3ms | Allocations: 229)
+  Rendered courses/index.html.haml within layouts/application (Duration: 321.1ms | Allocations: 324768)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 0.9ms | Allocations: 817)
+  Rendered layout layouts/application.html.haml (Duration: 327.7ms | Allocations: 329830)
+Completed 200 OK in 365ms (Views: 320.3ms | ActiveRecord: 18.5ms | Allocations: 342556)
+
+
+Started GET "/courses?courses_search%5Btitulo_cont%5D=public&courses_search%5Bdescricao_cont%5D=&courses_search%5Blinguagens_cont%5D=&courses_search%5Bnivel_cont%5D=&courses_search%5Buser_email_cont%5D=&commit=Search" for ::1 at 2022-11-13 16:28:21 -0300
+Processing by CoursesController#index as HTML
+  Parameters: {"courses_search"=>{"titulo_cont"=>"public", "descricao_cont"=>"", "linguagens_cont"=>"", "nivel_cont"=>"", "user_email_cont"=>""}, "commit"=>"Search"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering courses/index.html.haml within layouts/application
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "courses" WHERE "courses"."titulo" ILIKE '%public%'[0m
+  ↳ app/views/courses/index.html.haml:3
+  [1m[36mCourse Load (2.5ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."titulo" ILIKE '%public%'[0m
+  ↳ app/views/courses/index.html.haml:26
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  ↳ app/views/courses/index.html.haml:26
+  Rendered courses/_course.html.haml (Duration: 1.0ms | Allocations: 231)
+  Rendered courses/index.html.haml within layouts/application (Duration: 28.3ms | Allocations: 5750)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 2.3ms | Allocations: 765)
+  Rendered layout layouts/application.html.haml (Duration: 43.7ms | Allocations: 10580)
+Completed 200 OK in 56ms (Views: 36.8ms | ActiveRecord: 9.7ms | Allocations: 13162)
+
+
+Started GET "/courses/public_activity" for ::1 at 2022-11-13 16:28:23 -0300
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"public_activity"}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCourse Load (2.6ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."slug" = $1 LIMIT $2[0m  [["slug", "public_activity"], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:73:in `set_course'
+  Rendering layout layouts/application.html.haml
+  Rendering courses/show.html.haml within layouts/application
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 7.4ms | Allocations: 1368)
+  Rendered courses/show.html.haml within layouts/application (Duration: 14.8ms | Allocations: 4224)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 2.1ms | Allocations: 747)
+  Rendered layout layouts/application.html.haml (Duration: 30.9ms | Allocations: 8936)
+Completed 200 OK in 52ms (Views: 29.7ms | ActiveRecord: 7.5ms | Allocations: 12493)
+
+
+Started GET "/courses/public_activity/edit" for ::1 at 2022-11-13 16:28:25 -0300
+Processing by CoursesController#edit as HTML
+  Parameters: {"id"=>"public_activity"}
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCourse Load (2.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."slug" = $1 LIMIT $2[0m  [["slug", "public_activity"], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:73:in `set_course'
+  Rendering layout layouts/application.html.haml
+  Rendering courses/edit.html.haml within layouts/application
+  Rendered courses/_form.html.haml (Duration: 70.1ms | Allocations: 33566)
+  Rendered courses/edit.html.haml within layouts/application (Duration: 79.2ms | Allocations: 37250)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 1.0ms | Allocations: 794)
+  Rendered layout layouts/application.html.haml (Duration: 86.4ms | Allocations: 42174)
+Completed 200 OK in 105ms (Views: 87.4ms | ActiveRecord: 5.3ms | Allocations: 45683)
+
+
+Started PATCH "/courses/public_activity" for ::1 at 2022-11-13 16:28:28 -0300
+Processing by CoursesController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "course"=>{"titulo"=>"public_activity edit 2", "descricao"=>"2public_activity", "linguagens"=>"public_activity", "nivel"=>"Avançado"}, "commit"=>"Update Course", "id"=>"public_activity"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCourse Load (1.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."slug" = $1 LIMIT $2[0m  [["slug", "public_activity"], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:73:in `set_course'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/courses_controller.rb:50:in `block in update'
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:50:in `block in update'
+  [1m[36mCourse Update (1.4ms)[0m  [1m[33mUPDATE "courses" SET "titulo" = $1, "updated_at" = $2 WHERE "courses"."id" = $3[0m  [["titulo", "public_activity edit 2"], ["updated_at", "2022-11-13 19:28:28.821759"], ["id", 50]]
+  ↳ app/controllers/courses_controller.rb:50:in `block in update'
+  [1m[36mPublicActivity::Activity Create (1.9ms)[0m  [1m[32mINSERT INTO "activities" ("trackable_type", "trackable_id", "owner_type", "owner_id", "key", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["trackable_type", "Course"], ["trackable_id", 50], ["owner_type", "User"], ["owner_id", 1], ["key", "course.update"], ["created_at", "2022-11-13 19:28:28.828472"], ["updated_at", "2022-11-13 19:28:28.828472"]]
+  ↳ app/controllers/courses_controller.rb:50:in `block in update'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/courses_controller.rb:50:in `block in update'
+Redirected to http://localhost:3000/courses/public_activity
+Completed 302 Found in 30ms (ActiveRecord: 9.7ms | Allocations: 10606)
+
+
+Started GET "/courses/public_activity" for ::1 at 2022-11-13 16:28:28 -0300
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"public_activity"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCourse Load (1.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."slug" = $1 LIMIT $2[0m  [["slug", "public_activity"], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:73:in `set_course'
+  Rendering layout layouts/application.html.haml
+  Rendering courses/show.html.haml within layouts/application
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 3.9ms | Allocations: 1140)
+  Rendered courses/show.html.haml within layouts/application (Duration: 4.4ms | Allocations: 1336)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 1.0ms | Allocations: 797)
+  Rendered layout layouts/application.html.haml (Duration: 11.5ms | Allocations: 6364)
+Completed 200 OK in 19ms (Views: 10.4ms | ActiveRecord: 3.5ms | Allocations: 9257)
+
+
+Started GET "/activity" for ::1 at 2022-11-13 16:28:30 -0300
+Processing by StaticPagesController#activity as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.haml
+  Rendering static_pages/activity.html.haml within layouts/application
+  [1m[35m (4.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "activities"[0m
+  ↳ app/views/static_pages/activity.html.haml:5
+  [1m[36mPublicActivity::Activity Load (1.3ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/views/static_pages/activity.html.haml:9
+  [1m[36mCourse Load (1.5ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/views/static_pages/activity.html.haml:14
+  [1m[36mCACHE Course Load (0.0ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/views/static_pages/activity.html.haml:14
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/static_pages/activity.html.haml:17
+  Rendered static_pages/activity.html.haml within layouts/application (Duration: 21.3ms | Allocations: 5355)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 1.2ms | Allocations: 842)
+  Rendered layout layouts/application.html.haml (Duration: 30.6ms | Allocations: 10491)
+Completed 200 OK in 38ms (Views: 23.1ms | ActiveRecord: 10.1ms | Allocations: 13050)
+
+
+Started GET "/courses/public_activity" for ::1 at 2022-11-13 16:28:49 -0300
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"public_activity"}
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCourse Load (2.5ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."slug" = $1 LIMIT $2[0m  [["slug", "public_activity"], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:73:in `set_course'
+  Rendering layout layouts/application.html.haml
+  Rendering courses/show.html.haml within layouts/application
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/_course.html.haml:17
+  Rendered courses/_course.html.haml (Duration: 8.1ms | Allocations: 1178)
+  Rendered courses/show.html.haml within layouts/application (Duration: 9.4ms | Allocations: 1354)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.haml (Duration: 2.3ms | Allocations: 747)
+  Rendered layout layouts/application.html.haml (Duration: 27.4ms | Allocations: 6277)
+Completed 200 OK in 47ms (Views: 26.7ms | ActiveRecord: 8.3ms | Allocations: 9572)
+
+
