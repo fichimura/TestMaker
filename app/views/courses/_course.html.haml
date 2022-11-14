@@ -16,6 +16,11 @@
     .row
     = course.user.username
   .card-footer
+    = course.user
+    = course.user_id
     = link_to 'Detalhes', course, class: 'btn btn-sm btn-primary'
-    = link_to 'Editar', edit_course_path(course), class: 'btn btn-sm btn-warning'
-    = link_to 'Deletar', course, method: :delete, data: { confirm: 'Você tem certeza que deseja deletar este curso?' }, class: 'btn btn-sm btn-danger'
+    - if policy(course).edit?
+      /- if policy(course).edit?
+      = link_to 'Edit', edit_course_path(course), class: 'btn btn-sm btn-warning'
+      /- if policy(course).destroy?
+      = link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger'
