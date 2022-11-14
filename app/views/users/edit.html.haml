@@ -1,6 +1,6 @@
 .card
   .card-header
-    Editing roles for
+    Editando atribuições para
     = @user.email
   .card-body
     = simple_form_for @user do |f|
@@ -9,4 +9,4 @@
       %hr
       = f.button :submit, class: "btn btn-success"
   .card-footer
-    = link_to 'Cancel', users_path, class: 'btn btn-danger'
+    = link_to 'Cancelar', users_path, class: 'btn btn-danger'
