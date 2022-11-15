@@ -16,8 +16,6 @@
     .row
     = course.user.username
   .card-footer
-    = course.user
-    = course.user_id
     = link_to 'Detalhes', course, class: 'btn btn-sm btn-primary'
     - if policy(course).edit?
       /- if policy(course).edit?
