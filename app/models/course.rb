@@ -3,6 +3,8 @@ class Course < ApplicationRecord
     validates :descricao, presence: true, length: { :minimum => 5 }
     
     belongs_to :user
+    has_many :lessons
+
     def to_s
         titulo
     end

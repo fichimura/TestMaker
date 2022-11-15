@@ -6,7 +6,7 @@
   - if current_user
     = search_form_for @ransack_courses, as: :courses_search, url: courses_path do |f|
       .input-group
-        = f.search_field :titulo_cont, class: 'form-control-sm', style: 'float: left; width: 150px; ', placeholder: 'Encontre o curso', :autocomplete => :off
+        = f.search_field :titulo_cont, class: 'form-control-sm', style: 'float: left; width: 150px; ', placeholder: 'Pesquisar curso', :autocomplete => :off
         %span.input-group-append
           %button.btn.btn-primary.btn-sm{:type => "submit"}
             Pesquisar
@@ -16,9 +16,9 @@
     %h1
       .fa.fa-graduation-cap
     = Course.count
-    cursos
+    Cursos
     .row
-    cursos disponíveis para você aprender DevOps
+    Cursos disponíveis para você aprender DevOps
   .card.card-body
     %h1
     = Course.distinct.count(:user_id)
@@ -28,7 +28,7 @@
   .card.card-body
     %h1
     = User.count
-    estudantes
+    Estudantes
     .row
     Conheça seus colegas e interaja com eles para ampliar seu conhcecimento
 

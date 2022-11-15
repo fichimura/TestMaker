@@ -1,0 +1,9 @@
+.card
+  .card-header
+    = link_to lesson.titulo, lesson
+  .card-body
+    = lesson.conteudo
+    = lesson.course
+  .card-footer
+    = link_to 'Editar', edit_lesson_path(lesson), class: 'btn btn-sm btn-warning'
+    = link_to 'Deletar', lesson, method: :delete, data: { confirm: 'Você tem certeza?' }, class: 'btn btn-sm btn-danger'
