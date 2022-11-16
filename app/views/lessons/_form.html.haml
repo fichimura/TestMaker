@@ -6,7 +6,7 @@
   .form-inputs
     = f.input :titulo
     = f.input :conteudo
-    = f.association :course
+    = f.input :course_id, input_html: {value: @lesson.course_id || params[:course_id]}, as: :hidden
 
   .form-actions
     = f.submit "Atualizar lição", class:"btn btn-primary"

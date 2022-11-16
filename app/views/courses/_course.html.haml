@@ -18,7 +18,7 @@
   .card-footer
     = course.created_at.strftime('%d-%b-%Y')
     .row
-    = course.user.username
+    = link_to course.user.username, user_path(course.user)
   .card-footer
     = link_to 'Detalhes', course, class: 'btn btn-sm btn-primary'
     - if policy(course).edit?
