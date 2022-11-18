@@ -2,9 +2,8 @@
 \/
 = link_to @lesson.course.titulo, course_path(@lesson.course)
 \/
-= link_to @lesson.titulo, lesson_path(@lesson)
+= link_to @lesson.titulo, course_lesson_path(@lesson)
 %p
 
-= render 'lessons/lesson', lesson: @lesson
-
+= link_to @lesson.titulo, course_lesson_path(@course, @lesson)
 = link_to 'Voltar', course_path(@lesson.course)

@@ -14,6 +14,7 @@ class LessonsController < ApplicationController
   # GET /lessons/new
   def new
     @lesson = Lesson.new
+    @course = Course.friendly.find(params[:course_id])
   end
 
   # GET /lessons/1/edit
@@ -24,10 +25,12 @@ class LessonsController < ApplicationController
   # POST /lessons or /lessons.json
   def create
     @lesson = Lesson.new(lesson_params)
-
+    @course = Course.friendly.find(params[:course_id])
+    @lesson.course_id = @course.id
+    authorize @lesson
     respond_to do |format|
       if @lesson.save
-        format.html { redirect_to lesson_url(@lesson), notice: "Lição criada." }
+        format.html { redirect_to course_lesson_path(@course, @lesson), notice: 'Lição criada' }
         format.json { render :show, status: :created, location: @lesson }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -41,7 +44,7 @@ class LessonsController < ApplicationController
     authorize @lesson
     respond_to do |format|
       if @lesson.update(lesson_params)
-        format.html { redirect_to lesson_url(@lesson), notice: "Lição atualizada." }
+        format.html { redirect_to course_lesson_path(@course, @lesson), notice: 'Lição atualizada' }
         format.json { render :show, status: :ok, location: @lesson }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -56,7 +59,7 @@ class LessonsController < ApplicationController
     @lesson.destroy
 
     respond_to do |format|
-      format.html { redirect_to lessons_url, notice: "Lição deletada." }
+      format.html { redirect_to course_path(@course), notice: "Lição deletada." }
       format.json { head :no_content }
     end
   end
@@ -64,11 +67,12 @@ class LessonsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_lesson
+      @course = Course.friendly.find(params[:course_id])
       @lesson = Lesson.friendly.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
     def lesson_params
-      params.require(:lesson).permit(:titulo, :conteudo, :course_id)
+      params.require(:lesson).permit(:titulo, :conteudo)
     end
 end

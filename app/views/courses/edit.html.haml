@@ -4,6 +4,7 @@
   .card-body
     = render 'form'
 
-= link_to 'Detalhes', @course
-\|
-= link_to 'Voltar', courses_path
+  .card-footer
+    = link_to 'Detalhes', @course
+    \|
+    = link_to 'Voltar', courses_path

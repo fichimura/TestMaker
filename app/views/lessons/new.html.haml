@@ -1,5 +1,7 @@
-%h1 Nova Lição
-
-= render 'form'
-
-= link_to 'Voltar', lessons_path
+.card
+  .card-header
+    %h1 Nova lição
+  .card-body
+    = render 'form'
+  .card-footer
+    = link_to 'Voltar ao curso', course_path(@course)
