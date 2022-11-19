@@ -4,9 +4,14 @@
   .card-body
     = course.descricao
 
+
   .card-footer
     Lições: 
     = course.lessons.count
+
+  .card-footer
+    .text-center
+      = enrollment_button(course)
 
   .card-footer
   .row

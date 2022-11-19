@@ -7,6 +7,9 @@ class User < ApplicationRecord
   
   rolify
   
+
+  has_many :enrollments
+  has_many :courses
   
   def to_s
     email
@@ -15,8 +18,6 @@ class User < ApplicationRecord
   def username
     self.email.split(/@/).first
   end
-
-  has_many :courses
 
   extend FriendlyId
   friendly_id :email, use: :slugged
@@ -39,6 +40,10 @@ class User < ApplicationRecord
 
   def online?
     updated_at > 2.minutes.ago
+  end
+
+  def inscreveu(course)
+    self.enrollments.create(course: course)
   end
 
 
