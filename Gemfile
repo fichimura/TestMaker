@@ -25,6 +25,8 @@ gem "rolify"
 
 gem "pundit", "~> 2.1.0"
 
+gem 'pagy'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.7'
 # Use postgresql as the database for Active Record

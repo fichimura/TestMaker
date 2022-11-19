@@ -10,7 +10,6 @@
     = f.input :nivel, collection: Course.niveis, include_blank: true
     /= f.input :nivel, collection: [ "Iniciante", "Intermediário", "Avançado"]
 
-
-
+  %p
   .form-actions
     = f.submit "Atualizar curso", class:"btn btn-primary"
