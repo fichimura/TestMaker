@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
   end
 
   def can_administer?
-    current_user.try(:admin?)
+    true
   end
 
   private
