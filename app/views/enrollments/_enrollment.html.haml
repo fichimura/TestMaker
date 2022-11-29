@@ -1,0 +1,24 @@
+.card
+  .card-header
+    %p
+    Usuário: 
+    = link_to enrollment.user.username, user_path(enrollment.user)
+    %p
+    Inscrição em: 
+    = enrollment.updated_at.strftime('%d-%b-%Y')
+    %p
+    Curso: 
+    = link_to enrollment.course, course_path(enrollment.course)
+  .card-body
+    .text-warning
+    %p
+    Avaliação: 
+    %b= enrollment.avaliacao
+
+    %p
+    Comentários:
+    %small= enrollment.comentarios
+  - if current_user
+    .card-footer
+      - if policy(enrollment).edit?
+        = link_to 'Editar Avaliação', edit_enrollment_path(enrollment)

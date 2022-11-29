@@ -13,25 +13,41 @@
   %table.table.table-bordered.table-striped.table-sm
     %thead
       %tr
-        %th Course
-        %th User
-        %th Avaliacao
-        %th Comentarios
+        %th
+          Usuário
+        %th
+          Inscrito em
+        %th
+          .fa.fa-graduation-cap
+          Curso
+        %th 
+          .text-warning.fa.fa-clock
+          Avaliado em
+        %th 
+          .text-warning.fa.fa-star
+          Avaliação
+        %th 
+          .text-warning.fa.fa-comment
+          Comentários
         %th
         %th
         %th
-
     %tbody
       - @enrollments.each do |enrollment|
         %tr
-          %td= enrollment.course
-          %td= enrollment.user
+          %td= link_to enrollment.user, user_path(enrollment.user)
+          %td= enrollment.created_at.strftime("%d/%b/%Y, %H:%M")
+          %td= link_to enrollment.course, course_path(enrollment.course)
+          %td
+            - if enrollment.avaliacao.present?
+              = enrollment.updated_at.strftime("%d/%b/%Y, %H:%M")
           %td= enrollment.avaliacao
           %td= enrollment.comentarios
           %td= link_to 'Detalhes', enrollment
           %td= link_to 'Editar', edit_enrollment_path(enrollment)
           %td= link_to 'Deletar', enrollment, method: :delete, data: { confirm: 'Você tem certeza?' }
 
+
+!= pagy_bootstrap_nav(@pagy)
 %br
 
-= link_to 'Nova inscrição', new_enrollment_path
