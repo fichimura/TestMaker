@@ -1,0 +1,26 @@
+<h2>
+  Questões
+</h2>
+<p>
+  <%= link_to "Nova questão",new_survey_question_path(@survey) %>
+</p>
+<p>
+  <%= link_to "Voltar para questionários", surveys_path(@survey) %>
+</p>
+<hr/>
+
+<table>
+  <colgroup>
+    <col>
+    <col width="250">
+  </colgroup>
+  <thead>
+    <tr>
+      <th>Questão</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render partial: "question", collection: @questions %>
+  </tbody>
+</table>

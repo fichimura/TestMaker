@@ -1,0 +1,57 @@
+%nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+  %a.navbar-brand{:href => "/"} TestMaker
+  %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
+    %span.navbar-toggler-icon
+  #navbarSupportedContent.collapse.navbar-collapse
+    - if current_user
+      %ul.navbar-nav.mr-auto
+        %li.nav-item{class: "#{'active font-weight-bold' if current_page?('/')}"}
+          = link_to '/', class: 'nav-link' do
+            Home
+        %li.nav-item{class: "#{'active font-weight-bold' if current_page?('/courses')}"}
+          = link_to '/courses', class: 'nav-link' do
+            Cursos
+        .form-inline
+      %ul.navbar-nav.mr-auto
+        - if current_user.has_role?(:estudante)
+          %li.nav-item{class: "#{'active font-weight-bold' if current_page?('/enrollments')}"}
+            = link_to  '/enrollments', class: 'nav-link' do
+              Inscrições
+          %li.nav-item{class: "#{'active font-weight-bold' if current_page?('/rapidfire')}"}
+            = link_to '/rapidfire', class: 'nav-link' do
+              Questionários
+        - if current_user.has_role?(:professor)
+          %li.nav-item{class: "#{'active font-weight-bold' if current_page?(new_course_path)}"}
+            = link_to new_course_path, class: 'nav-link' do
+              Novo curso
+          %li.nav-item{class: "#{'active font-weight-bold' if current_page?(enrollments_path)}"}
+            = link_to  '/index_user', class: 'nav-link' do
+              Inscrições
+          %li.nav-item{class: "#{'active font-weight-bold' if current_page?('/rapidfire')}"}
+            = link_to '/rapidfire', class: 'nav-link' do
+              Questionários
+        - if current_user.has_role?(:admin)
+          %li.nav-item{class: "#{'active font-weight-bold' if current_page?(enrollments_path)}"}
+            = link_to  enrollments_path, class: 'nav-link' do
+              Inscrições
+          %li.nav-item{class: "#{'active font-weight-bold' if current_page?('/rapidfire')}"}
+            = link_to '/rapidfire', class: 'nav-link' do
+              Questionários
+          %li.nav-item{class: "#{'active font-weight-bold' if current_page?(users_path)}"}
+            = link_to users_path, class: 'nav-link' do
+              Usuários   
+
+
+      %b= current_user.username
+      %ul.navbar-nav.mr-right
+        %li.nav-item{class: "#{'active font-weight-bold' if current_page?(root_path)}"}
+          = link_to 'users/edit', class: 'nav-link' do
+            Configurações da Conta
+        %li.nav-item{class: "#{'active font-weight-bold' if current_page?(root_path)}"}
+          = link_to 'users/sign_out', method: :delete,class: 'nav-link' do
+            Sair
+
+    - else
+      %ul.navbar-nav
+        %li.nav-item= link_to 'Sign Up', new_user_registration_path, class: 'nav-link'
+        %li.nav-item= link_to 'Log In', new_user_session_path, class: 'nav-link'

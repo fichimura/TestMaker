@@ -9,6 +9,10 @@ class EnrollmentPolicy < ApplicationPolicy
       @user.has_role?(:admin) 
     end
 
+    def index_user?
+      @record.user_id == @user.id
+    end
+
     def edit?
       @record.user_id == @user.id
     end

@@ -1,0 +1,9 @@
+<tr id="question_<%= question.id %>">
+  <td><%= question.question_text %></td>
+  <td>
+    <ul class="horizontal-list">
+      <li><%= link_to "Editar", [:edit, question.survey, question] %></li>
+      <li><%= link_to "Deletar", [question.survey, question], method: :delete, data: { confirm: 'Você tem certeza?' }  %></li>
+    </ul>
+  </td>
+</tr>

@@ -31,6 +31,7 @@
         %th= 'IP do atual Sign in'.humanize
         %th= 'IP do último Sign in'.humanize
         %th Roles
+        %th Ações
     %tbody
       - @users.each do |user|
         %tr
@@ -46,8 +47,13 @@
           %td
             - user.roles.each do |role|
               = role.name
+          
             - if policy(user).edit?
-              = link_to 'Editar atribuições', edit_user_path(user), class: 'btn btn-sm btn-warning'
+              %td          
+
+                = link_to 'Editar atribuições', edit_user_path(user), class: 'btn btn-sm btn-warning'
+                = link_to 'Deletar conta de usuário', cancel_user_registration_path(user), data: { confirm: 'Você tem certeza?' },class: 'btn btn-sm btn-danger'
+
 
 != pagy_bootstrap_nav(@pagy)
 %br

@@ -8,6 +8,9 @@ class Enrollment < ApplicationRecord
   validates_uniqueness_of :course_id, scope: :user_id  
   validate :cant_subscribe_to_own_course 
 
+  validates_presence_of :avaliacao, if: :comentarios?
+  validates_presence_of :comentarios, if: :avaliacao?
+
   scope :pending_review, -> { where(avaliacao: [0, nil, ""], comentarios: [0, nil, ""]) }
 
   def to_s

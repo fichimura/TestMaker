@@ -17,6 +17,10 @@ class ApplicationController < ActionController::Base
     @ransack_courses = Course.ransack(params[:courses_search], search_key: :courses_search) #navbar search
   end
 
+  def can_administer?
+    true
+  end
+
 
 
   private

@@ -2,6 +2,7 @@ class CoursesController < ApplicationController
   before_action :set_course, only: %i[ show edit update destroy ]
 
   def index
+    @ransack_path = courses_path
     @ransack_courses = Course.ransack(params[:courses_search], search_key: :courses_search)
     #@courses = @ransack_courses.result.includes(:user)
     @pagy, @courses = pagy(@ransack_courses.result.includes(:user))
@@ -63,6 +64,29 @@ class CoursesController < ApplicationController
       format.html { redirect_to courses_url, notice: "Curso deletado." }
       format.json { head :no_content }
     end
+  end
+
+
+  def enrolled
+    @ransack_path = enrolled_courses_path
+    @ransack_courses = Course.joins(:enrollments).where(enrollments: {user: current_user}).ransack(params[:courses_search], search_key: :courses_search)
+    @pagy, @courses = pagy(@ransack_courses.result.includes(:user))
+    render 'index'
+  end
+
+
+  def pending_review
+    @ransack_path = pending_review_courses_path
+    @ransack_courses = Course.joins(:enrollments).merge(Enrollment.pending_review.where(user: current_user)).ransack(params[:courses_search], search_key: :courses_search)
+    @pagy, @courses = pagy(@ransack_courses.result.includes(:user))
+    render 'index'
+  end
+
+  def created
+    @ransack_path = created_courses_path
+    @ransack_courses = Course.where(user: current_user).ransack(params[:courses_search], search_key: :courses_search)
+    @pagy, @courses = pagy(@ransack_courses.result.includes(:user))
+    render 'index'
   end
 
   private

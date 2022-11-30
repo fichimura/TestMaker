@@ -1,0 +1,26 @@
+<h2>
+  Questionários
+</h2>
+<p>
+  <% if can_administer? %>
+    <%= link_to "Novo Questionário", new_survey_path %>
+  <% end %>
+</p>
+<p>
+  <%= link_to t('Voltar para a home'), '/' %>
+</p>
+<hr/>
+
+<table>
+  <colgroup>
+    <col>
+    <col width="250">
+  </colgroup>
+  <tbody>
+    <%= render partial: "survey", collection: @surveys %>
+  </tbody>
+</table>
+
+<% if defined?(Kaminari) %>
+  <%= paginate @surveys %>
+<% end %>

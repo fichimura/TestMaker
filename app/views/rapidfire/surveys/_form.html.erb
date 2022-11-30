@@ -1,0 +1,31 @@
+<h3><%= survey.new_record? ? "Novo Questionário" : "Edit Survey" %></h3>
+
+<%= form_for survey do |f| %>
+  <%- if survey.errors.any? %>
+    <ul>
+      <%- survey.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :nome %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :introdução %>
+    <%= f.text_area :introduction %>
+  </div>
+
+  <div class="group">
+    <%= f.label :depois_do_questionario %>
+    <%= f.text_area :after_survey_content %>
+  </div>
+
+  <%= f.submit "Confirmar", class:"btn btn-primary"%>
+  <p>
+    <%= link_to "Voltar para questionários", surveys_path(@survey) %>
+  </p>
+<% end %>

@@ -1,0 +1,39 @@
+<h3>Questão</h3>
+
+<%= form_for form, as: :question, url: url, method: method do |f| %>
+  <%- unless form.errors.empty? %>
+    <ul>
+      <%- form.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :Tipo %>
+    <%= f.select :type, ::Rapidfire::QuestionForm::QUESTION_TYPES, {}, id: "question_type" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :Texto %>
+    <%= f.text_field :question_text %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :Opções%>
+    <%= f.text_area :answer_options, rows: 5 %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :Obrigatório? %>
+    <%= f.check_box :answer_presence %>
+  </div>
+
+
+  <%= f.submit "Confirmar", class:"btn btn-primary"%>
+
+  <p>
+    <%= link_to "Voltar para questões", survey_questions_path(@survey) %>
+  </p>
+
+<% end %>
