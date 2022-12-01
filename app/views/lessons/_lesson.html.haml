@@ -1,9 +1,20 @@
 .card
   .card-header
+    - if lesson.viewed(current_user) == true
+      Visualizado
+     
+    - else
+      Não Visualizado
+
+
+    %b Lição:
     = link_to lesson.titulo, course_lesson_path(@course, lesson)
   - if policy(lesson).show?
     .card-body
-      = lesson.conteudo 
+      %b Conteúdo:
+      = lesson.conteudo
+      .row
+      %b Curso: 
       = lesson.course
   - if policy(lesson).edit?
     .card-footer

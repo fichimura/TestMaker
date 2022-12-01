@@ -14,32 +14,46 @@
         .form-inline
       %ul.navbar-nav.mr-auto
         - if current_user.has_role?(:estudante)
+          %li.nav-item{class: "#{'active font-weight-bold' if current_page?('/rapidfire')}"}
+            = link_to '/rapidfire', class: 'nav-link' do
+              Questionários
+          %li.nav-item{class: "#{'active font-weight-bold' if current_page?('/courses/enrolled')}"}
+            = link_to '/courses/enrolled', class: 'nav-link' do
+              Inscrições do aluno
+          %li.nav-item{class: "#{'active font-weight-bold' if current_page?('/courses/pending_review')}"}
+            = link_to '/courses/pending_review', class: 'nav-link' do
+              Cursos avaliados
+
+        - if current_user.has_role?(:professor)
+          %li.nav-item{class: "#{'active font-weight-bold' if current_page?('/courses/new')}"}
+            = link_to '/courses/new', class: 'nav-link' do
+              Novo curso
+          %li.nav-item{class: "#{'active font-weight-bold' if current_page?('/rapidfire')}"}
+            = link_to '/rapidfire', class: 'nav-link' do
+              Questionários
+          %li.nav-item{class: "#{'active font-weight-bold' if current_page?('/courses/created')}"}
+            = link_to '/courses/created', class: 'nav-link' do
+              Meus cursos
+          %li.nav-item{class: "#{'active font-weight-bold' if current_page?('/enrollments/my_students')}"}
+            = link_to '/enrollments/my_students', class: 'nav-link' do
+              Meus alunos
+          %li.nav-item{class: "#{'active font-weight-bold' if current_page?('/analytics')}"}
+            = link_to '/analytics', class: 'nav-link' do
+              Analytics 
+
+        - if current_user.has_role?(:admin)
           %li.nav-item{class: "#{'active font-weight-bold' if current_page?('/enrollments')}"}
             = link_to  '/enrollments', class: 'nav-link' do
               Inscrições
           %li.nav-item{class: "#{'active font-weight-bold' if current_page?('/rapidfire')}"}
             = link_to '/rapidfire', class: 'nav-link' do
               Questionários
-        - if current_user.has_role?(:professor)
-          %li.nav-item{class: "#{'active font-weight-bold' if current_page?(new_course_path)}"}
-            = link_to new_course_path, class: 'nav-link' do
-              Novo curso
-          %li.nav-item{class: "#{'active font-weight-bold' if current_page?(enrollments_path)}"}
-            = link_to  '/index_user', class: 'nav-link' do
-              Inscrições
-          %li.nav-item{class: "#{'active font-weight-bold' if current_page?('/rapidfire')}"}
-            = link_to '/rapidfire', class: 'nav-link' do
-              Questionários
-        - if current_user.has_role?(:admin)
-          %li.nav-item{class: "#{'active font-weight-bold' if current_page?(enrollments_path)}"}
-            = link_to  enrollments_path, class: 'nav-link' do
-              Inscrições
-          %li.nav-item{class: "#{'active font-weight-bold' if current_page?('/rapidfire')}"}
-            = link_to '/rapidfire', class: 'nav-link' do
-              Questionários
-          %li.nav-item{class: "#{'active font-weight-bold' if current_page?(users_path)}"}
-            = link_to users_path, class: 'nav-link' do
-              Usuários   
+          %li.nav-item{class: "#{'active font-weight-bold' if current_page?('/analytics')}"}
+            = link_to '/analytics', class: 'nav-link' do
+              Analytics   
+          %li.nav-item{class: "#{'active font-weight-bold' if current_page?('/users')}"}
+            = link_to '/users', class: 'nav-link' do
+              Usuários  
 
 
       %b= current_user.username

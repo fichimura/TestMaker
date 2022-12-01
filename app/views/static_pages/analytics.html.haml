@@ -1,0 +1,11 @@
+%h4.text-center
+  Usuários criados por dia
+= line_chart @users.group_by_day(:created_at).count
+
+%h4.text-center
+  Inscrições por dia
+= column_chart @enrollments.group_by_day(:created_at).count
+
+%h4.text-center
+  Popularidade do curso
+= bar_chart @enrollments.joins(:course).group(:'courses.titulo').count

@@ -12,6 +12,18 @@ class Enrollment < ApplicationRecord
   validates_presence_of :comentarios, if: :avaliacao?
 
   scope :pending_review, -> { where(avaliacao: [0, nil, ""], comentarios: [0, nil, ""]) }
+  scope :reviewed, -> { where.not(avaliacao: [0, nil, ""]) }
+  scope :latest_good_reviews, -> { order(avaliacao: :desc, created_at: :desc).limit(3) }
+
+  after_save do
+    unless avaliacao.nil? || avaliacao.zero?
+      course.update_rating
+    end
+  end
+
+  after_destroy do
+    course.update_rating
+  end
 
   def to_s
     user.to_s + " " + course.to_s

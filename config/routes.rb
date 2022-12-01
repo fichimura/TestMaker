@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get 'privacy_policy', to: 'static_pages#privacy_policy'
   get 'activity', to: 'static_pages#activity'
   get 'index_user', to: 'enrollments#index_user'
+  get 'analytics', to: 'static_pages#analytics'
 
   mount Rapidfire::Engine => "/rapidfire"
 

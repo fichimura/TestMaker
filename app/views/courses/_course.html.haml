@@ -2,12 +2,16 @@
   .card-header
     = link_to course.titulo, course_path(course)
   .card-body
+    %b Descrição:  
     = course.descricao
 
 
   .card-footer
-    Lições: 
+    %b Lições: 
     = course.lessons.count
+    .row
+    %b Inscritos:
+    = course.enrollments.count
 
   .card-footer
     .text-center
@@ -16,18 +20,28 @@
       = review_button(course)
 
   .card-footer
+    .text-warning
+    %b= course.average_rating
+
+  .card-footer
   .row
     .col-md-6
+      %b Linguagens:
       = course.linguagens
     .col-md-6
       .text-right
+        %b Nível:
         = course.nivel
   .card-footer
+    %b Curso criado
     = course.created_at.strftime('%d-%b-%Y')
     .row
+    %b Professor:
     = link_to course.user.username, user_path(course.user)
   .card-footer
     = link_to 'Detalhes', course, class: 'btn btn-sm btn-primary'
+    - if policy(course).owner?
+      = link_to 'Adicionar lição', new_course_lesson_path(course, @lesson), class: 'btn btn-primary btn-sm'
     - if policy(course).edit?
       /- if policy(course).edit?
       = link_to 'Editar', edit_course_path(course), class: 'btn btn-sm btn-warning'

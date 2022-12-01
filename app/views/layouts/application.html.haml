@@ -9,7 +9,7 @@
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     - unless controller_name == "surveys" || controller_name == "questions" || controller_name == "attempts"
       = render 'layouts/header'

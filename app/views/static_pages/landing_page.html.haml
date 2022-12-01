@@ -1,7 +1,6 @@
 .jumbotron
   .display-4
     Aqui o método é micro, mas o aprendizado é macro
-
   .p-4
   - if current_user
     = search_form_for @ransack_courses, as: :courses_search, url: courses_path do |f|
@@ -13,8 +12,7 @@
 
 .card-group
   .card.card-body
-    %h1
-      .fa.fa-graduation-cap
+    %h1s
     = Course.count
     Cursos
     .row
@@ -32,6 +30,8 @@
     .row
     Conheça seus colegas e interaja com eles para ampliar seu conhcecimento
 
+%p
+
 
 %hr
 %h2
@@ -47,11 +47,5 @@
   - @courses.each do |course|
     = render 'courses/course', course: course
 
-%hr
-%h2 
-  Últimos cursos
-.card-columns
-  - @latest_couses.each do |course|
-    = render 'courses/course', course: course
 
 %hr

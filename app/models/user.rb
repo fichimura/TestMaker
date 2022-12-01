@@ -10,6 +10,13 @@ class User < ApplicationRecord
 
   has_many :enrollments
   has_many :courses
+  has_many :user_lessons
+  
+  def view_lesson(lesson)
+    unless self.user_lessons.where(lesson: lesson).any?
+      self.user_lessons.create(lesson: lesson)
+    end
+  end
   
   def to_s
     email

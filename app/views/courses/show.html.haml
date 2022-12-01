@@ -1,13 +1,41 @@
-= link_to 'Cursos', courses_path
+- content_for :titulo do
+  TestMaker 
+  \/ 
+  = @course.titulo
+= link_to 'Courses', courses_path
 \/
 = link_to @course.titulo, course_path(@course)
 %p
 
 .row
-    .col-lg-6
-        = render 'courses/course', course: @course
-    .col-lg-6
-        = link_to 'Adicionar lição', new_course_lesson_path(@course, @lesson), class: 'btn btn-primary btn-sm btn-block'
-        %p
-        - @lessons.each do |lesson|
-            =render 'lessons/lesson', lesson: lesson
+  .col-lg-8.order-1.order-lg-1
+    .jumbotron
+      %h3
+        = @course.titulo
+      .p-3
+      .row
+      = @course.updated_at.strftime("%m/%Y")
+      .row
+      = @course.linguagens
+      .row
+      = @course.nivel
+      .p-3
+      = @course.descricao
+
+    %h4
+      .fa.fa-tasks
+      Lições:
+      = @course.lessons.count
+    %ul.list-group
+      - @lessons.each do |lesson|
+        = render 'lessons/lesson_preview', lesson: lesson
+    %p
+
+
+
+
+
+  .col-lg-4.order-0.order-lg-1
+    .sticky-top
+      = render 'courses/course', course: @course
+    %p

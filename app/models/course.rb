@@ -5,9 +5,24 @@ class Course < ApplicationRecord
     belongs_to :user
     has_many :lessons, dependent: :destroy
     has_many :enrollments
+    has_many :user_lessons, through: :lessons
+
+    validates :title, uniqueness: true
+
+    scope :latest, -> { limit(3).order(created_at: :desc) }
+    scope :top_rated, -> { limit(3).order(average_rating: :desc, created_at: :desc) }
+    scope :popular, -> { limit(3).order(enrollments_count: :desc, created_at: :desc) }
 
     def to_s
         titulo
+    end
+
+    def update_rating
+      if enrollments.any? && enrollments.where.not(avaliacao: nil).any?
+        update_column :average_rating, (enrollments.average(:avaliacao).round(2).to_f)
+      else
+        update_column :average_rating, (0)
+      end
     end
    
     extend FriendlyId

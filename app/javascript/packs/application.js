@@ -8,17 +8,22 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import "packs/bootstrap"
-import "@fortawesome/fontawesome-free/css/all"
 import 'bootstrap/dist/js/bootstrap'
 import 'bootstrap/dist/css/bootstrap'
-require("stylesheets/application.scss")
 import 'bootstrap'
 import 'stylesheets/application'
+import "chartkick/chart.js"
+
+require('stylesheets/application.scss')
+require("trix")
+require("@rails/actiontext")
+
 
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-require('stylesheets/application.scss')
-require("trix")
-require("@rails/actiontext")
+
+
+
+

@@ -37,6 +37,9 @@
           %li.nav-item{class: "#{'active font-weight-bold' if current_page?(my_students_enrollments_path)}"}
             = link_to my_students_enrollments_path, class: 'nav-link' do
               Meus alunos
+          %li.nav-item{class: "#{'active font-weight-bold' if current_page?(analytics_path)}"}
+            = link_to analytics_path, class: 'nav-link' do
+              Analytics   
 
         - if current_user.has_role?(:admin)
           %li.nav-item{class: "#{'active font-weight-bold' if current_page?(enrollments_path)}"}
@@ -45,9 +48,13 @@
           %li.nav-item{class: "#{'active font-weight-bold' if current_page?('/rapidfire')}"}
             = link_to '/rapidfire', class: 'nav-link' do
               Questionários
+          %li.nav-item{class: "#{'active font-weight-bold' if current_page?(analytics_path)}"}
+            = link_to analytics_path, class: 'nav-link' do
+              Analytics   
           %li.nav-item{class: "#{'active font-weight-bold' if current_page?(users_path)}"}
             = link_to users_path, class: 'nav-link' do
-              Usuários   
+              Usuários  
+
 
 
 
