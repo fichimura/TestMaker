@@ -1,24 +1,11 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+<h1> TestMaker </h1>
+<p> O TestMaker é uma aplicação voltada para facilitar o ensino de DevOps. Para isso possui admin, estudante e professor na plataforma
+com uma interface intuitiva. </p>
+ <ul>
+  <li>Ruby 3.1.2</li>
+  <li>Rails 6.1.7</li>
+  <li>PostgreSQL</li>
+ 
+ </ul>
+ 
+ <p> Para usar a aplicação, instalar e configurar estes requisitos acima, e depois rodar o comando "rails s" para iniciar localmente.</p>
