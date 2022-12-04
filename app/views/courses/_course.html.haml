@@ -21,7 +21,7 @@
 
   .card-footer
     .text-warning
-    %b= course.average_rating
+    = course.average_rating
 
   .card-footer
   .row
@@ -41,7 +41,7 @@
   .card-footer
     = link_to 'Detalhes', course, class: 'btn btn-sm btn-primary'
     - if policy(course).owner?
-      = link_to 'Adicionar lição', new_course_lesson_path(course, @lesson), class: 'btn btn-primary btn-sm'
+      = link_to 'Adicionar lição ', new_course_lesson_path(course, @lesson), class: 'btn btn-primary btn-sm'
     - if policy(course).edit?
       /- if policy(course).edit?
       = link_to 'Editar', edit_course_path(course), class: 'btn btn-sm btn-warning'

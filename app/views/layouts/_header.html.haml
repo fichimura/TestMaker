@@ -20,9 +20,6 @@
           %li.nav-item{class: "#{'active font-weight-bold' if current_page?(enrolled_courses_path)}"}
             = link_to enrolled_courses_path, class: 'nav-link' do
               Inscrições do aluno
-          %li.nav-item{class: "#{'active font-weight-bold' if current_page?(pending_review_courses_path,)}"}
-            = link_to pending_review_courses_path, class: 'nav-link' do
-              Cursos avaliados
 
         - if current_user.has_role?(:professor)
           %li.nav-item{class: "#{'active font-weight-bold' if current_page?(new_course_path)}"}

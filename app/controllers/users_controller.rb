@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    before_action :set_user, only: [:show, :edit, :update]
+    before_action :set_user, only: [:show, :edit, :update, :destroy]
   
     def index
     
@@ -21,6 +21,15 @@ class UsersController < ApplicationController
         redirect_to users_path, notice: 'Atribuições do usuário atualizada.'
       else
         render :edit
+      end
+    end
+
+    def destroy
+      @user.destroy
+  
+      respond_to do |format|
+        format.html { redirect_to '/users', notice: "Usuário deletado." }
+        format.json { head :no_content }
       end
     end
     

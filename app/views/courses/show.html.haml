@@ -28,7 +28,7 @@
       = @course.lessons.count
     %ul.list-group
       - @lessons.each do |lesson|
-        = render 'lessons/lesson_preview', lesson: lesson
+        = render 'lessons/lesson', lesson: lesson
     %p
 
 

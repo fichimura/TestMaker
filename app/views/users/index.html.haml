@@ -47,12 +47,10 @@
           %td
             - user.roles.each do |role|
               = role.name
-          
-            - if policy(user).edit?
-              %td          
-
-                = link_to 'Editar atribuições', edit_user_path(user), class: 'btn btn-sm btn-warning'
-                = link_to 'Deletar conta de usuário', cancel_user_registration_path(user), data: { confirm: 'Você tem certeza?' },class: 'btn btn-sm btn-danger'
+          %td 
+            - if policy(user).edit?         
+              = link_to 'Editar atribuições', edit_user_path(user), class: 'btn btn-sm btn-warning' 
+              = link_to 'Deletar conta de usuário', '/users/'+ (user.id).to_s, method: :delete ,class: 'btn btn-sm btn-danger'
 
 
 != pagy_bootstrap_nav(@pagy)

@@ -7,10 +7,9 @@ class User < ApplicationRecord
   
   rolify
   
-
-  has_many :enrollments
-  has_many :courses
-  has_many :user_lessons
+  has_many :courses, dependent: :nullify
+  has_many :enrollments, dependent: :nullify
+  has_many :user_lessons, dependent: :nullify
   
   def view_lesson(lesson)
     unless self.user_lessons.where(lesson: lesson).any?

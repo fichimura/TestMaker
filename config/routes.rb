@@ -10,12 +10,14 @@ Rails.application.routes.draw do
     resources :lessons
   end
   
-  resources :users, only: [:index, :edit, :show, :update]
+  resources :users, only: [:index, :edit, :show, :update, :destroy]
   root 'static_pages#landing_page'
   get 'privacy_policy', to: 'static_pages#privacy_policy'
   get 'activity', to: 'static_pages#activity'
   get 'index_user', to: 'enrollments#index_user'
   get 'analytics', to: 'static_pages#analytics'
+  delete 'destroy', to:'devise/registrations#destroy'
+
 
   mount Rapidfire::Engine => "/rapidfire"
 
